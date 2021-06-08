@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
+
+/* $primary: #ff7b11; */
+
+body {
+  color: #303034;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
