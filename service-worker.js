@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/umamusume/precache-manifest.02b095357b6e6fb246f6a5a05bb81bd3.js"
+  "/umamusume/precache-manifest.e0856be47ada8938986416806074cdc7.js"
 );
 
 workbox.clientsClaim();
