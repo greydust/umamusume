@@ -32,9 +32,15 @@ export class App extends Component {
   createRow(id) {
     return (
       <tr>
-        <th>{characterJson[id].text}</th>
+        <th>{this.idToPortrait(id)}</th>
         { _.map(this.characterIds, (targetId) => <th>{ this.calculateRelation(id, targetId) }</th>) }
       </tr>
+    )
+  }
+
+  idToPortrait(id) {
+    return (
+      <img class="portrait" src={`image/character/portrait/${id}.png`} alt={characterJson[id].text}/>
     )
   }
 
@@ -44,7 +50,7 @@ export class App extends Component {
         <tbody>
           <tr>
             <th></th>
-            { _.map(this.characterIds, (id) => <th>{characterJson[id].text}</th>) }
+            { _.map(this.characterIds, (id) => <th>{this.idToPortrait(id)}</th>) }
           </tr>
           { _.map(this.characterIds, (id) => this.createRow(id)) }
         </tbody>
