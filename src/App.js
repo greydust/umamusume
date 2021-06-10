@@ -1,29 +1,54 @@
-import * as _ from 'lodash';
+import _ from 'lodash';
 import React, { Component } from 'react';
 import "react-tabs/style/react-tabs.css";
-
 import './App.css';
 
-export class App extends Component {
+import characterJson from './db/character.json';
+import relation from './db/relation.json';
+import relation_member from './db/relation_member';
 
+
+export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.characterIds = Object.keys(characterJson);
+    this.relations = {};
+    for (let i = 0; i < this.characterIds.length; i += 1) {
+      this.relations[this.characterIds[i]] = {};
+      for (let j = 0; j < this.characterIds.length; j += 1) {
+        this.relations[this.characterIds[i]][this.characterIds[j]] = this.calculateRelation(this.characterIds[i], this.characterIds[j]);
+      }
+    }
+  }
+
+  calculateRelation(id1, id2) {
+    if (id1 === id2) {
+      return 0;
+    }
+    const relations = _.intersection(relation_member[id1], relation_member[id2])
+    return _.reduce(relations, (sum, id) => sum += parseInt(relation[id]), 0);
+  }
+
+  createRow(id) {
+    return (
+      <tr>
+        <th>{characterJson[id].text}</th>
+        { _.map(this.characterIds, (targetId) => <th>{ this.calculateRelation(id, targetId) }</th>) }
+      </tr>
+    )
+  }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <table>
+        <tbody>
+          <tr>
+            <th></th>
+            { _.map(this.characterIds, (id) => <th>{characterJson[id].text}</th>) }
+          </tr>
+          { _.map(this.characterIds, (id) => this.createRow(id)) }
+        </tbody>
+      </table>
     );
   }
 }
