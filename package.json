@@ -26,6 +26,7 @@
     "moment": "^2.29.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "2.1.2",
     "react-tabs": "^3.2.2"
   },
