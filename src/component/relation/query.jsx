@@ -67,7 +67,13 @@ function RelationQuery() {
             onChange={handleChange}
           >
             { horses.map((targetHorse, index) => (
-              <MenuItem key={`${index[1]}_option`} value={targetHorse}>{targetHorse[1].text}</MenuItem>
+              <MenuItem key={`${index[1]}_option`} value={targetHorse}>
+                <img
+                  className="portrait"
+                  src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${targetHorse[0]}.png`}
+                />
+                {targetHorse[1].text}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>
