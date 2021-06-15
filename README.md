@@ -8,4 +8,4 @@
 * `npm run start` in root folder.
 
 # Deploy
-* `npm deploy` in root folder to deploy on GitHub Pages.
+* `npm run deploy` in root folder to deploy on GitHub Pages.
