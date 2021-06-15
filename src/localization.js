@@ -2,15 +2,15 @@ import _ from 'lodash';
 
 class Localization {
   static getLocalizationJaJp() {
-    return require.context('./localization/', true, /ja-jp\.json$/);
+    return require.context('./localization/ja_jp/', true, /\.json$/);
   }
 
   static getLocalizationEnUs() {
-    return require.context('./localization/', true, /en-us\.json$/);
+    return require.context('./localization/en_us/', true, /\.json$/);
   }
 
   static getLocalizationZhTw() {
-    return require.context('./localization/', true, /zh-tw\.json$/);
+    return require.context('./localization/zh_tw', true, /\.json$/);
   }
 
   constructor() {

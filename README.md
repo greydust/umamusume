@@ -5,4 +5,7 @@
 * npm
 
 ## Run local
-* `npm run start` in root dir
+* `npm run start` in root folder.
+
+# Deploy
+* `npm deploy` in root folder to deploy on GitHub Pages.

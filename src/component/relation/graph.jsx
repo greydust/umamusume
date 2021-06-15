@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React from 'react';
+import React, { Component } from 'react';
 import 'react-tabs/style/react-tabs.css';
 
 import '../../app.css';
@@ -9,8 +9,8 @@ import characterJson from '../../db/character.json';
 import relation from '../../db/relation.json';
 import relationMember from '../../db/relation_member.json';
 
-function RelationGraph() {
-  function calculateRelation(id1, id2) {
+class RelationGraph extends Component {
+  static calculateRelation(id1, id2) {
     if (id1 === id2) {
       return 0;
     }
@@ -18,47 +18,53 @@ function RelationGraph() {
     return _.reduce(relations, (sum, id) => sum + parseInt(relation[id], 10), 0);
   }
 
-  function idToPortrait(id) {
-    return (
-      <img
-        className="portrait"
-        src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${id}.png`}
-        alt={characterJson[id].text}
-      />
-    );
+  constructor(props) {
+    super(props);
+    this.characterIds = Object.keys(characterJson);
+    this.relations = {};
+    for (let i = 0; i < this.characterIds.length; i += 1) {
+      this.relations[this.characterIds[i]] = {};
+      for (let j = 0; j < this.characterIds.length; j += 1) {
+        this.relations[this.characterIds[i]][this.characterIds[j]] = RelationGraph.calculateRelation(this.characterIds[i], this.characterIds[j]);
+      }
+    }
   }
 
-  function createRow(id) {
+  createRow(id) {
     return (
       <tr>
-        <th>{idToPortrait(id)}</th>
-        { _.map(characterIds, (targetId) => <th>{ calculateRelation(id, targetId) }</th>) }
+        <th>{this.idToPortrait(id)}</th>
+        { _.map(this.characterIds, (targetId) => <th>{ RelationGraph.calculateRelation(id, targetId) }</th>) }
       </tr>
     );
   }
 
-  const characterIds = Object.keys(characterJson);
-  const relations = {};
-  for (let i = 0; i < characterIds.length; i += 1) {
-    relations[characterIds[i]] = {};
-    for (let j = 0; j < characterIds.length; j += 1) {
-      relations[characterIds[i]][characterIds[j]] = calculateRelation(characterIds[i], characterIds[j]);
-    }
+  idToPortrait(id) {
+    const { localization } = this.props;
+    return (
+      <img
+        className="portrait"
+        src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${id}.png`}
+        alt={localization[characterJson[id].text]}
+      />
+    );
   }
 
-  return (
-    <div className="content">
-      <table>
-        <tbody>
-          <tr>
-            <th />
-            { _.map(characterIds, (id) => <th>{idToPortrait(id)}</th>) }
-          </tr>
-          { _.map(characterIds, (id) => createRow(id)) }
-        </tbody>
-      </table>
-    </div>
-  );
+  render() {
+    return (
+      <div className="content">
+        <table>
+          <tbody>
+            <tr>
+              <th />
+              { _.map(this.characterIds, (id) => <th>{this.idToPortrait(id)}</th>) }
+            </tr>
+            { _.map(this.characterIds, (id) => this.createRow(id)) }
+          </tbody>
+        </table>
+      </div>
+    );
+  }
 }
 
 export default RelationGraph;

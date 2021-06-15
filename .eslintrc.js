@@ -13,7 +13,6 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'max-len': ['error', { code: 120 }],
     'jsx-a11y/control-has-associated-label': [
       'error',
       {
@@ -44,6 +43,8 @@ module.exports = {
         depth: 3,
       },
     ],
+    'max-len': ['error', { code: 160 }],
+    'react/prop-types': ['off'],
   },
   settings: {
     react: {

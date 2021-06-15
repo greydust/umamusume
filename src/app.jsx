@@ -22,10 +22,9 @@ class App extends Component {
     this.state = {
       localization: this.localization.getLocalization('ja-jp'),
     };
-    this.changeLocalization = this.changeLocalization.bind(this);
   }
 
-  changeLocalization(locale) {
+  changeLocalization = (locale) => {
     this.setState({
       localization: this.localization.getLocalization(locale),
     });
@@ -52,11 +51,11 @@ class App extends Component {
           <Content className="tabs">
             <Switch>
               <Route exact path="/">
-                <Redirect to="/relation" />
+                <Redirect to="/relation/graph" />
               </Route>
-              <Route path="/relation/graph" component={RelationGraph} localization={localization} />
-              <Route path="/relation/query" component={RelationQuery} localization={localization} />
-              <Route path="/simulator" component={Simulator} localization={localization} />
+              <Route path="/relation/graph" render={() => (<RelationGraph localization={localization} />)} />
+              <Route path="/relation/query" render={() => (<RelationQuery localization={localization} />)} />
+              <Route path="/simulator" render={() => (<Simulator localization={localization} />)} />
             </Switch>
           </Content>
           <Footer className="footer">
