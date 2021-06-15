@@ -31,7 +31,7 @@ function Compatibility() {
   };
 
   const relationArray = () => {
-    const rel = [];
+    let rel = [];
     horses.forEach((horseOther) => {
       if (horseOther[0] !== horse.id) {
         rel.push([
@@ -41,7 +41,7 @@ function Compatibility() {
         ]);
       }
     });
-    _.sortBy(rel, [(value) => value[1]]);
+    rel = _.sortBy(rel, [(value) => -value[1]]);
 
     return rel.map((value, index) => (
       <tr key={index[1]}>
