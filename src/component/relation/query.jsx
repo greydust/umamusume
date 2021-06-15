@@ -42,7 +42,7 @@ class RelationQuery extends Component {
       if (horseOther[0] !== horse.id) {
         rel.push([
           localization[horseOther[1].text],
-          this.calculateRelation(horse.id, horseOther[0]),
+          RelationQuery.calculateRelation(horse.id, horseOther[0]),
           `${process.env.PUBLIC_URL}/static/image/character/portrait/${horseOther[0]}.png`,
         ]);
       }
