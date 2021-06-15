@@ -4,8 +4,8 @@
   "homepage": "https://greydust.github.io/umamusume",
   "main": "index.jsx",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "npm install && gh-pages -d build",
+    "predeploy": "npm install && npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
