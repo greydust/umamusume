@@ -47,7 +47,7 @@ function Compatibility() {
       <tr key={index[1]}>
         <td>{value[0]}</td>
         <td>{value[1]}</td>
-        <td><img src={value[2]} alt={value[1]} /></td>
+        <td><img className="portrait" src={value[2]} alt={value[1]} /></td>
       </tr>
     ));
   };

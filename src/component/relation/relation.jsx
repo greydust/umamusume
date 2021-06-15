@@ -1,13 +1,13 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React from 'react';
 import 'react-tabs/style/react-tabs.css';
 
 import characterJson from '../../db/character.json';
 import relation from '../../db/relation.json';
 import relationMember from '../../db/relation_member.json';
 
-class Relation extends Component {
-  static calculateRelation(id1, id2) {
+function Relation() {
+  function calculateRelation(id1, id2) {
     if (id1 === id2) {
       return 0;
     }
@@ -15,7 +15,7 @@ class Relation extends Component {
     return _.reduce(relations, (sum, id) => sum + parseInt(relation[id], 10), 0);
   }
 
-  static idToPortrait(id) {
+  function idToPortrait(id) {
     return (
       <img
         className="portrait"
@@ -25,42 +25,35 @@ class Relation extends Component {
     );
   }
 
-  constructor(props) {
-    super(props);
-    this.characterIds = Object.keys(characterJson);
-    this.relations = {};
-    for (let i = 0; i < this.characterIds.length; i += 1) {
-      this.relations[this.characterIds[i]] = {};
-      for (let j = 0; j < this.characterIds.length; j += 1) {
-        this.relations[this.characterIds[i]][this.characterIds[j]] = Relation.calculateRelation(
-          this.characterIds[i], this.characterIds[j],
-        );
-      }
-    }
-  }
-
-  createRow(id) {
+  function createRow(id) {
     return (
       <tr>
-        <th>{Relation.idToPortrait(id)}</th>
-        { _.map(this.characterIds, (targetId) => <th>{ Relation.calculateRelation(id, targetId) }</th>) }
+        <th>{idToPortrait(id)}</th>
+        { _.map(characterIds, (targetId) => <th>{ calculateRelation(id, targetId) }</th>) }
       </tr>
     );
   }
 
-  render() {
-    return (
-      <table>
-        <tbody>
-          <tr>
-            <th />
-            { _.map(this.characterIds, (id) => <th>{Relation.idToPortrait(id)}</th>) }
-          </tr>
-          { _.map(this.characterIds, (id) => this.createRow(id)) }
-        </tbody>
-      </table>
-    );
+  const characterIds = Object.keys(characterJson);
+  const relations = {};
+  for (let i = 0; i < characterIds.length; i += 1) {
+    relations[characterIds[i]] = {};
+    for (let j = 0; j < characterIds.length; j += 1) {
+      relations[characterIds[i]][characterIds[j]] = calculateRelation(characterIds[i], characterIds[j]);
+    }
   }
+
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <th />
+          { _.map(characterIds, (id) => <th>{idToPortrait(id)}</th>) }
+        </tr>
+        { _.map(characterIds, (id) => createRow(id)) }
+      </tbody>
+    </table>
+  );
 }
 
 export default Relation;

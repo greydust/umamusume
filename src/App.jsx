@@ -1,29 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {
+  Redirect, HashRouter as Router, Route, Link, Switch,
+} from 'react-router-dom';
+
 import 'react-tabs/style/react-tabs.css';
 import './App.css';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Relation from './component/relation/relation';
 import Compatibility from './component/compatibility/compatibility';
 
-class App extends Component {
-  constructor(prop) {
-    super(prop);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <div className="content">
-            <Route path="/Relation" component={Relation} />
-            <Route path="/Compatibility" component={Compatibility} />
-          </div>
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <div className="links">
+          <Link to="/relation" className="link">Relation</Link>
+          <Link to="/compatibility" className="link">Compatibility</Link>
         </div>
-      </Router>
-    );
-  }
+        <div className="tabs">
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/relation" />
+            </Route>
+            <Route path="/relation" component={Relation} />
+            <Route path="/compatibility" component={Compatibility} />
+          </Switch>
+        </div>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
