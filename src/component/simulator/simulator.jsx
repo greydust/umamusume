@@ -1,8 +1,10 @@
 import React from 'react';
 
+import '../../app.css';
+
 function Calculator() {
   return (
-    <div>Test</div>
+    <div className="content">Test</div>
   );
 }
 

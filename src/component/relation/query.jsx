@@ -5,6 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import React, { useState } from 'react';
 
+import '../../app.css';
 import './relation.css';
 
 import characterJson from '../../db/character.json';

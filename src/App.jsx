@@ -6,11 +6,11 @@ import {
 
 import RelationGraph from './component/relation/graph';
 import RelationQuery from './component/relation/query';
-import Calculator from './component/calculator/calculator';
+import Simulator from './component/simulator/simulator';
 import Localization from './localization';
 
 import 'antd/dist/antd.css';
-import './App.css';
+import './app.css';
 
 const { Header, Content, Footer } = Layout;
 const { Option } = Select;
@@ -56,11 +56,11 @@ class App extends Component {
               </Route>
               <Route path="/relation" component={RelationGraph} localization={localization} />
               <Route path="/compatibility" component={RelationQuery} localization={localization} />
-              <Route path="/calculator" component={Calculator} localization={localization} />
+              <Route path="/calculator" component={Simulator} localization={localization} />
             </Switch>
           </Content>
           <Footer className="footer">
-            <Select className="localization" defaultValue="ja-jp" onChange={this.changeLocalization}>
+            <Select className="localizationSelector" defaultValue="ja-jp" onChange={this.changeLocalization}>
               <Option value="zh-tw">繁體中文</Option>
               <Option value="ja-jp">日本語</Option>
               <Option value="en-us">English</Option>
