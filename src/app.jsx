@@ -39,13 +39,13 @@ class App extends Component {
           <Header className="header">
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
               <Menu.Item key="1">
-                <Link to="/relation" className="link">{localization['Relation Graph']}</Link>
+                <Link to="/relation/graph" className="link">{localization['Relation Graph']}</Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Link to="/compatibility" className="link">{localization['Relation Query']}</Link>
+                <Link to="/relation/query" className="link">{localization['Relation Query']}</Link>
               </Menu.Item>
               <Menu.Item key="3">
-                <Link to="/calculator" className="link">{localization.Simulator}</Link>
+                <Link to="/simulator" className="link">{localization.Simulator}</Link>
               </Menu.Item>
             </Menu>
           </Header>
@@ -54,9 +54,9 @@ class App extends Component {
               <Route exact path="/">
                 <Redirect to="/relation" />
               </Route>
-              <Route path="/relation" component={RelationGraph} localization={localization} />
-              <Route path="/compatibility" component={RelationQuery} localization={localization} />
-              <Route path="/calculator" component={Simulator} localization={localization} />
+              <Route path="/relation/graph" component={RelationGraph} localization={localization} />
+              <Route path="/relation/query" component={RelationQuery} localization={localization} />
+              <Route path="/simulator" component={Simulator} localization={localization} />
             </Switch>
           </Content>
           <Footer className="footer">
