@@ -2,11 +2,13 @@ import _ from 'lodash';
 import React from 'react';
 import 'react-tabs/style/react-tabs.css';
 
+import './relation.css';
+
 import characterJson from '../../db/character.json';
 import relation from '../../db/relation.json';
 import relationMember from '../../db/relation_member.json';
 
-function Relation() {
+function RelationGraph() {
   function calculateRelation(id1, id2) {
     if (id1 === id2) {
       return 0;
@@ -44,16 +46,18 @@ function Relation() {
   }
 
   return (
-    <table>
-      <tbody>
-        <tr>
-          <th />
-          { _.map(characterIds, (id) => <th>{idToPortrait(id)}</th>) }
-        </tr>
-        { _.map(characterIds, (id) => createRow(id)) }
-      </tbody>
-    </table>
+    <div className="content">
+      <table>
+        <tbody>
+          <tr>
+            <th />
+            { _.map(characterIds, (id) => <th>{idToPortrait(id)}</th>) }
+          </tr>
+          { _.map(characterIds, (id) => createRow(id)) }
+        </tbody>
+      </table>
+    </div>
   );
 }
 
-export default Relation;
+export default RelationGraph;

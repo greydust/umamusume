@@ -5,11 +5,13 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import React, { useState } from 'react';
 
+import './relation.css';
+
 import characterJson from '../../db/character.json';
 import relation from '../../db/relation.json';
 import relationMember from '../../db/relation_member.json';
 
-function Compatibility() {
+function RelationQuery() {
   function calculateRelation(id1, id2) {
     if (id1 === id2) {
       return 0;
@@ -53,7 +55,7 @@ function Compatibility() {
   };
 
   return (
-    <div>
+    <div className="content">
       <div className="dropdown">
         <FormControl>
           <InputLabel id="demo-simple-select-label">ウマ</InputLabel>
@@ -76,4 +78,4 @@ function Compatibility() {
   );
 }
 
-export default Compatibility;
+export default RelationQuery;
