@@ -16,7 +16,7 @@ class Calculator extends Component<IProps, IState> {
 
   render() {
     return (
-      <div className="content">Test</div>
+      <div className="content">Test 2</div>
     );
   }
 }
