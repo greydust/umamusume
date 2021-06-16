@@ -20,7 +20,7 @@ for item in current.fetchall():
   for obj in assets.objects:
     if obj.type in [UnityPy.enums.ClassIDType.Texture2D, UnityPy.enums.ClassIDType.Sprite]:
       image = obj.read().image
-      image.save(os.path.join("..\\public\\image\\character\\portrait", image_name + ".png"))
+      image.save(os.path.join("..\\public\\static\\image\\character\\portrait", image_name + ".png"))
 
 
 
