@@ -47,6 +47,7 @@ module.exports = {
       },
     ],
     'max-len': ['error', { code: 160 }],
+    'no-underscore-dangle': ['error', { allowAfterThis: true }],
     'react/prop-types': ['off'],
   },
 };
