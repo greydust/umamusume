@@ -6,8 +6,12 @@ import '../../app.css';
 import './relation.css';
 
 import characterJson from '../../db/character.json';
-import relation from '../../db/relation.json';
-import relationMember from '../../db/relation_member.json';
+import relationJson from '../../db/relation.json';
+import relationMemberJson from '../../db/relation_member.json';
+
+const characters = characterJson as { [key: string]: { text: string} };
+const relations = relationJson as { [key: string]: string };
+const relationMembers = relationMemberJson as { [key: string]: string[] };
 
 interface IProps {
   localization: { [key: string]: string };
@@ -21,8 +25,8 @@ class RelationGraph extends Component<IProps, IState> {
     if (id1 === id2) {
       return 0;
     }
-    const relations: string[] = _.intersection(relationMember[id1], relationMember[id2]);
-    return _.reduce(relations, (sum: number, id: string) => sum + parseInt(relation[id], 10), 0);
+    const targetRelations: string[] = _.intersection(relationMembers[id1], relationMembers[id2]);
+    return _.reduce(targetRelations, (sum: number, id: string) => sum + parseInt(relations[id], 10), 0);
   }
 
   characterIds: string[];
@@ -56,7 +60,7 @@ class RelationGraph extends Component<IProps, IState> {
       <img
         className="portrait"
         src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${id}.png`}
-        alt={localization[characterJson[id].text]}
+        alt={localization[characters[id].text]}
       />
     );
   }
