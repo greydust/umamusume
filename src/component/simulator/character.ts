@@ -1,7 +1,15 @@
 import _ from 'lodash';
 
-import constant, { CoursePhase, RunningStyle } from './constant';
+import constant, { CoursePhase, RunningStyle, ProperRate } from './constant';
 import Course from './course';
+
+import distanceProperRateJson from '../../db/proper_rate/distance.json';
+import groundProperRateJson from '../../db/proper_rate/ground.json';
+import runningStyleProperRateJson from '../../db/proper_rate/running_style.json';
+
+const distanceProperRate = distanceProperRateJson as { [key: string]: { speed: number, power: number } };
+const groundProperRate = groundProperRateJson as { [key: string]: number };
+const runningStyleProperRate = runningStyleProperRateJson as { [key: string]: number };
 
 interface CharacterStat {
   speed: number;
@@ -20,16 +28,20 @@ class Character {
 
   private _speedRandomRange: [number, number] = [0, 0];
 
+  private _properRate: { distance: ProperRate, ground: ProperRate, runningStyle: ProperRate };
+
   constructor(
-    { stat, style, course }: {
+    { stat, style, course, properRate }: {
       stat: CharacterStat,
       style: RunningStyle,
       course: Course,
+      properRate: { distance: ProperRate, ground: ProperRate, runningStyle: ProperRate },
     },
   ) {
     this._stat = stat;
     this._style = style;
     this._course = course;
+    this._properRate = properRate;
 
     this.refreshSpeedRandomRange();
   }
