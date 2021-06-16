@@ -66,8 +66,9 @@ class RelationQuery extends Component<IProps, IState> {
     return rel.map((value, index) => (
       <tr>
         <td>{value[0]}</td>
-        <td>{value[1]}</td>
         <td><img className="portrait" src={value[2]} alt={value[0]} /></td>
+        <td>{value[1]}</td>
+        
       </tr>
     ));
   }
