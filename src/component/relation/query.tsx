@@ -12,7 +12,7 @@ import characterJson from '../../db/character.json';
 import relationJson from '../../db/relation.json';
 import relationMemberJson from '../../db/relation_member.json';
 
-const characters = characterJson as { [key: string]: { text: string} };
+const characters = characterJson as { [key: string]: { text: string } };
 const relations = relationJson as { [key: string]: string };
 const relationMembers = relationMemberJson as { [key: string]: string[] };
 
@@ -68,7 +68,6 @@ class RelationQuery extends Component<IProps, IState> {
         <td>{value[0]}</td>
         <td><img className="portrait" src={value[2]} alt={value[0]} /></td>
         <td>{value[1]}</td>
-        
       </tr>
     ));
   }
