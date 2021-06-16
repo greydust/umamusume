@@ -9,16 +9,27 @@ import characterJson from '../../db/character.json';
 import relation from '../../db/relation.json';
 import relationMember from '../../db/relation_member.json';
 
-class RelationGraph extends Component {
-  static calculateRelation(id1, id2) {
+interface IProps {
+  localization: { [key: string]: string };
+}
+
+interface IState {
+}
+
+class RelationGraph extends Component<IProps, IState> {
+  static calculateRelation(id1: string, id2: string) {
     if (id1 === id2) {
       return 0;
     }
-    const relations = _.intersection(relationMember[id1], relationMember[id2]);
-    return _.reduce(relations, (sum, id) => sum + parseInt(relation[id], 10), 0);
+    const relations: string[] = _.intersection(relationMember[id1], relationMember[id2]);
+    return _.reduce(relations, (sum: number, id: string) => sum + parseInt(relation[id], 10), 0);
   }
 
-  constructor(props) {
+  characterIds: string[];
+
+  relations: { [key: string]: { [key: string]: number } };
+
+  constructor(props: IProps) {
     super(props);
     this.characterIds = Object.keys(characterJson);
     this.relations = {};
@@ -30,7 +41,7 @@ class RelationGraph extends Component {
     }
   }
 
-  createRow(id) {
+  createRow(id: string) {
     return (
       <tr>
         <th>{this.idToPortrait(id)}</th>
@@ -39,7 +50,7 @@ class RelationGraph extends Component {
     );
   }
 
-  idToPortrait(id) {
+  idToPortrait(id: string) {
     const { localization } = this.props;
     return (
       <img

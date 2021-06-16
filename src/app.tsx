@@ -15,8 +15,17 @@ import './app.css';
 const { Header, Content, Footer } = Layout;
 const { Option } = Select;
 
-class App extends Component {
-  constructor(props) {
+interface IProps {
+}
+
+interface IState {
+  localization: { [key: string]: string };
+}
+
+class App extends Component<IProps, IState> {
+  localization: Localization;
+
+  constructor(props: {}) {
     super(props);
     this.localization = new Localization();
     this.state = {
@@ -24,11 +33,11 @@ class App extends Component {
     };
   }
 
-  changeLocalization = (locale) => {
+  changeLocalization = (locale: string) => {
     this.setState({
       localization: this.localization.getLocalization(locale),
     });
-  }
+  };
 
   render() {
     const { localization } = this.state;

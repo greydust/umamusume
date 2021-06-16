@@ -12,16 +12,26 @@ import characterJson from '../../db/character.json';
 import relation from '../../db/relation.json';
 import relationMember from '../../db/relation_member.json';
 
-class RelationQuery extends Component {
-  static calculateRelation(id1, id2) {
-    if (id1 === id2) {
+interface IProps {
+  localization: { [key: string]: string };
+}
+
+interface IState {
+  horse: { id?: string, name?: string };
+}
+
+class RelationQuery extends Component<IProps, IState> {
+  static calculateRelation(id1: string | undefined, id2: string) {
+    if (id1 === id2 || id1 === undefined) {
       return 0;
     }
-    const relations = _.intersection(relationMember[id1], relationMember[id2]);
-    return _.reduce(relations, (sum, id) => sum + parseInt(relation[id], 10), 0);
+    const relations: string[] = _.intersection(relationMember[id1], relationMember[id2]);
+    return _.reduce(relations, (sum: number, id: string) => sum + parseInt(relation[id], 10), 0);
   }
 
-  constructor(props) {
+  horses: [string, any][];
+
+  constructor(props: IProps) {
     super(props);
     this.horses = Object.entries(characterJson);
     this.state = {
@@ -29,7 +39,7 @@ class RelationQuery extends Component {
     };
   }
 
-  selectHorse = (event) => {
+  selectHorse = (event: any) => {
     const { value } = event.target;
     this.setState({ horse: { id: value[0], name: value[1].text } });
   };
@@ -37,7 +47,7 @@ class RelationQuery extends Component {
   buildRelationArray() {
     const { horse } = this.state;
     const { localization } = this.props;
-    let rel = [];
+    let rel: [string, number, string][] = [];
     this.horses.forEach((horseOther) => {
       if (horseOther[0] !== horse.id) {
         rel.push([
@@ -50,16 +60,15 @@ class RelationQuery extends Component {
     rel = _.sortBy(rel, [(value) => -value[1]]);
 
     return rel.map((value, index) => (
-      <tr key={index[1]}>
+      <tr>
         <td>{value[0]}</td>
         <td>{value[1]}</td>
-        <td><img className="portrait" src={value[2]} alt={value[1]} /></td>
+        <td><img className="portrait" src={value[2]} alt={value[0]} /></td>
       </tr>
     ));
   }
 
   render() {
-    const { horse } = this.state;
     const { localization } = this.props;
     const relationArray = this.buildRelationArray();
     return (
@@ -70,11 +79,10 @@ class RelationQuery extends Component {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={horse[1]}
               onChange={this.selectHorse}
             >
               { this.horses.map((targetHorse, index) => (
-                <MenuItem key={`${index[1]}_option`} value={targetHorse}>
+                <MenuItem key={`${targetHorse[0]}_option`} value={targetHorse}>
                   <img
                     className="portrait"
                     src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${targetHorse[0]}.png`}
