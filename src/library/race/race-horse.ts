@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import constant, { CoursePhase, RunningStyle } from './constant';
 import Course from './course';
-import Horse, { HorseProperRate, HorseStat } from './horse';
+import Horse, { HorseStat } from './horse';
 
 import distanceProperRateJson from '../../db/proper_rate/distance.json';
 import groundProperRateJson from '../../db/proper_rate/ground.json';
@@ -12,15 +12,19 @@ const groundProperRate = groundProperRateJson as { [key: string]: number };
 const runningStyleProperRate = runningStyleProperRateJson as { [key: string]: number };
 
 enum BreakPoint {
-  None = 'None',
-  FinishFirstBlock = 'FinishFirstBlock',
-  FinishPhaseStart = 'FinishPhaseStart',
-  FinishPhaseMiddle = 'FinishPhaseMiddle',
-  FinishPhaseEnd = 'FinishPhaseEnd',
-  LastSpurt = 'LastSpurt',
-  FinishPhaseLastSpurt = 'FinishPhaseLastSpurt',
-  PositionSense = 'PositionSense',
-  Skill = 'Skill',
+  FinishFirstBlock = '0',
+  FinishPhaseStart = '10',
+  FinishPhaseMiddle = '20',
+  FinishPhaseEnd = '30',
+  FinishPhaseLastSpurt = '40',
+
+  LastSpurt = '100',
+  PositionSense = '110',
+  Skill = '120',
+
+  FinishBlock = '900',
+
+  None = '9999',
 }
 
 enum Mode {
@@ -34,10 +38,12 @@ enum Mode {
   ZeroHp,
 }
 
-class RaceHorse extends Horse {
-  private _runningStyle: RunningStyle;
-
+class RaceHorse {
   private _course: Course;
+
+  private _horse: Horse;
+
+  private _runningStyle: RunningStyle;
 
   private _speedRandomRange: [number, number] = [0, 0];
 
@@ -57,16 +63,12 @@ class RaceHorse extends Horse {
 
   _startDashTargetSpeed: number | undefined = undefined;
 
-  constructor({
-    stat, runningStyle, course, properRate,
-  }: {
-    stat: HorseStat,
+  constructor({ horse, runningStyle, course }: {
+    horse: Horse,
     runningStyle: RunningStyle,
     course: Course,
-    properRate: HorseProperRate,
   }) {
-    super({ stat, properRate });
-
+    this._horse = horse;
     this._course = course;
     this._runningStyle = runningStyle;
     this.refreshSpeedRandomValue();
@@ -74,11 +76,11 @@ class RaceHorse extends Horse {
 
   private get stat(): HorseStat {
     return {
-      speed: this._stat.speed,
-      stamina: this._stat.stamina,
-      pow: this._stat.pow,
-      guts: this._stat.guts,
-      wiz: this._stat.wiz,
+      speed: this._horse.stat.speed,
+      stamina: this._horse.stat.stamina,
+      pow: this._horse.stat.pow,
+      guts: this._horse.stat.guts,
+      wiz: this._horse.stat.wiz,
     };
   }
 
@@ -105,7 +107,7 @@ class RaceHorse extends Horse {
   private phaseEndBaseTargetSpeed(): number {
     return this._course.baseTargetSpeed * constant.targetSpeed.targetSpeedCoefficient[this._runningStyle][CoursePhase.End]
       + Math.sqrt(constant.targetSpeed.phaseEndBaseTargetSpeedCoef * this.stat.speed)
-        * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._properRate.distanceType[this._course.distanceType]].speed;
+        * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].speed;
   }
 
   private get lastSpurtTargetSpeed(): number {
@@ -113,7 +115,7 @@ class RaceHorse extends Horse {
       (this.phaseEndBaseTargetSpeed() + constant.targetSpeed.lastSpurtBaseTargetSpeedAddCoef * this._course.baseTargetSpeed)
           * constant.targetSpeed.baseTargetSpeedCoef
         + Math.sqrt(constant.targetSpeed.lastSpurtTargetSpeedCoefSqrt * this.stat.speed)
-          * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._properRate.distanceType[this._course.distanceType]].speed,
+          * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].speed,
       this.minSpeed,
     );
   }
@@ -127,20 +129,20 @@ class RaceHorse extends Horse {
 
   private phaseStartAccel(): number {
     return constant.accel.accelPhaseCoef[this._runningStyle][CoursePhase.Start] * Math.sqrt(this.stat.pow * constant.accel.accelPowCoefSqrt)
-      * groundProperRate[this._properRate.groundType[this._course.groundType]]
-      * distanceProperRate[this._properRate.distanceType[this._course.distanceType]].power;
+      * groundProperRate[this._horse.properRate.groundType[this._course.groundType]]
+      * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].power;
   }
 
   private phaseMiddleAccel(): number {
     return constant.accel.accelPhaseCoef[this._runningStyle][CoursePhase.Middle] * Math.sqrt(this.stat.pow * constant.accel.accelPowCoefSqrt)
-      * groundProperRate[this._properRate.groundType[this._course.groundType]]
-      * distanceProperRate[this._properRate.distanceType[this._course.distanceType]].power;
+      * groundProperRate[this._horse.properRate.groundType[this._course.groundType]]
+      * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].power;
   }
 
   private phaseEndAccel(): number {
     return constant.accel.accelPhaseCoef[this._runningStyle][CoursePhase.End] * Math.sqrt(this.stat.pow * constant.accel.accelPowCoefSqrt)
-      * groundProperRate[this._properRate.groundType[this._course.groundType]]
-      * distanceProperRate[this._properRate.distanceType[this._course.distanceType]].power;
+      * groundProperRate[this._horse.properRate.groundType[this._course.groundType]]
+      * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].power;
   }
 
   private readonly accelMap: { [key in CoursePhase]: () => number } = {
@@ -233,12 +235,16 @@ class RaceHorse extends Horse {
         if (value.distance < minDistance) {
           minDistance = value.distance;
           minKey = key as BreakPoint;
-        } else if (value.time !== undefined) {
-          const distance = this._distance + (value.time - this._time) * this._speed;
-          if (distance < minDistance) {
-            minDistance = distance;
-            minKey = key as BreakPoint;
-          }
+        } else if (value.distance === minDistance && minKey < key) {
+          minKey = key as BreakPoint;
+        }
+      } else if (value.time !== undefined) {
+        const distance = this._distance + (value.time - this._time) * this._speed;
+        if (distance < minDistance) {
+          minDistance = distance;
+          minKey = key as BreakPoint;
+        } else if (value.distance === minDistance && minKey < key) {
+          minKey = key as BreakPoint;
         }
       }
     }
@@ -301,6 +307,11 @@ class RaceHorse extends Horse {
     this._breakPoints[BreakPoint.FinishPhaseStart] = { distance: this._course.phaseStartDistance };
   }
 
+  private finishBlock(): void {
+    this._mode.delete(Mode.FirstBlock);
+    this._breakPoints[BreakPoint.FinishPhaseStart] = { distance: this._course.phaseStartDistance };
+  }
+
   private finishPhaseStart(): void {
     this._phase = CoursePhase.Middle;
     this._breakPoints[BreakPoint.FinishPhaseMiddle] = { distance: this._course.phaseMiddleDistance };
@@ -330,6 +341,7 @@ class RaceHorse extends Horse {
   private readonly breakPointMap: { [key in BreakPoint]: () => void } = {
     [BreakPoint.None]: () => {},
     [BreakPoint.FinishFirstBlock]: this.finishFirstBlock,
+    [BreakPoint.FinishBlock]: this.finishBlock,
     [BreakPoint.FinishPhaseStart]: this.finishPhaseStart,
     [BreakPoint.FinishPhaseMiddle]: this.finishPhaseMiddle,
     [BreakPoint.FinishPhaseEnd]: this.finishPhaseEnd,

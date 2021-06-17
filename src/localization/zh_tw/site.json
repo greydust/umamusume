@@ -1,5 +1,13 @@
 {
   "Relation Graph": "相性表",
   "Relation Query": "相性查詢",
-  "Simulator": "模擬器"
+  "Simulator": "模擬器",
+
+  "SimulatorCalculate": "模擬",
+
+  "Speed": "速度",
+  "Stamina": "耐力",
+  "Power": "力量",
+  "Guts": "毅力",
+  "Wiz": "智力"
 }

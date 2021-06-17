@@ -1,5 +1,13 @@
 {
   "Relation Graph": "Relation Graph",
   "Relation Query": "Relation Query",
-  "Simulator": "Simulator"
+  "Simulator": "Simulator",
+
+  "SimulatorCalculate": "Simulate",
+ 
+  "Speed": "Speed",
+  "Stamina": "Stamina",
+  "Power": "Power",
+  "Guts": "Willpower",
+  "Wiz": "Wisdom"
 }

@@ -17,9 +17,9 @@ export interface HorseProperRate {
 }
 
 class Horse {
-  protected _stat: HorseStat;
+  stat: HorseStat;
 
-  protected _properRate: HorseProperRate;
+  properRate: HorseProperRate;
 
   constructor(
     { stat, properRate }: {
@@ -27,8 +27,8 @@ class Horse {
       properRate: HorseProperRate,
     },
   ) {
-    this._stat = stat;
-    this._properRate = properRate;
+    this.stat = stat;
+    this.properRate = properRate;
   }
 }
 

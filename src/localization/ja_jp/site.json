@@ -1,5 +1,43 @@
 {
   "Relation Graph": "相性表",
   "Relation Query": "相性",
-  "Simulator": "シミュレーター"
+  "Simulator": "シミュレーター",
+
+  "SimulatorCalculate": "シミュレーター",
+
+  "Speed": "スピード",
+  "Stamina": "スタミナ",
+  "Power": "パワー",
+  "Guts": "根性",
+  "Wiz": "賢さ",
+
+  "RunningStyle": "脚質適性",
+  "RunningStyleNige": "逃げ",
+  "RunningStyleSenko": "先行",
+  "RunningStyleSashi": "差し",
+  "RunningStyleOikomi": "追込",
+
+  "DistanceType": "距離適性",
+  "DistanceTypeShort": "短距離",
+  "DistanceTypeMile": "マイル",
+  "DistanceTypeMiddle": "中距離",
+  "DistanceTypeLong": "長距離",
+
+  "GroundType": "バ場適性",
+  "GroundTypeTurf": "芝",
+  "GroundTypeDirt": "ダート",
+
+  "GroundStatusGood": "良",
+  "GroundStatusSlightlyHeavy": "稍重",
+  "GroundStatusHeavy": "重",
+  "GroundStatusBad": "不良",
+
+  "S": "S",
+  "A": "A",
+  "B": "B",
+  "C": "C",
+  "D": "D",
+  "E": "E",
+  "F": "F",
+  "G": "G"
 }

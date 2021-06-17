@@ -1,20 +1,20 @@
 export enum RunningStyle {
-  Nige,
-  Senko,
-  Sashi,
-  Oikomi,
+  Nige = 'RunningStyleNige',
+  Senko = 'RunningStyleSenko',
+  Sashi = 'RunningStyleSashi',
+  Oikomi = 'RunningStyleOikomi',
 }
 
 export enum DistanceType {
-  Short,
-  Mile,
-  Middle,
-  Long,
+  Short = 'DistanceTypeShort',
+  Mile = 'DistanceTypeMile',
+  Middle = 'DistanceTypeMiddle',
+  Long = 'DistanceTypeLong',
 }
 
 export enum GroundType {
-  Turf,
-  Dirt,
+  Turf = 'GroundTypeTurf',
+  Dirt = 'GroundTypeDirt',
 }
 
 export enum CoursePhase {
@@ -25,10 +25,10 @@ export enum CoursePhase {
 }
 
 export enum GroundStatus {
-  Good,
-  SlightlyHeavy,
-  Heavy,
-  Bad,
+  Good = 'GroundStatusGood',
+  SlightlyHeavy = 'GroundStatusSlightlyHeavy',
+  Heavy = 'GroundStatusHeavy',
+  Bad = 'GroundStatusBad',
 }
 
 export enum ProperRate {
