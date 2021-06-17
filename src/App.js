@@ -1,15 +1,17 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import React, { Component } from 'react';
 import "react-tabs/style/react-tabs.css";
 import './App.css';
 
-import characterJson from './db/character.json';
-import relation from './db/relation.json';
-import relation_member from './db/relation_member';
+// import characterJson from './db/character.json';
+// import relation from './db/relation.json';
+// import relation_member from './db/relation_member';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Homepage from './components/homepage/Homepage';
 import Compatibility from './components/compatibility/Compatibility';
+import Skills from './components/skills/Skills';
+
 
 
 export class App extends Component{
@@ -22,7 +24,8 @@ export class App extends Component{
         <div className="App">
 		      <div className="content">
 		        <Route exact path="/" component={Homepage} />
-		        <Route path="/Compatibility" component={Compatibility} />
+            <Route path="/Compatibility" component={Compatibility} />
+            <Route path="/Skills" component={Skills} />
 		      </div>
         </div>
       </Router>
