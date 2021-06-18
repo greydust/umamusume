@@ -7,23 +7,46 @@ interface IProps {
 }
 
 interface Skill {
-  ID: string,
+  ID : number,
   Name: string,
-  Description: string,
-  Condition: string,
-  TimeKeep: string,
-  Grade: string,
-  Effect: any,
-  EffectType1: string,
-  EffectValue1: string,
-  EffectType2: string,
-  EffectValue2: string,  
-  EffectType3: string,
-  EffectValue3: string,  
-  EffectType4: string,
-  EffectValue4: string,
-  EffectType5: string,
-  EffectValue5: string
+  Condition1: string,
+  TimeKeep1: number,
+  CD1: number,
+  Effect1 : {
+      ParamType1: string, 
+      ParamValue1: number, 
+      TargetType1: string, 
+      TargetValue1: number, 
+      ParamType2: string, 
+      ParamValue2: number, 
+      TargetType2: string, 
+      TargetValue2: number, 
+      ParamType3: string, 
+      ParamValue3: number, 
+      TargetType3: string, 
+      TargetValue3: number
+  },
+  Effect2: {
+      Condition2: string, 
+      TimeKeep2: number, 
+      CD2: number, 
+      ParamType1: string, 
+      ParamValue1: number, 
+      TargetType1: string, 
+      TargetValue1: number, 
+      ParamType2: string, 
+      ParamValue2: number, 
+      TargetType2: string, 
+      TargetValue2: number, 
+      ParamType3: string, 
+      ParamValue3: number, 
+      TargetType3: string, 
+      TargetValue3: number
+  },
+  PopularityParam1: string, 
+  PopularityBonus1: string, 
+  PopularityParam2: string, 
+  PopularityBonus2: string    
 
 }
 
@@ -50,27 +73,15 @@ function Skills(props: IProps) {
     let tmp;
 
     console.log(skills)
-    return skills.filter((value) => value['Effect'])
-                  .map((value, index) => 
-                    <tr key={index}>
-                      <td>{value['ID']}</td>
-                      <td>{value['Name']}</td>
-                      <td>{value['Description']}</td>
-                      <td>{value['Condition']}</td>
-                      <td>{value['TimeKeep']}</td>
-                      <td>{value['Grade']}</td>
-                      <td>{value['EffectType1']}</td>
-                      <td>{value['EffectValue1']}</td>
-                      <td>{value['EffectType2']}</td>
-                      <td>{value['EffectValue2']}</td>
-                      <td>{value['EffectType3']}</td>
-                      <td>{value['EffectValue3']}</td>
-                      <td>{value['EffectType4']}</td>
-                      <td>{value['EffectValue4']}</td>
-                      <td>{value['EffectType5']}</td>
-                      <td>{value['EffectValue5']}</td>
+    return skills.map((value, index) => 
+    <tr key={index}>
+      <td>{value['ID']}</td>
+      <td>{value['Name']}</td>
+      <td>{value['Condition1']}</td>
+      <td>{value['TimeKeep1']}</td>
+      <td>{value['CD1']}</td>
 
-                    </tr>);
+    </tr>);
   }
 
   return (
