@@ -7,6 +7,7 @@ import {
 import RelationGraph from './component/relation/graph';
 import RelationQuery from './component/relation/query';
 import Simulator from './component/simulator/simulator';
+import Skills from './component/skills/skills';
 import Localization from './localization';
 
 import 'antd/dist/antd.css';
@@ -65,6 +66,7 @@ class App extends Component<IProps, IState> {
               <Route path="/relation/graph" render={() => (<RelationGraph localization={localization} />)} />
               <Route path="/relation/query" render={() => (<RelationQuery localization={localization} />)} />
               <Route path="/simulator" render={() => (<Simulator localization={localization} />)} />
+              <Route path="/skills" render={() => (<Skills localization={localization} />)} />
             </Switch>
           </Content>
           <Footer className="footer">
