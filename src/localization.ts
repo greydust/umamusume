@@ -1,6 +1,12 @@
 import _ from 'lodash';
 
 class Localization {
+  default: {};
+
+  localizer: {
+    [key: string]: () => __WebpackModuleApi.RequireContext;
+  };
+
   static getLocalizationJaJp() {
     return require.context('./localization/ja_jp/', true, /\.json$/);
   }
@@ -23,7 +29,7 @@ class Localization {
     this.default = this.getLocalization('ja-jp');
   }
 
-  getLocalization(locale) {
+  getLocalization(locale: string) {
     const files = this.localizer[locale]();
     const filesJson = _.map(files.keys(), (key) => files(key));
     return _.merge({}, this.default, ...filesJson);

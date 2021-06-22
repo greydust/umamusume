@@ -12,9 +12,14 @@ import characterJson from '../../db/character.json';
 import relationJson from '../../db/relation.json';
 import relationMemberJson from '../../db/relation_member.json';
 
-const characters = characterJson as { [key: string]: { text: string } };
+const characters = characterJson as { [key: string]: {} };
 const relations = relationJson as { [key: string]: string };
 const relationMembers = relationMemberJson as { [key: string]: string[] };
+
+interface Horse {
+  id: string;
+  name: string;
+}
 
 interface IProps {
   localization: { [key: string]: string };

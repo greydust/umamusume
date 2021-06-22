@@ -29,17 +29,14 @@ def extract_relation_member():
     with open("../src/db/relation_member.json", "w", newline='\n') as fp:
         json.dump(relation_member_json, fp, indent=2, sort_keys=True)
 
-    current.execute("SELECT * FROM card_data LEFT JOIN text_data ON card_data.chara_id = text_data.[index] AND text_data.category = 6")
+def extract_character():
+    current.execute("SELECT * FROM card_data")
     character_data = current.fetchall()
-    CHARACTER_KEYS = ["text"]
+    CHARACTER_KEYS = []
 
     character_json = { item["chara_id"]: { key: item[key] for key in CHARACTER_KEYS } for item in character_data}
     with open("../src/db/character.json", "w", newline='\n', encoding="utf-8") as fp:
         json.dump(character_json, fp, ensure_ascii=False, indent=2, sort_keys=True)
-
-    character_name_localization = { item["text"]: item["text"] for item in character_data }
-    with open("../src/localization/ja_jp/character/name.json", "w", encoding="utf-8") as fp:
-        json.dump(character_name_localization, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
 def extract_proper_rate():
     current.execute("SELECT * FROM race_proper_distance_rate")
@@ -57,7 +54,26 @@ def extract_proper_rate():
     with open("../src/db/proper_rate/running_style.json", "w", newline='\n') as fp:
         json.dump(proper_running_style_json, fp, indent=2, sort_keys=True)
 
+def extract_course():
+    current.execute("SELECT * FROM race_course_set")
+    course_json = { item["id"]: item for item in current.fetchall()}
+    with open("../src/db/course.json", "w", newline='\n') as fp:
+        json.dump(course_json, fp, indent=2, sort_keys=True)
+
+def extract_localization():
+    current.execute("SELECT * FROM text_data WHERE category = 6")
+    character_name_localization = { item["index"]: item["text"] for item in current.fetchall() }
+    with open("../src/localization/ja_jp/character/name.json", "w", encoding="utf-8") as fp:
+        json.dump(character_name_localization, fp, ensure_ascii=False, indent=2, sort_keys=True)
+
+    current.execute("SELECT * FROM text_data WHERE category = 35")
+    course_name_localization = { item["index"]: item["text"] for item in current.fetchall() }
+    with open("../src/localization/ja_jp/course/name.json", "w", encoding="utf-8") as fp:
+        json.dump(course_name_localization, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
 extract_relation()
 extract_relation_member()
 extract_proper_rate()
+extract_course()
+extract_localization()
+extract_character()
