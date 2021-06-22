@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.select-label {
+  display: flex;
+  flex: 0 0 auto;
+  margin: 5px;
+}
+
+.select {
+  flex: 1 0 auto;
+  display: flex;
+}

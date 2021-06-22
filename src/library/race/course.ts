@@ -1,4 +1,5 @@
-import constant, { GroundType, GroundStatus, DistanceType } from './constant';
+import constant from './constant';
+import { DistanceType, GroundType, GroundStatus } from '../../common';
 
 class Course {
   private _distance: number;

@@ -68,7 +68,7 @@ def extract_localization():
 
     current.execute("SELECT * FROM text_data WHERE category = 35")
     course_name_localization = { item["index"]: item["text"] for item in current.fetchall() }
-    with open("../src/localization/ja_jp/course/name.json", "w", encoding="utf-8") as fp:
+    with open("../src/localization/ja_jp/course/racecourse.json", "w", encoding="utf-8") as fp:
         json.dump(course_name_localization, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
 extract_relation()

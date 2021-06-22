@@ -1,46 +1,6 @@
-export enum RunningStyle {
-  Nige = 'RunningStyleNige',
-  Senko = 'RunningStyleSenko',
-  Sashi = 'RunningStyleSashi',
-  Oikomi = 'RunningStyleOikomi',
-}
-
-export enum DistanceType {
-  Short = 'DistanceTypeShort',
-  Mile = 'DistanceTypeMile',
-  Middle = 'DistanceTypeMiddle',
-  Long = 'DistanceTypeLong',
-}
-
-export enum GroundType {
-  Turf = 'GroundTypeTurf',
-  Dirt = 'GroundTypeDirt',
-}
-
-export enum CoursePhase {
-  Start = 0,
-  Middle,
-  End,
-  LastSpurt,
-}
-
-export enum GroundStatus {
-  Good = 'GroundStatusGood',
-  SlightlyHeavy = 'GroundStatusSlightlyHeavy',
-  Heavy = 'GroundStatusHeavy',
-  Bad = 'GroundStatusBad',
-}
-
-export enum ProperRate {
-  G = '1',
-  F = '2',
-  E = '3',
-  D = '4',
-  C = '5',
-  B = '6',
-  A = '7',
-  S = '8',
-}
+import {
+  RunningStyle, CoursePhase, GroundType, GroundStatus,
+} from '../../common';
 
 const constant = {
   baseDistance: 2000,
