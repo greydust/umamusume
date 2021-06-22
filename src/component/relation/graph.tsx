@@ -36,7 +36,7 @@ class RelationGraph extends Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props);
-    this.characterIds = Object.keys(characterJson);
+    this.characterIds = Object.keys(characters);
     this.relations = {};
     for (let i = 0; i < this.characterIds.length; i += 1) {
       this.relations[this.characterIds[i]] = {};
@@ -48,9 +48,9 @@ class RelationGraph extends Component<IProps, IState> {
 
   createRow(id: string) {
     return (
-      <tr>
-        <th>{this.idToPortrait(id)}</th>
-        { _.map(this.characterIds, (targetId) => <th>{ RelationGraph.calculateRelation(id, targetId) }</th>) }
+      <tr key={`relation_row_${id}`}>
+        <th key={`portrait_row_${id}`}>{this.idToPortrait(id)}</th>
+        { _.map(this.characterIds, (targetId) => <th key={`relation_${id}_${targetId}`}>{ RelationGraph.calculateRelation(id, targetId) }</th>) }
       </tr>
     );
   }
@@ -73,7 +73,7 @@ class RelationGraph extends Component<IProps, IState> {
           <tbody>
             <tr>
               <th />
-              { _.map(this.characterIds, (id) => <th>{this.idToPortrait(id)}</th>) }
+              { _.map(this.characterIds, (id) => <th key={`portrait_column_${id}`}>{this.idToPortrait(id)}</th>) }
             </tr>
             { _.map(this.characterIds, (id) => this.createRow(id)) }
           </tbody>

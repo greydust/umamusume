@@ -17,9 +17,10 @@ const characters = characterJson as { [key: string]: {} };
 const relations = relationJson as { [key: string]: string };
 const relationMembers = relationMemberJson as { [key: string]: string[] };
 
-interface Horse {
-  id: string;
+interface HorseRow {
   name: string;
+  relation: number;
+  image: string;
 }
 
 interface IProps {
@@ -27,11 +28,11 @@ interface IProps {
 }
 
 interface IState {
-  horse: { id?: string, name?: string };
+  horseId: string
 }
 
 class RelationQuery extends Component<IProps, IState> {
-  static calculateRelation(id1: string | undefined, id2: string) {
+  static calculateRelation(id1: string | undefined, id2: string): number {
     if (id1 === id2 || id1 === undefined) {
       return 0;
     }
@@ -45,35 +46,35 @@ class RelationQuery extends Component<IProps, IState> {
     super(props);
     this.horses = Object.keys(characters);
     this.state = {
-      horse: {},
+      horseId: '',
     };
   }
 
   selectHorse = (event: any) => {
     const { value } = event.target;
-    this.setState({ horse: { id: value[0], name: value[1].text } });
+    this.setState({ horseId: value });
   };
 
   buildRelationArray() {
-    const { horse } = this.state;
+    const { horseId } = this.state;
     const { localization } = this.props;
-    let rel: [string, number, string][] = [];
-    this.horses.forEach((horseId) => {
-      if (horseId !== horse.id) {
-        rel.push([
-          localization.character.name[horseId],
-          RelationQuery.calculateRelation(horse.id, horseId),
-          `${process.env.PUBLIC_URL}/static/image/character/portrait/${horseId}.png`,
-        ]);
+    let rel: HorseRow[] = [];
+    this.horses.forEach((targetHorseId) => {
+      if (targetHorseId !== horseId) {
+        rel.push({
+          name: localization.character.name[targetHorseId],
+          relation: RelationQuery.calculateRelation(horseId, targetHorseId),
+          image: `${process.env.PUBLIC_URL}/static/image/character/portrait/${targetHorseId}.png`,
+        });
       }
     });
-    rel = _.sortBy(rel, [(value) => -value[1]]);
+    rel = _.sortBy(rel, [(horseRow) => -horseRow.relation]);
 
-    return rel.map((value, index) => (
+    return rel.map((horseRow) => (
       <tr>
-        <td>{value[0]}</td>
-        <td><img className="portrait" src={value[2]} alt={value[0]} /></td>
-        <td>{value[1]}</td>
+        <td>{horseRow.name}</td>
+        <td><img className="portrait" src={horseRow.image} alt={horseRow.name} /></td>
+        <td>{horseRow.relation}</td>
       </tr>
     ));
   }
