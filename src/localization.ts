@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { LocalizationData, LocalizationSubData } from './common';
+
 class Localization {
   default: {};
 
@@ -29,10 +31,22 @@ class Localization {
     this.default = this.getLocalization('ja-jp');
   }
 
-  getLocalization(locale: string) {
+  getLocalization(locale: string): LocalizationData {
     const files = this.localizer[locale]();
-    const filesJson = _.map(files.keys(), (key) => files(key));
-    return _.merge({}, this.default, ...filesJson);
+    const fileJson: LocalizationSubData = {};
+    for (const fileKey of files.keys()) {
+      const structure = fileKey.split('.')[1].split('/');
+
+      let target: LocalizationSubData = fileJson;
+      for (let i = 1; i < structure.length; i += 1) {
+        if (!(structure[i] in fileJson)) {
+          target[structure[i]] = {};
+        }
+        target = target[structure[i]] as LocalizationSubData;
+      }
+      _.merge(target, files(fileKey));
+    }
+    return _.merge({}, this.default, fileJson) as LocalizationData;
   }
 }
 

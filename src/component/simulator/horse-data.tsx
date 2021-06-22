@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
+import { LocalizationData } from '../../common';
 import HorseProperRate from './horse-proper-rate';
 import HorseStatData from './horse-stat-data';
 
 interface IProps {
-  localization: { [key: string]: string };
+  localization: LocalizationData;
 }
 
 interface IState {

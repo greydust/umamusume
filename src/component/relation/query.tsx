@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import '../../app.css';
 import './relation.css';
 
+import { LocalizationData } from '../../common';
 import characterJson from '../../db/character.json';
 import relationJson from '../../db/relation.json';
 import relationMemberJson from '../../db/relation_member.json';
@@ -22,7 +23,7 @@ interface Horse {
 }
 
 interface IProps {
-  localization: { [key: string]: string };
+  localization: LocalizationData;
 }
 
 interface IState {
@@ -38,11 +39,11 @@ class RelationQuery extends Component<IProps, IState> {
     return _.reduce(targetRelations, (sum: number, id: string) => sum + parseInt(relations[id], 10), 0);
   }
 
-  horses: [string, any][];
+  horses: string[];
 
   constructor(props: IProps) {
     super(props);
-    this.horses = Object.entries(characters);
+    this.horses = Object.keys(characters);
     this.state = {
       horse: {},
     };
@@ -57,12 +58,12 @@ class RelationQuery extends Component<IProps, IState> {
     const { horse } = this.state;
     const { localization } = this.props;
     let rel: [string, number, string][] = [];
-    this.horses.forEach((horseOther) => {
-      if (horseOther[0] !== horse.id) {
+    this.horses.forEach((horseId) => {
+      if (horseId !== horse.id) {
         rel.push([
-          localization[horseOther[1].text],
-          RelationQuery.calculateRelation(horse.id, horseOther[0]),
-          `${process.env.PUBLIC_URL}/static/image/character/portrait/${horseOther[0]}.png`,
+          localization.character.name[horseId],
+          RelationQuery.calculateRelation(horse.id, horseId),
+          `${process.env.PUBLIC_URL}/static/image/character/portrait/${horseId}.png`,
         ]);
       }
     });
@@ -90,14 +91,14 @@ class RelationQuery extends Component<IProps, IState> {
               id="demo-simple-select"
               onChange={this.selectHorse}
             >
-              { this.horses.map((targetHorse, index) => (
-                <MenuItem key={`${targetHorse[0]}_option`} value={targetHorse}>
+              { this.horses.map((targetHorseId) => (
+                <MenuItem key={`${targetHorseId}_option`} value={targetHorseId}>
                   <img
                     className="portrait"
-                    src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${targetHorse[0]}.png`}
-                    alt={localization[targetHorse[1].text]}
+                    src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${targetHorseId}.png`}
+                    alt={localization.character.name[targetHorseId]}
                   />
-                  {localization[targetHorse[1].text]}
+                  {localization.character.name[targetHorseId]}
                 </MenuItem>
               ))}
             </Select>

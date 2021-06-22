@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+import { LocalizationData } from '../../common';
+
 interface IProps {
-  localization: { [key: string]: string };
+  localization: LocalizationData;
   result: any;
 }
 

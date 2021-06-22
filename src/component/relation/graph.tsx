@@ -5,6 +5,7 @@ import 'react-tabs/style/react-tabs.css';
 import '../../app.css';
 import './relation.css';
 
+import { LocalizationData } from '../../common';
 import characterJson from '../../db/character.json';
 import relationJson from '../../db/relation.json';
 import relationMemberJson from '../../db/relation_member.json';
@@ -14,7 +15,7 @@ const relations = relationJson as { [key: string]: string };
 const relationMembers = relationMemberJson as { [key: string]: string[] };
 
 interface IProps {
-  localization: { [key: string]: string };
+  localization: LocalizationData
 }
 
 interface IState {
@@ -60,7 +61,7 @@ class RelationGraph extends Component<IProps, IState> {
       <img
         className="portrait"
         src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${id}.png`}
-        alt={localization[characters[id].text]}
+        alt={localization.character.name[id]}
       />
     );
   }

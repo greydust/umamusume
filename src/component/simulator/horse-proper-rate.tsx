@@ -4,10 +4,12 @@ import {
 } from 'antd';
 import React, { Component } from 'react';
 
+import { LocalizationData } from '../../common';
+
 const { Option } = Select;
 
 interface IProps {
-  localization: { [key: string]: string };
+  localization: LocalizationData;
 }
 
 interface IState {
@@ -38,14 +40,14 @@ class HorseProperRate extends Component<IProps, IState> {
         <Form>
           { _.map(HorseProperRate.properRateTypes, (proper, properType) => (
             <div>
-              <Row gutter={[8, 8]}><Col span={24}>{localization[properType]}</Col></Row>
+              <Row gutter={[8, 8]}><Col span={24}>{localization.site[properType]}</Col></Row>
               <Row gutter={[8, 8]}>
                 { _.map(proper, (properRate, properRateType) => (
                   <Col span={4}>
-                    <Form.Item name={properRateType} label={localization[properRate]}>
+                    <Form.Item name={properRateType} label={localization.site[properRate]}>
                       <Select defaultValue="7">
                         { _.map(HorseProperRate.properRate, (value, key) => (
-                          <Option value={value}>{localization[key]}</Option>
+                          <Option value={value}>{localization.site[key]}</Option>
                         ))}
                       </Select>
                     </Form.Item>

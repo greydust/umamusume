@@ -1,6 +1,7 @@
 import { Button } from 'antd';
 import React, { Component } from 'react';
 
+import { LocalizationData } from '../../common';
 import CourseData from './course-data';
 import HorseData from './horse-data';
 import RaceResult from './race-result';
@@ -8,7 +9,7 @@ import RaceResult from './race-result';
 import '../../app.css';
 
 interface IProps {
-  localization: { [key: string]: string };
+  localization: LocalizationData;
 }
 
 interface IState {

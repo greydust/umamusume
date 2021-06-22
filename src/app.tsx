@@ -4,6 +4,7 @@ import {
   Redirect, HashRouter as Router, Route, Link, Switch,
 } from 'react-router-dom';
 
+import { LocalizationData } from './common';
 import RelationGraph from './component/relation/graph';
 import RelationQuery from './component/relation/query';
 import Simulator from './component/simulator/simulator';
@@ -20,7 +21,7 @@ interface IProps {
 }
 
 interface IState {
-  localization: { [key: string]: string };
+  localization: LocalizationData;
 }
 
 class App extends Component<IProps, IState> {
@@ -48,13 +49,13 @@ class App extends Component<IProps, IState> {
           <Header className="header">
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
               <Menu.Item key="1">
-                <Link to="/relation/graph" className="link">{localization['Relation Graph']}</Link>
+                <Link to="/relation/graph" className="link">{localization.site['Relation Graph']}</Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Link to="/relation/query" className="link">{localization['Relation Query']}</Link>
+                <Link to="/relation/query" className="link">{localization.site['Relation Query']}</Link>
               </Menu.Item>
               <Menu.Item key="3">
-                <Link to="/simulator" className="link">{localization.Simulator}</Link>
+                <Link to="/simulator" className="link">{localization.site.Simulator}</Link>
               </Menu.Item>
             </Menu>
           </Header>
@@ -66,7 +67,7 @@ class App extends Component<IProps, IState> {
               <Route path="/relation/graph" render={() => (<RelationGraph localization={localization} />)} />
               <Route path="/relation/query" render={() => (<RelationQuery localization={localization} />)} />
               <Route path="/simulator" render={() => (<Simulator localization={localization} />)} />
-              <Route path="/skills" render={() => (<Skills localization={localization} />)} />
+              <Route path="/skills" render={() => (<Skills />)} />
             </Switch>
           </Content>
           <Footer className="footer">
