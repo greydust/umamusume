@@ -1,15 +1,16 @@
 import _ from 'lodash';
-import {
-  Form, Row, Col, Select,
-} from 'antd';
+import { Row, Col, Select } from 'antd';
 import React, { Component } from 'react';
 
 import { LocalizationData } from '../../common';
 
-const { Option } = Select;
+import './simulator.css';
 
 interface IProps {
   localization: LocalizationData;
+  setData: (key: string, value: any) => void,
+  state: { [key: string]: string },
+
 }
 
 interface IState {
@@ -34,30 +35,32 @@ class HorseProperRate extends Component<IProps, IState> {
   };
 
   render() {
-    const { localization } = this.props;
+    const { localization, setData, state } = this.props;
     return (
-      <div>
-        <Form>
-          { _.map(HorseProperRate.properRateTypes, (proper, properType) => (
-            <div>
-              <Row gutter={[8, 8]}><Col span={24}>{localization.site[properType]}</Col></Row>
-              <Row gutter={[8, 8]}>
-                { _.map(proper, (properRate, properRateType) => (
+      <>
+        { _.map(HorseProperRate.properRateTypes, (properTypes, properName) => (
+          <>
+            <Row gutter={[8, 8]}><Col span={24}>{localization.site[properName]}</Col></Row>
+            <Row gutter={[8, 8]}>
+              { _.map(properTypes, (properRateType) => {
+                const camelProperRateType = _.camelCase(properRateType);
+                return (
                   <Col span={4}>
-                    <Form.Item name={properRateType} label={localization.site[properRate]}>
-                      <Select defaultValue="7">
+                    <div className="flex">
+                      <span className="select-label">{`${localization.site[properRateType]}:`}</span>
+                      <Select className="select" value={state[camelProperRateType]} onChange={(value) => setData(camelProperRateType, value)}>
                         { _.map(HorseProperRate.properRate, (value, key) => (
-                          <Option value={value}>{localization.site[key]}</Option>
+                          <Select.Option value={value}>{localization.site[key]}</Select.Option>
                         ))}
                       </Select>
-                    </Form.Item>
+                    </div>
                   </Col>
-                ))}
-              </Row>
-            </div>
-          ))}
-        </Form>
-      </div>
+                );
+              })}
+            </Row>
+          </>
+        ))}
+      </>
     );
   }
 }

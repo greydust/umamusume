@@ -3,8 +3,6 @@
   "Relation Query": "相性",
   "Simulator": "シミュレーター",
 
-  "SimulatorCalculate": "シミュレート",
-
   "Speed": "スピード",
   "Stamina": "スタミナ",
   "Power": "パワー",
@@ -41,6 +39,10 @@
   "F": "F",
   "G": "G",
 
+  "SimulatorCalculate": "シミュレート",
+  "SimulatorCalculateRounds": "回数",
+  "Strategy": "作戦",
+  "GroundStatus": "状態",
   "Racecourse": "競馬場",
   "Ground": "バ場",
   "Distance": "距離"

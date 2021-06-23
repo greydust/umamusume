@@ -14,7 +14,7 @@ const constant = {
     startAccelAdd: 24,
   },
   targetSpeed: {
-    baseTargetSpeedRandomMinusVal1: -0.65,
+    baseTargetSpeedRandomMinusVal1: -0.0065,
     baseTargetSpeedRandomMinusVal2: 5500,
     baseTargetSpeedRandomPlusVal1: 5500,
     baseTargetSpeedRandomLogCoefficient: 0.1,

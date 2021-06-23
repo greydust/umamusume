@@ -5,7 +5,9 @@ import HorseProperRate from './horse-proper-rate';
 import HorseStatData from './horse-stat-data';
 
 interface IProps {
-  localization: LocalizationData;
+  localization: LocalizationData,
+  setData: (key: string, value: any) => void,
+  state: any,
 }
 
 interface IState {
@@ -17,12 +19,12 @@ class HorseData extends Component<IProps, IState> {
   }
 
   render() {
-    const { localization } = this.props;
+    const { localization, setData, state } = this.props;
     return (
-      <div>
-        <HorseStatData localization={localization} />
-        <HorseProperRate localization={localization} />
-      </div>
+      <>
+        <HorseStatData localization={localization} setData={setData} state={state} />
+        <HorseProperRate localization={localization} setData={setData} state={state} />
+      </>
     );
   }
 }
