@@ -180,16 +180,13 @@ class Calculator extends Component<IProps, IState> {
       },
     });
 
-    let counter = 0;
     const raceHorse = new RaceHorse({
       horse: targetHorse, course: targetCourse, runningStyle: strategy as RunningStyle,
     });
     for (let i = 0; i < rounds; i += 1) {
       raceHorse.simulate();
-      counter += 1;
-      console.log(raceHorse.hp, raceHorse.time, counter);
+      console.log(raceHorse.hp, raceHorse.time, i);
       this.setState({ finished: i });
-      await Promise.delay(0);
     }
     this.setState({ running: false });
   };
