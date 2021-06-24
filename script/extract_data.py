@@ -91,11 +91,47 @@ def get_course_slope_per(course):
                     return course_slope_per
     return []
 
+def get_course_param(course):
+    target_file_name = 'race/courseeventparam/{id}/pfb_prm_race{id}'.format(id = course["id"])
+    meta_current.execute('SELECT n as name, h as hash from a WHERE n = "{target_file_name}"'.format(
+        target_file_name = target_file_name,
+    ))
+    item = meta_current.fetchone()
+    course_definition = {
+        "straight": [],
+        "corner": [{}, {}, {}, {}],
+    }
+    if item:
+        assets = UnityPy.load(os.path.join(asset_folder, "dat", item["hash"][:2], item["hash"]))
+        for obj in assets.objects:
+            if obj.type in [UnityPy.enums.ClassIDType.MonoBehaviour]:
+                if obj.serialized_type.nodes:
+                    tree = obj.read_typetree()
+                    params = tree["courseParams"]
+                    for param in params:
+                        if param["_paramType"] == 0 and 1 <= param["_values"][0] <= 4:
+                            course_definition["corner"][param["_values"][0] - 1] = {
+                                "start": param["_distance"],
+                                "end": param["_distance"] + param["_values"][1],
+                            }
+                        elif param["_paramType"] == 2:
+                            if param["_values"][0] == 1:
+                                last_straight_start = param["_distance"]
+                            elif param["_values"][0] == 2:
+                                course_definition["straight"].append({
+                                    "start": last_straight_start,
+                                    "end": param["_distance"],
+                                })
+                    break
+
+    return course_definition
+
 def extract_course():
     current.execute("SELECT * FROM race_course_set")
     course_json = {}
     for item in current.fetchall():
         item["slope_per"] = get_course_slope_per(item)
+        item["param"] = get_course_param(item)
         course_json[item["id"]] = item
     with open("../src/db/course.json", "w", newline='\n') as fp:
         json.dump(course_json, fp, indent=2, sort_keys=True)
