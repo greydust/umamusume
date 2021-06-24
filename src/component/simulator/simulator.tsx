@@ -1,7 +1,9 @@
+import _ from 'lodash';
 import {
-  Button, Col, InputNumber, Row,
+  Button, Col, InputNumber, Row, Progress,
 } from 'antd';
 import React, { Component } from 'react';
+import Promise from 'bluebird';
 
 import {
   CourseCategory, CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, ProperRate, RunningStyle,
@@ -60,8 +62,9 @@ interface IState extends IHorseState, IGroundProperRate, IDistanceProperRate, IR
   course?: CourseDataType,
   groundStatus?: GroundStatus,
 
+  running: boolean,
+  finished: number,
   rounds: number,
-
   raceResult?: any,
 }
 
@@ -90,8 +93,9 @@ class Calculator extends Component<IProps, IState> {
       runningStyleSashi: ProperRate.A,
       runningStyleOikomi: ProperRate.A,
 
+      running: false,
       rounds: 1000,
-
+      finished: 0,
       raceResult: {},
     };
 
@@ -133,7 +137,11 @@ class Calculator extends Component<IProps, IState> {
     }
   };
 
-  calculate = () => {
+  calculate = async () => {
+    this.setState({
+      running: true,
+      finished: 0,
+    });
     const {
       speed, stamina, pow, guts, wiz,
       strategy, groundStatus, ground, distance, course,
@@ -172,13 +180,18 @@ class Calculator extends Component<IProps, IState> {
       },
     });
 
+    let counter = 0;
     const raceHorse = new RaceHorse({
       horse: targetHorse, course: targetCourse, runningStyle: strategy as RunningStyle,
     });
     for (let i = 0; i < rounds; i += 1) {
       raceHorse.simulate();
-      console.log(raceHorse.hp, raceHorse.time);
+      counter += 1;
+      console.log(raceHorse.hp, raceHorse.time, counter);
+      this.setState({ finished: i });
+      await Promise.delay(0);
     }
+    this.setState({ running: false });
   };
 
   updateCourse = () => {
@@ -207,7 +220,10 @@ class Calculator extends Component<IProps, IState> {
 
   render() {
     const { localization } = this.props;
-    const { raceResult, course, rounds } = this.state;
+    const {
+      raceResult, course, finished, rounds, running,
+    } = this.state;
+    const progressPercent = _.round(finished / rounds * 100, 1);
     return (
       <div className="content">
         <HorseData
@@ -224,14 +240,6 @@ class Calculator extends Component<IProps, IState> {
         <Row gutter={[8, 8]}>
           <Col span={4}>
             <div className="flex">
-              <Button
-                className="select-label"
-                type="primary"
-                disabled={course === undefined}
-                onClick={this.calculate}
-              >
-                {localization.site.SimulatorCalculate}
-              </Button>
               <span className="select-label">{`${localization.site.SimulatorCalculateRounds}:`}</span>
               <InputNumber
                 className="select"
@@ -240,6 +248,15 @@ class Calculator extends Component<IProps, IState> {
                 max={1000}
                 onChange={(value) => this.setData('rounds', value)}
               />
+              <Button
+                className="select-label"
+                type="primary"
+                disabled={course === undefined || running}
+                onClick={this.calculate}
+              >
+                {localization.site.SimulatorCalculate}
+              </Button>
+              { running ? <Progress className="select-label" percent={progressPercent} /> : null }
             </div>
           </Col>
         </Row>

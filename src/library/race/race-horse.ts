@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import util from 'util';
+
 import constant from './constant';
 import Course from './course';
 import Horse, { HorseStat } from './horse';
@@ -13,17 +15,19 @@ const groundProperRate = groundProperRateJson as { [key: string]: number };
 const runningStyleProperRate = runningStyleProperRateJson as { [key: string]: number };
 
 enum BreakPoint {
-  FinishFirstBlock = '0',
-  FinishPhaseStart = '10',
-  FinishPhaseMiddle = '20',
-  FinishPhaseEnd = '30',
-  FinishPhaseLastSpurt = '40',
+  FinishFirstBlock = '0000',
+  FinishPhaseStart = '0010',
+  FinishPhaseMiddle = '0020',
+  FinishPhaseEnd = '0030',
+  FinishPhaseLastSpurt = '0040',
 
-  LastSpurt = '100',
-  PositionSense = '110',
-  Skill = '120',
+  LastSpurt = '0100',
+  PositionSense = '0110',
+  Skill = '0120',
 
-  FinishBlock = '900',
+  FinishBlock = '0900',
+
+  Goal = '1000',
 
   None = '9999',
 }
@@ -37,6 +41,12 @@ enum Mode {
   Temptation,
   PositionKeepPaceDown,
   ZeroHp,
+}
+
+interface LastSpurtCandidate {
+  time: number,
+  targetSpeed: number,
+  lastSpurtDistance: number,
 }
 
 class RaceHorse {
@@ -55,6 +65,8 @@ class RaceHorse {
   private _mode: Set<Mode> = new Set<Mode>();
 
   private _speed: number = 0;
+
+  private _lastSpurtTargetSpeed: number = 0;
 
   private _hp: number = 0;
 
@@ -96,6 +108,10 @@ class RaceHorse {
     return this._time;
   }
 
+  private get lastSpurtDetermineRate(): number {
+    return constant.lastSpurt.determineRateBase + constant.lastSpurt.determineRateWizMultiplier * this.stat.wiz;
+  }
+
   private get stat(): HorseStat {
     return {
       speed: this._horse.stat.speed,
@@ -126,7 +142,7 @@ class RaceHorse {
     + Math.sqrt(constant.targetSpeed.phaseEndBaseTargetSpeedCoef * this.stat.speed)
     * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].speed;
 
-  private get lastSpurtTargetSpeed(): number {
+  private get maxLastSpurtTargetSpeed(): number {
     return Math.max(
       (this.phaseEndBaseTargetSpeed() + constant.targetSpeed.lastSpurtBaseTargetSpeedAddCoef * this._course.baseTargetSpeed)
           * constant.targetSpeed.baseTargetSpeedCoef
@@ -134,6 +150,10 @@ class RaceHorse {
           * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].speed,
       this.minSpeed,
     );
+  }
+
+  private get lastSpurtTargetSpeed(): number {
+    return this._lastSpurtTargetSpeed;
   }
 
   private readonly baseTargetSpeedMap: { [key in CoursePhase]: () => number } = {
@@ -187,6 +207,9 @@ class RaceHorse {
   }
 
   get targetSpeed(): number {
+    if (this._mode.has(Mode.ZeroHp)) {
+      return this.minSpeed;
+    }
     return Math.max(this.minSpeed, this.realTargetSpeed);
   }
 
@@ -251,31 +274,78 @@ class RaceHorse {
     return { breakPoint: minKey, distance: minDistance };
   }
 
-  private getAccelHpDecrease(initialSpeed: number, accel: number, time: number): number {
-    const speedCoefficient = (initialSpeed - this._course.baseTargetSpeed + constant.hp.speedGapParam1);
-    return this.hpDecreaseRate
+  private static getAccelHpDecrease({
+    initialSpeed, accel, time, hpDecreaseRate, baseTargetSpeed,
+  }: {
+    initialSpeed: number, accel: number, time: number, hpDecreaseRate: number, baseTargetSpeed: number,
+  }): number {
+    const speedCoefficient = (initialSpeed - baseTargetSpeed + constant.hp.speedGapParam1);
+    return hpDecreaseRate
       * (accel ** 2 * time ** 3 / 3 + accel * time ** 2 * speedCoefficient + speedCoefficient ** 2 * time)
       / constant.hp.speedGapParam1Pow;
   }
 
-  private getRunHpDecrease(speed: number, time: number): number {
-    return this.hpDecreaseRate * (speed - this._course.baseTargetSpeed + constant.hp.speedGapParam1) ** 2 / constant.hp.speedGapParam1Pow;
+  private static getRunHpDecrease({
+    speed, time, hpDecreaseRate, baseTargetSpeed,
+  }: {
+    speed: number, time: number, hpDecreaseRate: number, baseTargetSpeed: number
+  }): number {
+    return hpDecreaseRate * (speed - baseTargetSpeed + constant.hp.speedGapParam1) ** 2 / constant.hp.speedGapParam1Pow;
   }
 
-  private doGateOpen() {
-    this._time += Math.ceil(_.random(constant.course.gateTimeRange.min, constant.course.gateTimeRange.max, true) / constant.course.frameTime)
+  private static accelToTargetSpeed({
+    accel, currentSpeed, targetSpeed, maxDistance, hpDecreaseRate, baseTargetSpeed,
+  }: {
+    accel: number,
+    currentSpeed: number,
+    targetSpeed: number,
+    maxDistance: number,
+    hpDecreaseRate: number,
+    baseTargetSpeed: number
+  }) {
+    const targetSpeedByDistanceSquare = currentSpeed ** 2 + 2 * accel * maxDistance;
+    const finalSpeed = accel > 0
+      ? Math.min(targetSpeed, Math.sqrt(targetSpeedByDistanceSquare))
+      : Math.max(targetSpeed, Math.sqrt(Math.max(targetSpeedByDistanceSquare, 0)));
+    const time = (finalSpeed - currentSpeed) / accel;
+    const distance = (currentSpeed + currentSpeed + accel * time) * time / 2;
+    const hpCost = RaceHorse.getAccelHpDecrease({
+      initialSpeed: currentSpeed,
+      accel,
+      time,
+      hpDecreaseRate,
+      baseTargetSpeed,
+    });
+    return {
+      time, distance, hpCost, finalSpeed,
+    };
+  }
+
+  private doGateOpen(): void {
+    this._time += Math.floor(_.random(constant.course.gateTimeRange.min, constant.course.gateTimeRange.max, true) / constant.course.frameTime)
       * constant.course.frameTime;
     this._mode.add(Mode.StartDash);
+    this._breakPoints[BreakPoint.FinishBlock] = { distance: this._course.blockDistance };
+    this._breakPoints[BreakPoint.Goal] = { distance: this._course.distance };
   }
 
   private finishStartDash(): void {
-    const { accel } = this;
-    const time = (this.startDashTargetSpeed - this._speed) / accel;
+    const { accel, targetSpeed } = this;
+    const {
+      time, distance, hpCost, finalSpeed,
+    } = RaceHorse.accelToTargetSpeed({
+      accel,
+      currentSpeed: this._speed,
+      targetSpeed,
+      maxDistance: this._course.distance,
+      hpDecreaseRate: this.hpDecreaseRate,
+      baseTargetSpeed: this._course.baseTargetSpeed,
+    });
     this._time += time;
-    this._distance += (this._speed + this.startDashTargetSpeed) * time / 2;
-    this._hp -= this.getAccelHpDecrease(this._speed, accel, time);
+    this._distance += distance;
+    this._hp -= hpCost;
+    this._speed = finalSpeed;
 
-    this._speed = this.startDashTargetSpeed;
     this._mode.delete(Mode.StartDash);
     if (this._runningStyle === RunningStyle.Sashi || this._runningStyle === RunningStyle.Oikomi) {
       this._breakPoints[BreakPoint.FinishFirstBlock] = { distance: this._course.blockDistance };
@@ -285,22 +355,45 @@ class RaceHorse {
     }
   }
 
-  private doAccelAndRun(distance: number) {
+  private calculateAccelAndRun(distance: number) {
     const { accel, targetSpeed } = this;
-    const accelDistance = distance - this._distance;
-    const realTargetSpeed = accel > 0
-      ? Math.min(targetSpeed, Math.sqrt(this._speed ** 2 + 2 * accel * accelDistance))
-      : Math.max(targetSpeed, Math.sqrt(Math.max(this._speed ** 2 + 2 * accel * accelDistance, 0)));
-    const accelTime = (realTargetSpeed - this._speed) / accel;
-    this._time += accelTime;
-    this._distance += (this._speed + this._speed + accel * accelTime) * accelTime / 2;
-    this._hp -= this.getAccelHpDecrease(this._speed, accel, accelTime);
+    const {
+      time: accelTime, distance: accelDistance, hpCost: accelHpCost, finalSpeed,
+    } = RaceHorse.accelToTargetSpeed({
+      accel,
+      currentSpeed: this._speed,
+      targetSpeed,
+      maxDistance: distance - this._distance,
+      hpDecreaseRate: this.hpDecreaseRate,
+      baseTargetSpeed: this._course.baseTargetSpeed,
+    });
 
-    this._speed = realTargetSpeed;
-    const runTime = (distance - this._distance) / this._speed;
-    this._time += runTime;
-    this._distance = distance;
-    this._hp -= this.getRunHpDecrease(this._speed, runTime);
+    const runDistance = (distance - this._distance - accelDistance);
+    const runTime = runDistance / finalSpeed;
+    const runHpCost = RaceHorse.getRunHpDecrease({
+      speed: finalSpeed,
+      time: runTime,
+      hpDecreaseRate: this.hpDecreaseRate,
+      baseTargetSpeed: this._course.baseTargetSpeed,
+    });
+
+    return {
+      time: accelTime + runTime,
+      distance: accelDistance + runDistance,
+      hpCost: accelHpCost + runHpCost,
+      finalSpeed,
+    };
+  }
+
+  private doAccelAndRun(targetDistance: number) {
+    const {
+      time, distance, hpCost, finalSpeed,
+    } = this.calculateAccelAndRun(targetDistance);
+
+    this._hp -= hpCost;
+    this._time += time;
+    this._distance += distance;
+    this._speed = finalSpeed;
   }
 
   private finishFirstBlock = () => {
@@ -309,8 +402,10 @@ class RaceHorse {
   };
 
   private finishBlock = () => {
-    this._mode.delete(Mode.FirstBlock);
-    this._breakPoints[BreakPoint.FinishPhaseStart] = { distance: this._course.phaseStartDistance };
+    if (!this._mode.has(Mode.LastSpurt) && this._course.distance > this._distance) {
+      this.refreshSpeedRandomValue();
+      this._breakPoints[BreakPoint.FinishBlock] = { distance: this._distance + this._course.blockDistance };
+    }
   };
 
   private finishPhaseStart = () => {
@@ -318,9 +413,108 @@ class RaceHorse {
     this._breakPoints[BreakPoint.FinishPhaseMiddle] = { distance: this._course.phaseMiddleDistance };
   };
 
+  private static randomByCandidates(lastSpurtSpeedCandidates: LastSpurtCandidate[], determineRate: number): LastSpurtCandidate {
+    const randomNumber = Math.random();
+    const targetItem = Math.min(
+      lastSpurtSpeedCandidates.length - 1,
+      Math.floor(Math.log(randomNumber) / Math.log(1 - determineRate)),
+    );
+    return lastSpurtSpeedCandidates[targetItem];
+  }
+
+  private calculateLastSpurt = (): { lastSpurtDistance: number, lastSpurtTargetSpeed: number } => {
+    this._mode.add(Mode.LastSpurt);
+    this._lastSpurtTargetSpeed = this.maxLastSpurtTargetSpeed;
+    const { hpCost, finalSpeed } = this.calculateAccelAndRun(this._course.distance);
+    this._mode.delete(Mode.LastSpurt);
+    if (hpCost <= this._hp) {
+      return {
+        lastSpurtDistance: this._distance,
+        lastSpurtTargetSpeed: finalSpeed,
+      };
+    }
+
+    let lastSpurtSpeedCandidates: LastSpurtCandidate[] = [];
+    const phaseEndBaseTargetSpeed = this.phaseEndBaseTargetSpeed();
+    const maxDistance = this._course.distance - this._distance - constant.lastSpurt.targetDistanceFromGoal;
+    const { accel, hpDecreaseRate } = this;
+    const { baseTargetSpeed } = this._course;
+    for (; this.lastSpurtTargetSpeed >= phaseEndBaseTargetSpeed; this._lastSpurtTargetSpeed -= constant.targetSpeed.lastSpurtTargetSpeedStep) {
+      const {
+        time: phaseEndAccelTime,
+        distance: phaseEndAccelDistance,
+        hpCost: phaseEndAccelHpCost,
+        finalSpeed: phaseEndFinalSpeed,
+      } = RaceHorse.accelToTargetSpeed({
+        accel,
+        currentSpeed: this._speed,
+        targetSpeed: phaseEndBaseTargetSpeed,
+        maxDistance,
+        hpDecreaseRate,
+        baseTargetSpeed,
+      });
+      const {
+        time: lastSpurtAccelTime,
+        distance: lastSpurtAccelDistance,
+        hpCost: lastSpurtAccelHpCost,
+      } = RaceHorse.accelToTargetSpeed({
+        accel,
+        currentSpeed: phaseEndFinalSpeed,
+        targetSpeed: this.lastSpurtTargetSpeed,
+        maxDistance: maxDistance - phaseEndAccelDistance,
+        hpDecreaseRate,
+        baseTargetSpeed,
+      });
+      const runDistance = maxDistance - phaseEndAccelDistance - lastSpurtAccelDistance;
+      const phaseEndRunHpCost = RaceHorse.getRunHpDecrease({
+        speed: phaseEndBaseTargetSpeed,
+        time: runDistance / phaseEndBaseTargetSpeed,
+        hpDecreaseRate,
+        baseTargetSpeed,
+      });
+      const lastSpurtRunHpCost = RaceHorse.getRunHpDecrease({
+        speed: this.lastSpurtTargetSpeed,
+        time: runDistance / this.lastSpurtTargetSpeed,
+        hpDecreaseRate,
+        baseTargetSpeed,
+      });
+
+      if (this.hp >= phaseEndAccelHpCost + lastSpurtAccelHpCost + lastSpurtRunHpCost) {
+        lastSpurtSpeedCandidates.push({
+          lastSpurtDistance: this._distance,
+          targetSpeed: this.lastSpurtTargetSpeed,
+          time: phaseEndAccelTime + lastSpurtAccelTime + runDistance / this.lastSpurtTargetSpeed,
+        });
+      } else if (this.hp >= phaseEndAccelHpCost + lastSpurtAccelHpCost + phaseEndRunHpCost) {
+        const hpLeft = this.hp - (phaseEndAccelHpCost + lastSpurtAccelHpCost + phaseEndRunHpCost);
+        const hpDiff = lastSpurtRunHpCost - phaseEndRunHpCost;
+        lastSpurtSpeedCandidates.push({
+          lastSpurtDistance: this._distance + phaseEndAccelDistance + runDistance * (1 - hpLeft / hpDiff),
+          targetSpeed: this.lastSpurtTargetSpeed,
+          time: phaseEndAccelTime + lastSpurtAccelTime + (hpLeft / hpDiff) * lastSpurtRunHpCost + (1 - hpLeft / hpDiff) * phaseEndRunHpCost,
+        });
+      }
+    }
+    lastSpurtSpeedCandidates.push({
+      lastSpurtDistance: Number.MAX_VALUE,
+      targetSpeed: phaseEndBaseTargetSpeed,
+      time: Number.MAX_VALUE,
+    });
+    lastSpurtSpeedCandidates = _.sortBy(lastSpurtSpeedCandidates, ['time']);
+    console.log(lastSpurtSpeedCandidates);
+    const candidate = RaceHorse.randomByCandidates(lastSpurtSpeedCandidates, this.lastSpurtDetermineRate);
+    return {
+      lastSpurtDistance: candidate.lastSpurtDistance,
+      lastSpurtTargetSpeed: candidate.targetSpeed,
+    };
+  };
+
   private finishPhaseMiddle = () => {
     this._phase = CoursePhase.End;
+    const { lastSpurtDistance, lastSpurtTargetSpeed } = this.calculateLastSpurt();
     this._breakPoints[BreakPoint.FinishPhaseEnd] = { distance: this._course.phaseMiddleDistance };
+    this._breakPoints[BreakPoint.LastSpurt] = { distance: lastSpurtDistance };
+    this._lastSpurtTargetSpeed = lastSpurtTargetSpeed;
   };
 
   private finishPhaseEnd = () => {
@@ -329,7 +523,6 @@ class RaceHorse {
   };
 
   private doLastSpurt = () => {
-    delete this._breakPoints[BreakPoint.LastSpurt];
     this._mode.add(Mode.LastSpurt);
   };
 
@@ -338,6 +531,10 @@ class RaceHorse {
   private triggerPositionSense = () => {};
 
   private triggerSkill = () => {};
+
+  private reachGoal = () => {
+    this._breakPoints = {};
+  };
 
   private readonly breakPointMap: { [key in BreakPoint]: () => void } = {
     [BreakPoint.None]: () => {},
@@ -350,6 +547,7 @@ class RaceHorse {
     [BreakPoint.FinishPhaseLastSpurt]: this.finishLastSpurt,
     [BreakPoint.PositionSense]: this.triggerPositionSense,
     [BreakPoint.Skill]: this.triggerSkill,
+    [BreakPoint.Goal]: this.reachGoal,
   };
 
   simulate() {
@@ -361,14 +559,30 @@ class RaceHorse {
     this._phase = CoursePhase.Start;
 
     this.doGateOpen();
+    this.debugOutput();
     this.finishStartDash();
+    this.debugOutput();
 
     while (Object.keys(this._breakPoints).length > 0) {
       const { breakPoint, distance } = this.minBreakpoint;
       this.doAccelAndRun(distance);
       delete this._breakPoints[breakPoint];
       this.breakPointMap[breakPoint]();
+      this.debugOutput();
     }
+  }
+
+  debugOutput() {
+    const debugData = {
+      hp: this.hp,
+      speed: this._speed,
+      time: this._time,
+      distance: this._distance,
+      phase: this._phase,
+      mode: Array.from(this._mode),
+      breakPoints: util.inspect(this._breakPoints, { depth: null }),
+    };
+    console.log(debugData);
   }
 }
 

@@ -54,6 +54,7 @@ const constant = {
     downSlopeAddSpeedVal1: 0.3,
     downSlopeAddSpeedVal2: 10,
     firstBlockSlowStyles: [RunningStyle.Sashi, RunningStyle.Oikomi],
+    lastSpurtTargetSpeedStep: 0.1,
   },
   accel: {
     accelPhaseCoef: {
@@ -141,6 +142,11 @@ const constant = {
     positionSense: 10 / 24,
     frameTime: 1 / 15,
     gateTimeRange: { min: 0, max: 0.1 },
+  },
+  lastSpurt: {
+    determineRateBase: 0.15,
+    determineRateWizMultiplier: 0.0005,
+    targetDistanceFromGoal: 60,
   },
 };
 
