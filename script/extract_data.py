@@ -1,5 +1,7 @@
 import json
+import math
 import os
+import UnityPy
 import sqlite3
 
 def db_dict_factory(cursor, row):
@@ -12,6 +14,10 @@ asset_folder = os.path.join(os.getenv("UserProfile"), "AppData\\LocalLow\\Cygame
 connection = sqlite3.connect(os.path.join(asset_folder, "master\\master.mdb"))
 connection.row_factory = db_dict_factory
 current = connection.cursor()
+
+meta_connection = sqlite3.connect(os.path.join(asset_folder, "meta"))
+meta_connection.row_factory = db_dict_factory
+meta_current = meta_connection.cursor()
 
 def extract_relation():
     current.execute("SELECT * FROM succession_relation")
@@ -54,9 +60,43 @@ def extract_proper_rate():
     with open("../src/db/proper_rate/running_style.json", "w", newline='\n') as fp:
         json.dump(proper_running_style_json, fp, indent=2, sort_keys=True)
 
+def get_course_slope_per(course):
+    target_file_name = 'race/course/{race_track_id}/pos/an_pos_race{race_track_id}_00_{distance}_{ground}_{inout}_{turn}'.format(
+        race_track_id = course["race_track_id"],
+        distance = course["distance"],
+        ground = str(int(course["ground"]) - 1).zfill(2),
+        inout = int(course["inout"]) - 1,
+        turn = int(course["turn"]) - 1,
+    )
+    meta_current.execute('SELECT n as name, h as hash from a WHERE n = "{target_file_name}"'.format(
+        target_file_name = target_file_name,
+    ))
+    item = meta_current.fetchone()
+    if item:
+        assets = UnityPy.load(os.path.join(asset_folder, "dat", item["hash"][:2], item["hash"]))
+        for obj in assets.objects:
+            if obj.type in [UnityPy.enums.ClassIDType.MonoBehaviour]:
+                if obj.serialized_type.nodes:
+                    tree = obj.read_typetree()
+                    rotations = tree["key"]["rotation"]
+                    slope_pers = [math.tan(math.asin(min(max(2*(r["w"]*r["x"]-r["y"]*r["z"]), -1), 1)))*100 for r in rotations]
+                    part_distance = float(course["distance"]) / (len(slope_pers) - 1)
+                    current_distance = 0
+                    course_slope_per = []
+                    for slope_per in slope_pers:
+                        real_slope_per = 0 if -1 < slope_per < 1 else slope_per
+                        if not course_slope_per or course_slope_per[-1]["slope_per"] != real_slope_per:
+                            course_slope_per.append({ "distance": current_distance, "slope_per": real_slope_per })
+                        current_distance += part_distance
+                    return course_slope_per
+    return []
+
 def extract_course():
     current.execute("SELECT * FROM race_course_set")
-    course_json = { item["id"]: item for item in current.fetchall()}
+    course_json = {}
+    for item in current.fetchall():
+        item["slope_per"] = get_course_slope_per(item)
+        course_json[item["id"]] = item
     with open("../src/db/course.json", "w", newline='\n') as fp:
         json.dump(course_json, fp, indent=2, sort_keys=True)
 
