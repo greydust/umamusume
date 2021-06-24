@@ -466,15 +466,17 @@ class RaceHorse {
         baseTargetSpeed,
       });
       const runDistance = maxDistance - phaseEndAccelDistance - lastSpurtAccelDistance;
+      const phaseEndRunTime = runDistance / phaseEndBaseTargetSpeed;
       const phaseEndRunHpCost = RaceHorse.getRunHpDecrease({
         speed: phaseEndBaseTargetSpeed,
-        time: runDistance / phaseEndBaseTargetSpeed,
+        time: phaseEndRunTime,
         hpDecreaseRate,
         baseTargetSpeed,
       });
+      const lastSpurtRunTime = runDistance / this.lastSpurtTargetSpeed;
       const lastSpurtRunHpCost = RaceHorse.getRunHpDecrease({
         speed: this.lastSpurtTargetSpeed,
-        time: runDistance / this.lastSpurtTargetSpeed,
+        time: lastSpurtRunTime,
         hpDecreaseRate,
         baseTargetSpeed,
       });
@@ -483,7 +485,7 @@ class RaceHorse {
         lastSpurtSpeedCandidates.push({
           lastSpurtDistance: this._distance,
           targetSpeed: this.lastSpurtTargetSpeed,
-          time: phaseEndAccelTime + lastSpurtAccelTime + runDistance / this.lastSpurtTargetSpeed,
+          time: phaseEndAccelTime + lastSpurtAccelTime + lastSpurtRunTime,
         });
       } else if (this.hp >= phaseEndAccelHpCost + lastSpurtAccelHpCost + phaseEndRunHpCost) {
         const hpLeft = this.hp - (phaseEndAccelHpCost + lastSpurtAccelHpCost + phaseEndRunHpCost);
@@ -491,7 +493,7 @@ class RaceHorse {
         lastSpurtSpeedCandidates.push({
           lastSpurtDistance: this._distance + phaseEndAccelDistance + runDistance * (1 - hpLeft / hpDiff),
           targetSpeed: this.lastSpurtTargetSpeed,
-          time: phaseEndAccelTime + lastSpurtAccelTime + (hpLeft / hpDiff) * lastSpurtRunHpCost + (1 - hpLeft / hpDiff) * phaseEndRunHpCost,
+          time: phaseEndAccelTime + lastSpurtAccelTime + (hpLeft / hpDiff) * lastSpurtRunTime + (1 - hpLeft / hpDiff) * phaseEndRunTime,
         });
       }
     }
