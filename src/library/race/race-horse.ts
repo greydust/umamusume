@@ -290,7 +290,7 @@ class RaceHorse {
   }: {
     speed: number, time: number, hpDecreaseRate: number, baseTargetSpeed: number
   }): number {
-    return hpDecreaseRate * (speed - baseTargetSpeed + constant.hp.speedGapParam1) ** 2 / constant.hp.speedGapParam1Pow;
+    return hpDecreaseRate * (speed - baseTargetSpeed + constant.hp.speedGapParam1) ** 2 / constant.hp.speedGapParam1Pow * time;
   }
 
   private static accelToTargetSpeed({
@@ -425,7 +425,7 @@ class RaceHorse {
   private calculateLastSpurt = (): { lastSpurtDistance: number, lastSpurtTargetSpeed: number } => {
     this._mode.add(Mode.LastSpurt);
     this._lastSpurtTargetSpeed = this.maxLastSpurtTargetSpeed;
-    const { hpCost, finalSpeed } = this.calculateAccelAndRun(this._course.distance);
+    const { hpCost, finalSpeed } = this.calculateAccelAndRun(this._course.distance - constant.lastSpurt.targetDistanceFromGoal);
     this._mode.delete(Mode.LastSpurt);
     if (hpCost <= this._hp) {
       return {
@@ -501,7 +501,6 @@ class RaceHorse {
       time: Number.MAX_VALUE,
     });
     lastSpurtSpeedCandidates = _.sortBy(lastSpurtSpeedCandidates, ['time']);
-    console.log(lastSpurtSpeedCandidates);
     const candidate = RaceHorse.randomByCandidates(lastSpurtSpeedCandidates, this.lastSpurtDetermineRate);
     return {
       lastSpurtDistance: candidate.lastSpurtDistance,
@@ -573,6 +572,7 @@ class RaceHorse {
   }
 
   debugOutput() {
+    return;
     const debugData = {
       hp: this.hp,
       speed: this._speed,
@@ -582,7 +582,6 @@ class RaceHorse {
       mode: Array.from(this._mode),
       breakPoints: util.inspect(this._breakPoints, { depth: null }),
     };
-    console.log(debugData);
   }
 }
 
