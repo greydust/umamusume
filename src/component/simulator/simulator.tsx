@@ -1,19 +1,16 @@
 import _ from 'lodash';
-import {
-  Button, Col, InputNumber, Row, Progress,
-} from 'antd';
 import React, { Component } from 'react';
-import Promise from 'bluebird';
 
 import {
-  CourseCategory, CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, ProperRate, RunningStyle,
+  CourseCategory, CourseDataType, GroundStatus, GroundType, LocalizationData, ProperRate, RunningStyle,
 } from '../../common';
+import {
+  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate,
+} from './common';
 import CourseData from './course-data';
 import HorseData from './horse-data';
 import RaceResult from './race-result';
-import Horse from '../../library/race/horse';
-import Course from '../../library/race/course';
-import RaceHorse from '../../library/race/race-horse';
+import SimulatorCalculator from './simulator-calculator';
 
 import 'antd/dist/antd.css';
 import './simulator.css';
@@ -27,33 +24,6 @@ interface IProps {
   localization: LocalizationData;
 }
 
-interface IHorseState {
-  speed: number,
-  stamina: number,
-  pow: number,
-  guts: number,
-  wiz: number,
-}
-
-interface IGroundProperRate {
-  groundTypeTurf: ProperRate,
-  groundTypeDirt: ProperRate,
-}
-
-interface IDistanceProperRate {
-  distanceTypeShort: ProperRate,
-  distanceTypeMile: ProperRate,
-  distanceTypeMiddle: ProperRate,
-  distanceTypeLong: ProperRate,
-}
-
-interface IRunningStyleProperRate {
-  runningStyleNige: ProperRate,
-  runningStyleSenko: ProperRate,
-  runningStyleSashi: ProperRate,
-  runningStyleOikomi: ProperRate,
-}
-
 interface IState extends IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate {
   strategy?: RunningStyle,
   racecourse?: string,
@@ -62,13 +32,10 @@ interface IState extends IHorseState, IGroundProperRate, IDistanceProperRate, IR
   course?: CourseDataType,
   groundStatus?: GroundStatus,
 
-  running: boolean,
-  finished: number,
-  rounds: number,
   raceResult?: any,
 }
 
-class Calculator extends Component<IProps, IState> {
+class Simulator extends Component<IProps, IState> {
   private courseCategories: CourseCategory = {};
 
   constructor(props: IProps) {
@@ -92,15 +59,22 @@ class Calculator extends Component<IProps, IState> {
       runningStyleSenko: ProperRate.A,
       runningStyleSashi: ProperRate.A,
       runningStyleOikomi: ProperRate.A,
-
-      running: false,
-      rounds: 1000,
-      finished: 0,
-      raceResult: {},
     };
 
     this.loadCourseData();
   }
+
+  updateCourse = () => {
+    const {
+      strategy, racecourse, ground, distance, groundStatus,
+    } = this.state;
+    if (racecourse === undefined || ground === undefined || distance === undefined || strategy === undefined || groundStatus === undefined) {
+      this.setState({ course: undefined });
+    } else {
+      this.setState({ course: this.courseCategories[racecourse][ground][distance] });
+    }
+  };
+
 
   setData = (key: string, value: any): void => {
     switch (key) {
@@ -137,71 +111,6 @@ class Calculator extends Component<IProps, IState> {
     }
   };
 
-  calculate = async () => {
-    this.setState({
-      running: true,
-      finished: 0,
-    });
-    const {
-      speed, stamina, pow, guts, wiz,
-      strategy, groundStatus, ground, distance, course,
-      groundTypeTurf, groundTypeDirt,
-      distanceTypeShort, distanceTypeMile, distanceTypeMiddle, distanceTypeLong,
-      runningStyleNige, runningStyleSenko, runningStyleSashi, runningStyleOikomi,
-      rounds,
-    } = this.state;
-
-    const targetCourse = new Course({
-      distance: parseInt(distance as string, 10),
-      groundStatus: groundStatus as GroundStatus,
-      groundType: ground as GroundType,
-    });
-    const targetHorse = new Horse({
-      stat: {
-        speed, stamina, pow, guts, wiz,
-      },
-      properRate: {
-        groundType: {
-          [GroundType.Turf]: groundTypeTurf,
-          [GroundType.Dirt]: groundTypeDirt,
-        },
-        distanceType: {
-          [DistanceType.Short]: distanceTypeShort,
-          [DistanceType.Mile]: distanceTypeMile,
-          [DistanceType.Middle]: distanceTypeMiddle,
-          [DistanceType.Long]: distanceTypeLong,
-        },
-        runningStyle: {
-          [RunningStyle.Nige]: runningStyleNige,
-          [RunningStyle.Senko]: runningStyleSenko,
-          [RunningStyle.Sashi]: runningStyleSashi,
-          [RunningStyle.Oikomi]: runningStyleOikomi,
-        },
-      },
-    });
-
-    const raceHorse = new RaceHorse({
-      horse: targetHorse, course: targetCourse, runningStyle: strategy as RunningStyle,
-    });
-    for (let i = 0; i < rounds; i += 1) {
-      raceHorse.simulate();
-      console.log(raceHorse.hp, raceHorse.time, i);
-      this.setState({ finished: i });
-    }
-    this.setState({ running: false });
-  };
-
-  updateCourse = () => {
-    const {
-      strategy, racecourse, ground, distance, groundStatus,
-    } = this.state;
-    if (racecourse === undefined || ground === undefined || distance === undefined || strategy === undefined || groundStatus === undefined) {
-      this.setState({ course: undefined });
-    } else {
-      this.setState({ course: this.courseCategories[racecourse][ground][distance] });
-    }
-  };
-
   loadCourseData() {
     for (const courseId of Object.keys(courses)) {
       const course = courses[courseId];
@@ -217,10 +126,7 @@ class Calculator extends Component<IProps, IState> {
 
   render() {
     const { localization } = this.props;
-    const {
-      raceResult, course, finished, rounds, running,
-    } = this.state;
-    const progressPercent = _.round(finished / rounds * 100, 1);
+    const { raceResult } = this.state;
     return (
       <div className="content">
         <HorseData
@@ -234,33 +140,15 @@ class Calculator extends Component<IProps, IState> {
           setData={this.setData}
           state={this.state}
         />
-        <Row gutter={[8, 8]}>
-          <Col span={4}>
-            <div className="flex">
-              <span className="select-label">{`${localization.site.SimulatorCalculateRounds}:`}</span>
-              <InputNumber
-                className="select"
-                value={rounds}
-                min={1}
-                max={1000}
-                onChange={(value) => this.setData('rounds', value)}
-              />
-              <Button
-                className="select-label"
-                type="primary"
-                disabled={course === undefined || running}
-                onClick={this.calculate}
-              >
-                {localization.site.SimulatorCalculate}
-              </Button>
-              { running ? <Progress className="select-label" percent={progressPercent} /> : null }
-            </div>
-          </Col>
-        </Row>
+        <SimulatorCalculator
+          localization={localization}
+          state={this.state}
+          setData={this.setData}
+        />
         <RaceResult localization={localization} result={raceResult} />
       </div>
     );
   }
 }
 
-export default Calculator;
+export default Simulator;
