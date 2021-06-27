@@ -132,6 +132,7 @@ def extract_course():
     for item in current.fetchall():
         item["slope_per"] = get_course_slope_per(item)
         item["param"] = get_course_param(item)
+        item["distance"] = int(item["distance"])
         course_json[item["id"]] = item
     with open("../src/db/course.json", "w", newline='\n') as fp:
         json.dump(course_json, fp, indent=2, sort_keys=True)
