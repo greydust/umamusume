@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import Promise from 'bluebird';
 
 import {
-  CourseCategory, CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, RunningStyle,
+  CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, RunningStyle,
 } from '../../common';
 import {
   IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate,
@@ -23,7 +23,7 @@ interface SimulatorState extends IHorseState, IGroundProperRate, IDistanceProper
   groundStatus?: string,
   racecourse?: string,
   ground?: string,
-  distance?: string,
+  distance?: number,
   course?: CourseDataType,
 }
 
@@ -59,7 +59,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
     const { state } = this.props;
     const {
       speed, stamina, pow, guts, wiz,
-      strategy, groundStatus, ground, distance, course,
+      strategy, groundStatus, course,
       groundTypeTurf, groundTypeDirt,
       distanceTypeShort, distanceTypeMile, distanceTypeMiddle, distanceTypeLong,
       runningStyleNige, runningStyleSenko, runningStyleSashi, runningStyleOikomi,
@@ -67,9 +67,8 @@ class SimulatorCalculator extends Component<IProps, IState> {
     const { rounds } = this.state;
 
     const targetCourse = new Course({
-      distance: parseInt(distance as string, 10),
+      courseData: course as CourseDataType,
       groundStatus: groundStatus as GroundStatus,
-      groundType: ground as GroundType,
     });
     const targetHorse = new Horse({
       stat: {
@@ -96,14 +95,16 @@ class SimulatorCalculator extends Component<IProps, IState> {
     });
 
     let counter = 0;
-    const worksPerThread = Math.floor(rounds / SimulatorCalculator.concurrency);
+    let started = 0;
+    const worksPerThread = Math.ceil(rounds / SimulatorCalculator.concurrency);
     await Promise.map(
       new Array(SimulatorCalculator.concurrency),
       async () => {
         const raceHorse = new RaceHorse({
           horse: targetHorse, course: targetCourse, runningStyle: strategy as RunningStyle,
         });
-        for (let i = 0; i < worksPerThread; i += 1) {
+        for (let i = 0; i < worksPerThread && started < rounds; i += 1) {
+          started += 1;
           raceHorse.simulate();
           console.log(raceHorse.hp, raceHorse.time, counter);
           counter += 1;

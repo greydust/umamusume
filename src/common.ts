@@ -87,7 +87,7 @@ export interface CourseCategory {
 export interface CourseDataType {
   id: string,
   race_track_id: string,
-  distance: string,
+  distance: number,
   ground: GroundType,
   turn: TurnType,
   inout: InoutType,
@@ -96,6 +96,11 @@ export interface CourseDataType {
   finish_time_min_random_range: string,
   finish_time_max: string,
   finish_time_max_random_range: string,
+  param: {
+    corner: { start: number, end: number }[],
+    straight: { start: number, end: number }[],
+  }
+  slope_per: { distance: number, slope_per: number }[],
 }
 
 class Common {

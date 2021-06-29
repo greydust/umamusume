@@ -1,12 +1,10 @@
 import constant from './constant';
-import { DistanceType, GroundType, GroundStatus } from '../../common';
+import {
+  DistanceType, GroundType, GroundStatus, CourseDataType, TurnType,
+} from '../../common';
 
 class Course {
-  private _distance: number;
-
-  distanceType: DistanceType;
-
-  groundType: GroundType;
+  private _courseData: CourseDataType;
 
   groundStatus: GroundStatus;
 
@@ -26,15 +24,25 @@ class Course {
     return DistanceType.Long;
   }
 
-  constructor({ distance, groundType, groundStatus } : { distance: number, groundType: GroundType, groundStatus: GroundStatus }) {
-    this._distance = distance;
-    this.distanceType = Course.getDistanceType(distance);
-    this.groundType = groundType;
+  constructor({ courseData, groundStatus } : { courseData: CourseDataType, groundStatus: GroundStatus }) {
+    this._courseData = courseData;
     this.groundStatus = groundStatus;
   }
 
   get distance(): number {
-    return this._distance;
+    return this._courseData.distance;
+  }
+
+  get distanceType(): DistanceType {
+    return Course.getDistanceType(this.distance);
+  }
+
+  get groundType(): GroundType {
+    return this._courseData.ground;
+  }
+
+  get turnType(): TurnType {
+    return this._courseData.turn;
   }
 
   get blockDistance(): number {
@@ -58,10 +66,12 @@ class Course {
   }
 
   get baseTargetSpeed(): number {
-    return 20 - (this._distance - constant.baseDistance) * constant.course.distanceTargetSpeedCoefficient;
+    return 20 - (this.distance - constant.baseDistance) * constant.course.distanceTargetSpeedCoefficient;
   }
 
-  getSlopePer = (distance: number) => 0;
+  get allSlopePers(): { distance: number, slope_per: number }[] {
+    return this._courseData.slope_per;
+  }
 }
 
 export default Course;

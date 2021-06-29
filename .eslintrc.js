@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'guard-for-in': ['off'],
     'jsx-a11y/control-has-associated-label': [
       'error',
       {
