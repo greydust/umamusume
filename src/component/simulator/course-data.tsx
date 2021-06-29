@@ -22,7 +22,7 @@ interface IProps {
     groundStatus?: string,
     racecourse?: string,
     ground?: string,
-    distance?: string,
+    distance?: number,
     course?: CourseDataType,
   },
 }
@@ -127,7 +127,7 @@ class CourseData extends Component<IProps, IState> {
         <div className="flex">
           <span className="select-label">{`${localization.site.Distance}:`}</span>
           <Select className="select" value={distance} onChange={(value) => setData('distance', value)}>
-            { _.map(courseCategories[racecourse][ground], (value: string, key: string) => (
+            { _.map(courseCategories[racecourse][ground], (value: string, key: number) => (
               <Option value={key}>{key}</Option>
             ))}
           </Select>

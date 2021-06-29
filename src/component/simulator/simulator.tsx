@@ -1,4 +1,4 @@
-import _ from 'lodash';
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
 import {
@@ -28,7 +28,7 @@ interface IState extends IHorseState, IGroundProperRate, IDistanceProperRate, IR
   strategy?: RunningStyle,
   racecourse?: string,
   ground?: GroundType,
-  distance?: string,
+  distance?: number,
   course?: CourseDataType,
   groundStatus?: GroundStatus,
 
@@ -40,12 +40,14 @@ class Simulator extends Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props);
+
+    this.loadCourseData();
     this.state = {
-      speed: 1,
-      stamina: 1,
-      pow: 1,
-      guts: 1,
-      wiz: 1,
+      speed: 1200,
+      stamina: 300,
+      pow: 1200,
+      guts: 300,
+      wiz: 300,
 
       groundTypeTurf: ProperRate.A,
       groundTypeDirt: ProperRate.A,
@@ -59,9 +61,14 @@ class Simulator extends Component<IProps, IState> {
       runningStyleSenko: ProperRate.A,
       runningStyleSashi: ProperRate.A,
       runningStyleOikomi: ProperRate.A,
-    };
 
-    this.loadCourseData();
+      strategy: RunningStyle.Nige,
+      racecourse: '10001',
+      ground: GroundType.Turf,
+      distance: 1200,
+      groundStatus: GroundStatus.Good,
+      course: this.courseCategories['10001'][GroundType.Turf][1200],
+    };
   }
 
   updateCourse = () => {
@@ -74,7 +81,6 @@ class Simulator extends Component<IProps, IState> {
       this.setState({ course: this.courseCategories[racecourse][ground][distance] });
     }
   };
-
 
   setData = (key: string, value: any): void => {
     switch (key) {

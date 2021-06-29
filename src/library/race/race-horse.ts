@@ -26,10 +26,36 @@ enum BreakPoint {
   Skill = '0120',
 
   FinishBlock = '0900',
+  Slope = '0910',
 
   Goal = '1000',
 
   None = '9999',
+}
+
+interface BreakPointData {
+  distance?: number,
+  time?: number,
+  parameters?: any
+}
+
+interface BreakPointSet {
+  [BreakPoint.FinishFirstBlock]?: BreakPointData,
+  [BreakPoint.FinishPhaseStart]?: BreakPointData,
+  [BreakPoint.FinishPhaseMiddle]?: BreakPointData,
+  [BreakPoint.FinishPhaseEnd]?: BreakPointData,
+  [BreakPoint.FinishPhaseLastSpurt]?: BreakPointData,
+
+  [BreakPoint.LastSpurt]?: BreakPointData,
+  [BreakPoint.PositionSense]?: BreakPointData,
+  [BreakPoint.Skill]?: BreakPointData[],
+
+  [BreakPoint.FinishBlock]?: BreakPointData,
+  [BreakPoint.Slope]?: BreakPointData[],
+
+  [BreakPoint.Goal]?: BreakPointData,
+
+  [BreakPoint.None]?: BreakPointData,
 }
 
 enum Mode {
@@ -74,9 +100,11 @@ class RaceHorse {
 
   private _time: number = 0;
 
-  private _breakPoints: { [key in BreakPoint]?: { distance?: number, time?: number } } = {};
+  private _breakPoints: BreakPointSet = {};
 
   _startDashTargetSpeed: number | undefined = undefined;
+
+  private _slopePer: number = 0;
 
   constructor({ horse, runningStyle, course }: {
     horse: Horse,
@@ -196,7 +224,7 @@ class RaceHorse {
   }
 
   private get realTargetSpeed(): number {
-    const slopePer = this._course.getSlopePer(this._distance);
+    const slopePer = this._slopePer;
     let slopeAdd = 0;
     if (slopePer >= 1) {
       slopeAdd = slopePer * constant.targetSpeed.upSlopeAddSpeedVal1 / this.stat.pow;
@@ -250,28 +278,40 @@ class RaceHorse {
       * (this._mode.has(Mode.DownSlopeAccel) ? constant.hp.hpDecRateMultiplyDownSlopeAccelMode : 1);
   }
 
-  get minBreakpoint(): { breakPoint: BreakPoint, distance: number } {
+  get minBreakpoint(): { breakPoint: BreakPoint, distance: number, parameters: any } {
     let minKey: BreakPoint = BreakPoint.None;
     let minDistance: number = Number.MAX_VALUE;
+    let minParameters: any;
     for (const [key, value] of Object.entries(this._breakPoints)) {
-      if (value.distance !== undefined) {
-        if (value.distance < minDistance) {
-          minDistance = value.distance;
+      let targetValue: BreakPointData;
+      if (Array.isArray(value)) {
+        targetValue = value[value.length - 1];
+      } else {
+        targetValue = value;
+      }
+
+      if (targetValue.distance !== undefined) {
+        if (targetValue.distance < minDistance) {
+          minDistance = targetValue.distance;
           minKey = key as BreakPoint;
-        } else if (value.distance === minDistance && minKey < key) {
+          minParameters = targetValue.parameters;
+        } else if (targetValue.distance === minDistance && minKey < key) {
           minKey = key as BreakPoint;
+          minParameters = targetValue.parameters;
         }
-      } else if (value.time !== undefined) {
-        const distance = this._distance + (value.time - this._time) * this._speed;
+      } else if (targetValue.time !== undefined) {
+        const distance = this._distance + (targetValue.time - this._time) * this._speed;
         if (distance < minDistance) {
           minDistance = distance;
           minKey = key as BreakPoint;
-        } else if (value.distance === minDistance && minKey < key) {
+          minParameters = targetValue.parameters;
+        } else if (targetValue.distance === minDistance && minKey < key) {
           minKey = key as BreakPoint;
+          minParameters = targetValue.parameters;
         }
       }
     }
-    return { breakPoint: minKey, distance: minDistance };
+    return { breakPoint: minKey, distance: minDistance, parameters: minParameters };
   }
 
   private static getAccelHpDecrease({
@@ -525,11 +565,16 @@ class RaceHorse {
 
   private doLastSpurt = () => {
     this._mode.add(Mode.LastSpurt);
+    delete this._breakPoints[BreakPoint.FinishBlock];
   };
 
   private finishLastSpurt = () => {};
 
   private triggerPositionSense = () => {};
+
+  private changeSlope = ({ slopePer }: { slopePer: number }) => {
+    this._slopePer = slopePer;
+  };
 
   private triggerSkill = () => {};
 
@@ -537,7 +582,7 @@ class RaceHorse {
     this._breakPoints = {};
   };
 
-  private readonly breakPointMap: { [key in BreakPoint]: () => void } = {
+  private readonly breakPointMap: { [key in BreakPoint]: (parameters: any) => void } = {
     [BreakPoint.None]: () => {},
     [BreakPoint.FinishFirstBlock]: this.finishFirstBlock,
     [BreakPoint.FinishBlock]: this.finishBlock,
@@ -547,9 +592,53 @@ class RaceHorse {
     [BreakPoint.LastSpurt]: this.doLastSpurt,
     [BreakPoint.FinishPhaseLastSpurt]: this.finishLastSpurt,
     [BreakPoint.PositionSense]: this.triggerPositionSense,
+    [BreakPoint.Slope]: this.changeSlope,
     [BreakPoint.Skill]: this.triggerSkill,
     [BreakPoint.Goal]: this.reachGoal,
   };
+
+  buildSlopeBreakPoints() {
+    const slopePers = this._course.allSlopePers;
+    for (let i = slopePers.length - 1; i > 0; i -= 1) {
+      this.addBreakPoint(BreakPoint.Slope, {
+        distance: slopePers[i].distance,
+        parameters: {
+          slopePer: slopePers[i].slope_per,
+        },
+      });
+    }
+  }
+
+  addBreakPoint(type: BreakPoint, data: BreakPointData) {
+    switch (type) {
+      case BreakPoint.Skill:
+      case BreakPoint.Slope:
+        if (!(type in this._breakPoints)) {
+          this._breakPoints[type] = [data];
+        } else {
+          this._breakPoints[type]?.push(data);
+        }
+        break;
+      default:
+        this._breakPoints[type] = data;
+        break;
+    }
+  }
+
+  removeBreakPoint(type: BreakPoint) {
+    switch (type) {
+      case BreakPoint.Skill:
+      case BreakPoint.Slope:
+        this._breakPoints[type]?.pop();
+        if (this._breakPoints[type]?.length === 0) {
+          delete this._breakPoints[type];
+        }
+        break;
+      default:
+        delete this._breakPoints[type];
+        break;
+    }
+  }
 
   simulate() {
     this._speed = constant.course.startSpeed;
@@ -558,23 +647,25 @@ class RaceHorse {
     this._hp = this.maxHp;
     this._mode = new Set();
     this._phase = CoursePhase.Start;
+    this._breakPoints = {};
 
+    this.buildSlopeBreakPoints();
     this.doGateOpen();
     this.debugOutput();
     this.finishStartDash();
     this.debugOutput();
 
     while (Object.keys(this._breakPoints).length > 0) {
-      const { breakPoint, distance } = this.minBreakpoint;
+      const { breakPoint, distance, parameters } = this.minBreakpoint;
       this.doAccelAndRun(distance);
-      delete this._breakPoints[breakPoint];
-      this.breakPointMap[breakPoint]();
+      this.removeBreakPoint(breakPoint);
+      this.breakPointMap[breakPoint](parameters);
       this.debugOutput();
     }
   }
 
   debugOutput() {
-    return;
+    // return;
     const debugData = {
       hp: this.hp,
       speed: this._speed,
@@ -583,7 +674,9 @@ class RaceHorse {
       phase: this._phase,
       mode: Array.from(this._mode),
       breakPoints: util.inspect(this._breakPoints, { depth: null }),
+      slopePer: this._slopePer,
     };
+    console.log(debugData);
   }
 }
 
