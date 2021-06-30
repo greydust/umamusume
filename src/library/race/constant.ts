@@ -148,6 +148,10 @@ const constant = {
     determineRateWizMultiplier: 0.0005,
     targetDistanceFromGoal: 60,
   },
+  slope: {
+    downSlopeAccelModeChanceBase: 0.0004,
+    downSlopeEndChance: 0.2,
+  },
 };
 
 export default constant;

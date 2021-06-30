@@ -53,9 +53,9 @@ export enum InoutType {
 
 export enum CoursePhase {
   Start = 0,
-  Middle,
-  End,
-  LastSpurt,
+  Middle = 1,
+  End = 2,
+  LastSpurt = 3,
 }
 
 export enum GroundStatus {
