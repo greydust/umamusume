@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 
-import skill_data from '../../db/skill.json';
-import { SkillItem } from './skill-item';
-
-interface IProps {
-}
-
 interface Skill {
     name: string,
     need_skill_point: number | null,
     description: string,
     id: number,
-    rarity: number,
+    rarity: number
     grade_value: number,
-
 
 }
 
@@ -77,40 +70,30 @@ interface Skill {
     // icon_id: number
 
 
-
-function Skills(props: IProps) {
-  const [skills, setSkills] = useState(initSkills);
-  const [effectFilter, setEffectFilter] = useState([]);
-
-  function initSkills() {
-    const data = skill_data;
-    const skillArray: Skill[] = [];
-    data.forEach((skill) => {
-      skillArray.push({
-        "name": skill.name,
-        "need_skill_point": skill.need_skill_point,
-        "description": skill.description,
-        "id": skill.id,
-        "rarity": skill.rarity,
-        "grade_value": skill.grade_value,
-
-      });
-    });
-    return skillArray;
-  }
-
-  const options = () => '';
-
-  const skillTable = () => skills.map((skill, index) => (<SkillItem skill={skill} /> ));
-
-  return (
-    <div>
-      {options()}
-      <table>
-        {skillTable()}
-      </table>
-    </div>
-  );
+interface Props {
+  skill: Skill,
 }
 
-export default Skills;
+export const SkillItem: React.FC<Props> = (props) => {
+
+  const [skill, setSkill] = useState(props.skill)
+
+  const grade_rate = () => {
+    return  (!skill.need_skill_point) ? skill.grade_value : (skill.grade_value / skill.need_skill_point).toFixed(2)
+  }
+
+
+  return (
+    <tr>
+      <td>{skill.id}</td>
+
+      <td>{skill.name}</td>
+      <td>{skill.description}</td>
+      <td>{skill.rarity}</td>
+      <td>{skill.need_skill_point}</td>
+      <td>{skill.grade_value}</td>
+      <td>{grade_rate()}</td>
+      
+    </tr>
+  )
+}
