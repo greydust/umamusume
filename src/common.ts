@@ -97,7 +97,7 @@ export interface CourseDataType {
   finish_time_max: string,
   finish_time_max_random_range: string,
   param: {
-    corner: { start: number, end: number }[],
+    corner: { start?: number, end?: number }[],
     straight: { start: number, end: number }[],
   }
   slope_per: { distance: number, slope_per: number }[],

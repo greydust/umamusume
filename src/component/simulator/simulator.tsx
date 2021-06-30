@@ -24,14 +24,17 @@ interface IProps {
   localization: LocalizationData;
 }
 
-interface IState extends IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate {
+interface IProperRate extends IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate {
+}
+
+interface IState extends IHorseState, IProperRate {
   strategy?: RunningStyle,
   racecourse?: string,
   ground?: GroundType,
   distance?: number,
-  course?: CourseDataType,
   groundStatus?: GroundStatus,
 
+  course?: CourseDataType,
   raceResult?: any,
 }
 
@@ -112,7 +115,7 @@ class Simulator extends Component<IProps, IState> {
         this.setState({ [key]: value as number } as Pick<IHorseState, keyof IHorseState>);
         break;
       default:
-        this.setState({ [key]: value });
+        this.setState({ [key]: value } as Pick<IProperRate, keyof IProperRate>);
         break;
     }
   };

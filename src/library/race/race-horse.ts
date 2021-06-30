@@ -666,7 +666,7 @@ class RaceHorse {
   }
 
   debugOutput() {
-    return;
+    // return;
     const debugData = {
       hp: this.hp,
       speed: this._speed,
