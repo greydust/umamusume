@@ -24,6 +24,7 @@ enum BreakPoint {
   LastSpurt = '0100',
   PositionSense = '0110',
   Skill = '0120',
+  DownSlopeAccelMode = '0130',
 
   FinishBlock = '0900',
   Slope = '0910',
@@ -49,6 +50,7 @@ interface BreakPointSet {
   [BreakPoint.LastSpurt]?: BreakPointData,
   [BreakPoint.PositionSense]?: BreakPointData,
   [BreakPoint.Skill]?: BreakPointData[],
+  [BreakPoint.DownSlopeAccelMode]?: BreakPointData,
 
   [BreakPoint.FinishBlock]?: BreakPointData,
   [BreakPoint.Slope]?: BreakPointData[],
@@ -115,10 +117,10 @@ class RaceHorse {
     this._course = course;
     this._runningStyle = runningStyle;
 
-    const upperBound = (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1)
+    const upperBound = (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1) * constant.targetSpeed.baseTargetSpeedRandomCoefficient
       * Math.log10(this.stat.wiz * constant.targetSpeed.baseTargetSpeedRandomLogCoefficient);
     const lowerBound = constant.targetSpeed.baseTargetSpeedRandomMinusVal1
-      + (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1)
+      + (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1) * constant.targetSpeed.baseTargetSpeedRandomCoefficient
       * Math.log10(this.stat.wiz * constant.targetSpeed.baseTargetSpeedRandomLogCoefficient);
     this._speedWizRandomRange = [lowerBound, upperBound];
     this.refreshSpeedRandomValue();
@@ -162,20 +164,24 @@ class RaceHorse {
     return this._startDashTargetSpeed;
   }
 
-  private phaseStartBaseTargetSpeed = () => this._course.baseTargetSpeed * constant.targetSpeed.targetSpeedCoefficient[this._runningStyle][CoursePhase.Start];
+  private get baseTargetSpeed(): number {
+    return this._course.baseTargetSpeed * constant.targetSpeed.targetSpeedCoefficient[this._runningStyle][this._phase];
+  }
 
-  private phaseMiddleBaseTargetSpeed = () => this._course.baseTargetSpeed * constant.targetSpeed.targetSpeedCoefficient[this._runningStyle][CoursePhase.Middle];
+  private get baseTargetSpeedRandom(): number {
+    return this.baseTargetSpeed * this._speedWizRandom;
+  }
 
-  private phaseEndBaseTargetSpeed = () => this._course.baseTargetSpeed * constant.targetSpeed.targetSpeedCoefficient[this._runningStyle][CoursePhase.End]
-    + Math.sqrt(constant.targetSpeed.phaseEndBaseTargetSpeedCoef * this.stat.speed)
-    * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].speed;
+  private get phaseEndTargetSpeedAddition(): number {
+    return Math.sqrt(constant.targetSpeed.phaseEndBaseTargetSpeedCoef * this.stat.speed)
+      * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].speed;
+  }
 
   private get maxLastSpurtTargetSpeed(): number {
     return Math.max(
-      (this.phaseEndBaseTargetSpeed() + constant.targetSpeed.lastSpurtBaseTargetSpeedAddCoef * this._course.baseTargetSpeed)
+      (this.baseTargetSpeed + this.phaseEndTargetSpeedAddition + constant.targetSpeed.lastSpurtBaseTargetSpeedAddCoef * this._course.baseTargetSpeed)
           * constant.targetSpeed.baseTargetSpeedCoef
-        + Math.sqrt(constant.targetSpeed.lastSpurtTargetSpeedCoefSqrt * this.stat.speed)
-          * constant.targetSpeed.addSpeedParamCoef * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].speed,
+        + this.phaseEndTargetSpeedAddition,
       this.minSpeed,
     );
   }
@@ -184,54 +190,23 @@ class RaceHorse {
     return this._lastSpurtTargetSpeed;
   }
 
-  private readonly baseTargetSpeedMap: { [key in CoursePhase]: () => number } = {
-    [CoursePhase.Start]: this.phaseStartBaseTargetSpeed,
-    [CoursePhase.Middle]: this.phaseMiddleBaseTargetSpeed,
-    [CoursePhase.End]: this.phaseEndBaseTargetSpeed,
-    [CoursePhase.LastSpurt]: this.phaseEndBaseTargetSpeed,
-  };
-
-  private phaseStartAccel = () => constant.accel.accelPhaseCoef[this._runningStyle][CoursePhase.Start]
-    * Math.sqrt(this.stat.pow * constant.accel.accelPowCoefSqrt)
-    * groundProperRate[this._horse.properRate.groundType[this._course.groundType]]
-    * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].power;
-
-  private phaseMiddleAccel = () => constant.accel.accelPhaseCoef[this._runningStyle][CoursePhase.Middle]
-    * Math.sqrt(this.stat.pow * constant.accel.accelPowCoefSqrt)
-    * groundProperRate[this._horse.properRate.groundType[this._course.groundType]]
-    * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].power;
-
-  private phaseEndAccel = () => constant.accel.accelPhaseCoef[this._runningStyle][CoursePhase.End]
-    * Math.sqrt(this.stat.pow * constant.accel.accelPowCoefSqrt)
-    * groundProperRate[this._horse.properRate.groundType[this._course.groundType]]
-    * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].power;
-
-  private readonly accelMap: { [key in CoursePhase]: () => number } = {
-    [CoursePhase.Start]: this.phaseStartAccel,
-    [CoursePhase.Middle]: this.phaseMiddleAccel,
-    [CoursePhase.End]: this.phaseEndAccel,
-    [CoursePhase.LastSpurt]: this.phaseEndAccel,
-  };
-
-  private get baseTargetSpeed(): number {
+  private get realTargetSpeed(): number {
     if (this._mode.has(Mode.StartDash) || this._mode.has(Mode.FirstBlock)) {
       return this.startDashTargetSpeed;
     }
     if (this._mode.has(Mode.LastSpurt)) {
       return this.lastSpurtTargetSpeed;
     }
-    return this.baseTargetSpeedMap[this._phase]();
-  }
 
-  private get realTargetSpeed(): number {
     const slopePer = this._slopePer;
     let slopeAdd = 0;
     if (slopePer >= 1) {
-      slopeAdd = slopePer * constant.targetSpeed.upSlopeAddSpeedVal1 / this.stat.pow;
+      slopeAdd = -slopePer * constant.targetSpeed.upSlopeAddSpeedVal1 / this.stat.pow;
     } else if (slopePer <= -1 && this._mode.has(Mode.DownSlopeAccel)) {
       slopeAdd = constant.targetSpeed.downSlopeAddSpeedVal1 + Math.abs(slopePer) / constant.targetSpeed.downSlopeAddSpeedVal2;
     }
-    return this.baseTargetSpeed * (1 + (this._mode.has(Mode.LastSpurt) ? 0 : this._speedWizRandom)) + slopeAdd;
+    return this.baseTargetSpeed + this.baseTargetSpeedRandom + slopeAdd
+      + (this._phase >= 2 ? this.phaseEndTargetSpeedAddition : 0);
   }
 
   get targetSpeed(): number {
@@ -245,6 +220,13 @@ class RaceHorse {
     this._speedWizRandom = _.random(...this._speedWizRandomRange, true);
   }
 
+  private get baseAccel(): number {
+    return constant.accel.accelPhaseCoef[this._runningStyle][this._phase]
+      * Math.sqrt(this.stat.pow * constant.accel.accelPowCoefSqrt)
+      * groundProperRate[this._horse.properRate.groundType[this._course.groundType]]
+      * distanceProperRate[this._horse.properRate.distanceType[this._course.distanceType]].power;
+  }
+
   get accel(): number {
     if (this._mode.has(Mode.ZeroHp)) {
       return constant.accel.accelDecreaseZeroHpCoef;
@@ -252,7 +234,7 @@ class RaceHorse {
 
     if (this._speed <= this.targetSpeed) {
       return (this._mode.has(Mode.StartDash) ? constant.accel.startAccelAdd : 0)
-        + this.accelMap[this._phase]() * (this._mode.has(Mode.UpSlope) ? constant.accel.accelPowCoefUpSlope : constant.accel.accelPowCoef);
+        + this.baseAccel * (this._mode.has(Mode.UpSlope) ? constant.accel.accelPowCoefUpSlope : constant.accel.accelPowCoef);
     }
     return constant.accel.accelDecreaseCoef[this._phase];
   }
@@ -475,7 +457,7 @@ class RaceHorse {
     }
 
     let lastSpurtSpeedCandidates: LastSpurtCandidate[] = [];
-    const phaseEndBaseTargetSpeed = this.phaseEndBaseTargetSpeed();
+    const phaseEndBaseTargetSpeed = this.baseTargetSpeed + this.phaseEndTargetSpeedAddition;
     const maxDistance = this._course.distance - this._distance - constant.lastSpurt.targetDistanceFromGoal;
     const { accel, hpDecreaseRate } = this;
     const { baseTargetSpeed } = this._course;
@@ -573,7 +555,25 @@ class RaceHorse {
   private triggerPositionSense = () => {};
 
   private changeSlope = ({ slopePer }: { slopePer: number }) => {
+    if (this._slopePer > -1 && slopePer <= -1) {
+      if (Math.random() <= this.stat.wiz * constant.slope.downSlopeAccelModeChanceBase) {
+        this._mode.add(Mode.DownSlopeAccel);
+        this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
+      }
+    }
     this._slopePer = slopePer;
+    if (slopePer > -1 && this._mode.has(Mode.DownSlopeAccel)) {
+      this._mode.delete(Mode.DownSlopeAccel);
+      delete this._breakPoints[BreakPoint.DownSlopeAccelMode];
+    }
+  };
+
+  private checkDownSlopeAccelMode = () => {
+    if (Math.random() <= constant.slope.downSlopeEndChance) {
+      this._mode.delete(Mode.DownSlopeAccel);
+    } else {
+      this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
+    }
   };
 
   private triggerSkill = () => {};
@@ -593,6 +593,7 @@ class RaceHorse {
     [BreakPoint.FinishPhaseLastSpurt]: this.finishLastSpurt,
     [BreakPoint.PositionSense]: this.triggerPositionSense,
     [BreakPoint.Slope]: this.changeSlope,
+    [BreakPoint.DownSlopeAccelMode]: this.checkDownSlopeAccelMode,
     [BreakPoint.Skill]: this.triggerSkill,
     [BreakPoint.Goal]: this.reachGoal,
   };
@@ -665,7 +666,7 @@ class RaceHorse {
   }
 
   debugOutput() {
-    // return;
+    return;
     const debugData = {
       hp: this.hp,
       speed: this._speed,
