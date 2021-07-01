@@ -636,23 +636,26 @@ class RaceHorse {
 
   private changeSlope = ({ slopePer }: { slopePer: number }) => {
     if (this._slopePer > -1 && slopePer <= -1) {
+      this.checkDownSlopeAccelMode();
+    } else if (this._slopePer <= -1 && slopePer > -1) {
+      this._mode.delete(Mode.DownSlopeAccel);
+      delete this._breakPoints[BreakPoint.DownSlopeAccelMode];
+    }
+    this._slopePer = slopePer;
+  };
+
+  private checkDownSlopeAccelMode = () => {
+    if (this._mode.has(Mode.DownSlopeAccel)) {
+      if (Math.random() <= constant.slope.downSlopeEndChance) {
+        this._mode.delete(Mode.DownSlopeAccel);
+      } else {
+        this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
+      }
+    } else {
       if (Math.random() <= this.stat.wiz * constant.slope.downSlopeAccelModeChanceBase) {
         this._mode.add(Mode.DownSlopeAccel);
         this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
       }
-    }
-    this._slopePer = slopePer;
-    if (slopePer > -1 && this._mode.has(Mode.DownSlopeAccel)) {
-      this._mode.delete(Mode.DownSlopeAccel);
-      delete this._breakPoints[BreakPoint.DownSlopeAccelMode];
-    }
-  };
-
-  private checkDownSlopeAccelMode = () => {
-    if (Math.random() <= constant.slope.downSlopeEndChance) {
-      this._mode.delete(Mode.DownSlopeAccel);
-    } else {
-      this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
     }
   };
 
