@@ -79,7 +79,7 @@ def get_course_slope_per(course):
                 if obj.serialized_type.nodes:
                     tree = obj.read_typetree()
                     rotations = tree["key"]["rotation"]
-                    slope_pers = [math.tan(math.asin(min(max(2*(r["w"]*r["x"]-r["y"]*r["z"]), -1), 1)))*100 for r in rotations]
+                    slope_pers = [-math.tan(math.asin(min(max(2*(r["w"]*r["x"]-r["y"]*r["z"]), -1), 1)))*100 for r in rotations]
                     part_distance = float(course["distance"]) / (len(slope_pers) - 1)
                     current_distance = 0
                     course_slope_per = []
