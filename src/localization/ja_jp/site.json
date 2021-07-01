@@ -45,5 +45,12 @@
   "GroundStatus": "状態",
   "Racecourse": "競馬場",
   "Ground": "バ場",
-  "Distance": "距離"
+  "Distance": "距離",
+
+  "TimeAverage": "平均時間",
+  "TimeStandardDeviation": "標準偏差",
+  "TimeShown": "表示時間",
+  "FullLastSpurtRate": "フールスパート率",
+  "HpLeftAverage": "平均残りHP",
+  "TimeMin": "世界記録"
 }

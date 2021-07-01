@@ -9,6 +9,7 @@ import Horse, { HorseStat } from './horse';
 import distanceProperRateJson from '../../db/proper_rate/distance.json';
 import groundProperRateJson from '../../db/proper_rate/ground.json';
 import runningStyleProperRateJson from '../../db/proper_rate/running_style.json';
+import { ResultFlag } from './common';
 import { RunningStyle, CoursePhase } from '../../common';
 
 const distanceProperRate = distanceProperRateJson as { [key: string]: { speed: number, power: number } };
@@ -16,22 +17,22 @@ const groundProperRate = groundProperRateJson as { [key: string]: number };
 const runningStyleProperRate = runningStyleProperRateJson as { [key: string]: number };
 
 enum BreakPoint {
-  FinishFirstBlock = '0000',
-  FinishPhaseStart = '0010',
-  FinishPhaseMiddle = '0020',
-  FinishPhaseEnd = '0030',
-  FinishPhaseLastSpurt = '0040',
+  Goal = '0000',
 
-  LastSpurt = '0100',
-  PositionSense = '0110',
-  Skill = '0120',
-  DownSlopeAccelMode = '0130',
-  ZeroHp = '0140',
+  FinishFirstBlock = '1000',
+  FinishPhaseStart = '1010',
+  FinishPhaseMiddle = '1020',
+  FinishPhaseEnd = '1030',
+  FinishPhaseLastSpurt = '1040',
 
-  FinishBlock = '0900',
-  Slope = '0910',
+  LastSpurt = '2000',
+  PositionSense = '2010',
+  Skill = '2020',
+  DownSlopeAccelMode = '2030',
+  ZeroHp = '2040',
 
-  Goal = '1000',
+  FinishBlock = '3000',
+  Slope = '3010',
 
   None = '9999',
 }
@@ -72,10 +73,6 @@ enum Mode {
   Temptation,
   PositionKeepPaceDown,
   ZeroHp,
-}
-
-enum ResultFlag {
-  FullLastSpurt,
 }
 
 interface LastSpurtCandidate {
@@ -286,7 +283,7 @@ class RaceHorse {
           minDistance = targetValue.distance;
           minKey = key as BreakPoint;
           minParameters = targetValue.parameters;
-        } else if (targetValue.distance === minDistance && minKey < key) {
+        } else if (targetValue.distance === minDistance && key < minKey) {
           minKey = key as BreakPoint;
           minParameters = targetValue.parameters;
         }
@@ -296,7 +293,7 @@ class RaceHorse {
           minDistance = distance;
           minKey = key as BreakPoint;
           minParameters = targetValue.parameters;
-        } else if (targetValue.distance === minDistance && minKey < key) {
+        } else if (targetValue.distance === minDistance && key < minKey) {
           minKey = key as BreakPoint;
           minParameters = targetValue.parameters;
         }
@@ -456,6 +453,7 @@ class RaceHorse {
       this._distance += realAccelDistance;
       this._hp = 0;
       this._mode.add(Mode.ZeroHp);
+      delete this._breakPoints[BreakPoint.ZeroHp];
       return false;
     }
 
@@ -480,13 +478,16 @@ class RaceHorse {
       this._distance += realRunDistance;
       this._hp = 0;
       this._mode.add(Mode.ZeroHp);
+      delete this._breakPoints[BreakPoint.ZeroHp];
       return false;
     }
 
     this._hp -= runHpCost;
     this._time += runTime;
     this._distance += runDistance;
-    this._breakPoints[BreakPoint.ZeroHp] = { distance: this.hp / speedHpDecreaseRate * this._speed };
+    if (!this._mode.has(Mode.ZeroHp)) {
+      this._breakPoints[BreakPoint.ZeroHp] = { distance: this._distance + this.hp / speedHpDecreaseRate * this._speed };
+    }
     return true;
   }
 
@@ -608,7 +609,7 @@ class RaceHorse {
   private finishPhaseMiddle = () => {
     this._phase = CoursePhase.End;
     const { lastSpurtDistance, lastSpurtTargetSpeed } = this.calculateLastSpurt();
-    this._breakPoints[BreakPoint.FinishPhaseEnd] = { distance: this._course.phaseMiddleDistance };
+    this._breakPoints[BreakPoint.FinishPhaseEnd] = { distance: this._course.phaseEndDistance };
     this._breakPoints[BreakPoint.LastSpurt] = { distance: lastSpurtDistance };
     this._lastSpurtTargetSpeed = lastSpurtTargetSpeed;
   };
@@ -747,7 +748,7 @@ class RaceHorse {
   }
 
   debugOutput() {
-    // return;
+    return;
     const debugData = {
       hp: this.hp,
       speed: this._speed,

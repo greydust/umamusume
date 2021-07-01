@@ -57,7 +57,7 @@ class Course {
     return this.distance * constant.course.phaseMiddle;
   }
 
-  get phaseMiddleEnd(): number {
+  get phaseEndDistance(): number {
     return this.distance * constant.course.phaseEnd;
   }
 

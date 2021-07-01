@@ -1,4 +1,5 @@
 import { ProperRate } from '../../common';
+import { ResultFlag } from '../../library/race/common';
 
 export interface IHorseState {
   speed: number,
@@ -25,6 +26,21 @@ export interface IRunningStyleProperRate {
   runningStyleSenko: ProperRate,
   runningStyleSashi: ProperRate,
   runningStyleOikomi: ProperRate,
+}
+
+export interface RaceResultData {
+  time: number,
+  resultFlags: Set<ResultFlag>,
+  hpLeft: number,
+  skills: {
+    normal: number,
+    rare: number,
+    unique: boolean,
+  },
+  temptation: {
+    triggered: boolean,
+    time: number,
+  },
 }
 
 class Common {

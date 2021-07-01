@@ -14,3 +14,7 @@
   flex: 1 0 auto;
   display: flex;
 }
+
+table, th, td {
+  border: 1px solid black;
+}

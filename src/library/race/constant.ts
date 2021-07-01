@@ -142,6 +142,7 @@ const constant = {
     positionSense: 10 / 24,
     frameTime: 1 / 15,
     gateTimeRange: { min: 0, max: 0.1 },
+    finishTimeCoef: 1.18,
   },
   lastSpurt: {
     determineRateBase: 0.15,

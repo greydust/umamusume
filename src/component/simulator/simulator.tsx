@@ -5,7 +5,7 @@ import {
   CourseCategory, CourseDataType, GroundStatus, GroundType, LocalizationData, ProperRate, RunningStyle,
 } from '../../common';
 import {
-  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate,
+  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate, RaceResultData,
 } from './common';
 import CourseData from './course-data';
 import HorseData from './horse-data';
@@ -35,7 +35,7 @@ interface IState extends IHorseState, IProperRate {
   groundStatus?: GroundStatus,
 
   course?: CourseDataType,
-  raceResult?: any,
+  raceResults: RaceResultData[],
 }
 
 class Simulator extends Component<IProps, IState> {
@@ -71,6 +71,7 @@ class Simulator extends Component<IProps, IState> {
       distance: 1200,
       groundStatus: GroundStatus.Good,
       course: this.courseCategories['10001'][GroundType.Turf][1200],
+      raceResults: [],
     };
   }
 
@@ -114,6 +115,9 @@ class Simulator extends Component<IProps, IState> {
       case 'wiz':
         this.setState({ [key]: value as number } as Pick<IHorseState, keyof IHorseState>);
         break;
+      case 'raceResults':
+        this.setState({ raceResults: value });
+        break;
       default:
         this.setState({ [key]: value } as Pick<IProperRate, keyof IProperRate>);
         break;
@@ -135,7 +139,7 @@ class Simulator extends Component<IProps, IState> {
 
   render() {
     const { localization } = this.props;
-    const { raceResult } = this.state;
+    const { raceResults, course } = this.state;
     return (
       <div className="content">
         <HorseData
@@ -154,7 +158,7 @@ class Simulator extends Component<IProps, IState> {
           state={this.state}
           setData={this.setData}
         />
-        <RaceResult localization={localization} result={raceResult} />
+        <RaceResult localization={localization} raceResults={raceResults} course={course} />
       </div>
     );
   }

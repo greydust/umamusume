@@ -104,6 +104,20 @@ export interface CourseDataType {
 }
 
 class Common {
+  static secondToTime(time: number): string {
+    const hour = Math.floor(time / 3600);
+    const hourString = hour > 0 ? `${hour}:` : '';
+    const minute = Math.floor((time - hour * 3600) / 60);
+    const minuteString = minute > 0
+      ? `${hour > 0 ? `${minute.toString().padStart(2)}` : minute}:`
+      : '';
+    const second = Math.floor(time - hour * 3600 - minute * 60);
+    const secondString = second > 0
+      ? `${(hour > 0 || minute > 0) ? `${second.toString().padStart(2)}` : second}`
+      : '0';
+    const minorString = `.${Math.floor((time - hour * 3600 - minute * 60 - second) * 100).toFixed(3)}`;
+    return `${hourString}${minuteString}${secondString}${minorString}`;
+  }
 }
 
 export default Common;

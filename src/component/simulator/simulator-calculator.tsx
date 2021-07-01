@@ -9,7 +9,7 @@ import {
   CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, RunningStyle,
 } from '../../common';
 import {
-  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate,
+  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate, RaceResultData,
 } from './common';
 import Horse from '../../library/race/horse';
 import Course from '../../library/race/course';
@@ -56,7 +56,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
       running: true,
       finished: 0,
     });
-    const { state } = this.props;
+    const { state, setData } = this.props;
     const {
       speed, stamina, pow, guts, wiz,
       strategy, groundStatus, course,
@@ -97,6 +97,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
     let counter = 0;
     let started = 0;
     const worksPerThread = Math.ceil(rounds / SimulatorCalculator.concurrency);
+    const raceResults: RaceResultData[] = [];
     await Promise.map(
       new Array(SimulatorCalculator.concurrency),
       async () => {
@@ -106,7 +107,20 @@ class SimulatorCalculator extends Component<IProps, IState> {
         for (let i = 0; i < worksPerThread && started < rounds; i += 1) {
           started += 1;
           raceHorse.simulate();
-          console.log(raceHorse.hp, raceHorse.time, counter);
+          raceResults.push({
+            time: raceHorse.time,
+            resultFlags: raceHorse.resultFlag,
+            hpLeft: raceHorse.hp > 0 ? raceHorse.hp : 0,
+            skills: {
+              normal: 0,
+              rare: 0,
+              unique: false,
+            },
+            temptation: {
+              triggered: false,
+              time: 0,
+            },
+          });
           counter += 1;
           this.setState({ finished: counter });
           await Promise.delay(0);
@@ -115,6 +129,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
       { concurrency: SimulatorCalculator.concurrency },
     );
     this.setState({ running: false });
+    setData('raceResults', raceResults);
   };
 
   render() {
