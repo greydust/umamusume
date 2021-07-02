@@ -3,6 +3,13 @@ import math
 import os
 import UnityPy
 import sqlite3
+import sys
+
+if sys.version_info.major < 3 or (sys.version_info.major == 3 and sys.version_info.minor < 9):
+    print("Please use Python 3.9 or later")
+    exit()
+
+base_dir = os.path.dirname(__file__)
 
 def db_dict_factory(cursor, row):
     result = {}
@@ -23,7 +30,7 @@ def extract_character_portrait():
     for obj in assets.objects:
       if obj.type in [UnityPy.enums.ClassIDType.Texture2D, UnityPy.enums.ClassIDType.Sprite]:
         image = obj.read().image
-        image.save(os.path.join("..\\public\\static\\image\\character\\portrait", image_name + ".png"))
+        image.save(os.path.join(base_dir, "..\\public\\static\\image\\character\\portrait", image_name + ".png"))
 
 def extract_course_param():
   current.execute('SELECT n as name, h as hash from a WHERE n LIKE "race/courseeventparam/%/pfb\_prm\_race%" ESCAPE "\\"')
@@ -34,7 +41,7 @@ def extract_course_param():
         if obj.type in [UnityPy.enums.ClassIDType.MonoBehaviour]:
             if obj.serialized_type.nodes:
                 tree = obj.read_typetree()
-                with open(basename, "w", newline='\n') as fp:
+                with open(os.path.join(base_dir, "../temp" , basename), "w", newline='\n') as fp:
                   json.dump(tree, fp, indent=2, sort_keys=True)
 
 def extract_course_slope():
@@ -50,9 +57,9 @@ def extract_course_slope():
                 tree = obj.read_typetree()
                 rotations = tree["key"]["rotation"]
                 slope_pers = [math.asin(min(max(2*(r["w"]*r["x"]-r["y"]*r["z"]), -1), 1)) for r in rotations]
-                with open(basename, "w", newline='\n') as fp:
+                with open(os.path.join(base_dir, "../temp" , basename), "w", newline='\n') as fp:
                   json.dump(slope_pers, fp, indent=2, sort_keys=True)
 
 extract_character_portrait()
-#extract_course_param()
-#extract_course_slope()
+# extract_course_param()
+# extract_course_slope()

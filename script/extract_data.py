@@ -3,6 +3,13 @@ import math
 import os
 import UnityPy
 import sqlite3
+import sys
+
+if sys.version_info.major < 3 or (sys.version_info.major == 3 and sys.version_info.minor < 9):
+    print("Please use Python 3.9 or later")
+    exit()
+
+base_dir = os.path.dirname(__file__)
 
 def db_dict_factory(cursor, row):
     result = {}
@@ -22,7 +29,7 @@ meta_current = meta_connection.cursor()
 def extract_relation():
     current.execute("SELECT * FROM succession_relation")
     relation_json = { item["relation_type"]: item["relation_point"] for item in current.fetchall() }
-    with open("../src/db/relation.json", "w", newline='\n') as fp:
+    with open(os.path.join(base_dir, "../src/db/relation.json"), "w", newline='\n') as fp:
         json.dump(relation_json, fp, indent=2, sort_keys=True)
 
 def extract_relation_member():
@@ -32,7 +39,7 @@ def extract_relation_member():
         if item["chara_id"] not in relation_member_json:
             relation_member_json[item["chara_id"]] = []
         relation_member_json[item["chara_id"]].append(item["relation_type"])
-    with open("../src/db/relation_member.json", "w", newline='\n') as fp:
+    with open(os.path.join(base_dir, "../src/db/relation_member.json"), "w", newline='\n') as fp:
         json.dump(relation_member_json, fp, indent=2, sort_keys=True)
 
 def extract_character():
@@ -41,23 +48,23 @@ def extract_character():
     CHARACTER_KEYS = []
 
     character_json = { item["chara_id"]: { key: item[key] for key in CHARACTER_KEYS } for item in character_data}
-    with open("../src/db/character.json", "w", newline='\n', encoding="utf-8") as fp:
+    with open(os.path.join(base_dir, "../src/db/character.json"), "w", newline='\n', encoding="utf-8") as fp:
         json.dump(character_json, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
 def extract_proper_rate():
     current.execute("SELECT * FROM race_proper_distance_rate")
     proper_distance_json = { item["id"]: { "speed": float(item["proper_rate_speed"]) / 10000, "power": float(item["proper_rate_power"]) / 10000 } for item in current.fetchall() }
-    with open("../src/db/proper_rate/distance.json", "w", newline='\n') as fp:
+    with open(os.path.join(base_dir, "../src/db/proper_rate/distance.json"), "w", newline='\n') as fp:
         json.dump(proper_distance_json, fp, indent=2, sort_keys=True)
 
     current.execute("SELECT * FROM race_proper_ground_rate")
     proper_ground_json = { item["id"]: float(item["proper_rate"]) / 10000 for item in current.fetchall() }
-    with open("../src/db/proper_rate/ground.json", "w", newline='\n') as fp:
+    with open(os.path.join(base_dir, "../src/db/proper_rate/ground.json"), "w", newline='\n') as fp:
         json.dump(proper_ground_json, fp, indent=2, sort_keys=True)
 
     current.execute("SELECT * FROM race_proper_runningstyle_rate")
     proper_running_style_json = { item["id"]: float(item["proper_rate"]) / 10000 for item in current.fetchall() }
-    with open("../src/db/proper_rate/running_style.json", "w", newline='\n') as fp:
+    with open(os.path.join(base_dir, "../src/db/proper_rate/running_style.json"), "w", newline='\n') as fp:
         json.dump(proper_running_style_json, fp, indent=2, sort_keys=True)
 
 def get_course_slope_per(course):
@@ -134,18 +141,18 @@ def extract_course():
         item["param"] = get_course_param(item)
         item["distance"] = int(item["distance"])
         course_json[item["id"]] = item
-    with open("../src/db/course.json", "w", newline='\n') as fp:
+    with open(os.path.join(base_dir, "../src/db/course.json"), "w", newline='\n') as fp:
         json.dump(course_json, fp, indent=2, sort_keys=True)
 
 def extract_localization():
     current.execute("SELECT * FROM text_data WHERE category = 6")
     character_name_localization = { item["index"]: item["text"] for item in current.fetchall() }
-    with open("../src/localization/ja_jp/character/name.json", "w", encoding="utf-8") as fp:
+    with open(os.path.join(base_dir, "../src/localization/ja_jp/character/name.json"), "w", encoding="utf-8") as fp:
         json.dump(character_name_localization, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
     current.execute("SELECT * FROM text_data WHERE category = 35")
     course_name_localization = { item["index"]: item["text"] for item in current.fetchall() }
-    with open("../src/localization/ja_jp/course/racecourse.json", "w", encoding="utf-8") as fp:
+    with open(os.path.join(base_dir, "../src/localization/ja_jp/course/racecourse.json"), "w", encoding="utf-8") as fp:
         json.dump(course_name_localization, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
 extract_relation()

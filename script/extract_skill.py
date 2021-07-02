@@ -1,7 +1,15 @@
 import sqlite3
 import json
 import os
-    
+import re
+import sys
+
+if sys.version_info.major < 3 or (sys.version_info.major == 3 and sys.version_info.minor < 9):
+    print("Please use Python 3.9 or later")
+    exit()
+
+base_dir = os.path.dirname(__file__)
+
 def db_dict_factory(cursor, row):
     result = {}
     for index, column in enumerate(cursor.description):
@@ -12,10 +20,6 @@ asset_folder = os.path.join(os.getenv("UserProfile"), "AppData\\LocalLow\\Cygame
 connection = sqlite3.connect(os.path.join(asset_folder, "master\\master.mdb"))
 connection.row_factory = db_dict_factory
 current = connection.cursor()
-
-meta_connection = sqlite3.connect(os.path.join(asset_folder, "meta"))
-meta_connection.row_factory = db_dict_factory
-meta_current = meta_connection.cursor()
 
 sql = """
     SELECT Text1.'text' AS name, Point.need_skill_point, Text2.'text' AS description, Skill.*
@@ -31,232 +35,141 @@ sql = """
     ORDER BY Skill.id;
     """
 
+def do_nothing(var):
+    return var
+
+def to_string(var):
+    try:
+        return str(var)
+    except:
+        return None
+
+def to_integer(var):
+    try:
+        return int(var)
+    except:
+        return None
+
+def to_float(var):
+    try:
+        return float(var)
+    except:
+        return None
+
+parameter_converter = {
+    "name": do_nothing,
+    "need_skill_point": to_integer,
+    "description":do_nothing,
+    "id": do_nothing,
+    "rarity": to_integer,
+    "group_id": do_nothing,
+    "group_rate": to_integer,
+    "filter_switch": to_integer,
+    "grade_value": to_integer,
+    "skill_category": to_integer,
+    "tag_id": do_nothing,
+    "unique_skill_id_1": do_nothing,
+    "unique_skill_id_2": do_nothing,
+    "exp_type": to_integer,
+    "potential_per_default": to_integer,
+    "activate_lot": to_integer,
+    "condition_1": do_nothing,
+    "float_ability_time_1": to_integer,
+    "float_cooldown_time_1": to_integer,
+    "ability_type_1_1": to_integer,
+    "ability_value_usage_1_1": to_integer,
+    "ability_value_level_usage_1_1": to_integer,
+    "float_ability_value_1_1": to_integer,
+    "target_type_1_1": to_integer,
+    "target_value_1_1": to_integer,
+    "ability_type_1_2": to_integer,
+    "ability_value_usage_1_2": to_integer,
+    "ability_value_level_usage_1_2": to_integer,
+    "float_ability_value_1_2": to_integer,
+    "target_type_1_2": to_integer,
+    "target_value_1_2": to_integer,
+    "ability_type_1_3": to_integer,
+    "ability_value_usage_1_3": to_integer,
+    "ability_value_level_usage_1_3": to_integer,
+    "float_ability_value_1_3": to_integer,
+    "target_type_1_3": to_integer,
+    "target_value_1_3": to_integer,
+    "condition_2": do_nothing,
+    "float_ability_time_2": to_integer,
+    "float_cooldown_time_2": to_integer,
+    "ability_type_2_1": to_integer,
+    "ability_value_usage_2_1": to_integer,
+    "ability_value_level_usage_2_1": to_integer,
+    "float_ability_value_2_1": to_integer,
+    "target_type_2_1": to_integer,
+    "target_value_2_1": to_integer,
+    "ability_type_2_2": to_integer,
+    "ability_value_usage_2_2": to_integer,
+    "ability_value_level_usage_2_2": to_integer,
+    "float_ability_value_2_2": to_integer,
+    "target_type_2_2": to_integer,
+    "target_value_2_2": to_integer,
+    "ability_type_2_3": to_integer,
+    "ability_value_usage_2_3": to_integer,
+    "ability_value_level_usage_2_3": to_integer,
+    "float_ability_value_2_3": to_integer,
+    "target_type_2_3": to_integer,
+    "target_value_2_3": to_integer,
+    "popularity_add_param_1": to_integer,
+    "popularity_add_value_1": to_integer,
+    "popularity_add_param_2": to_integer,
+    "popularity_add_value_2": to_integer,
+    "disp_order": to_integer,
+    "icon_id": to_integer,
+}
+
+condition_object_map = {
+    "condition_1": "condition_1_object",
+    "condition_2": "condition_2_object",
+}
+
+condition_pattern = re.compile("^([a-zA-Z0-9_]+)(>\=|>|\=\=|<|<\=|!\=)([a-zA-Z0-9_]+)$")
+
+def parse_condition(condition: str):
+    if not condition:
+        return {}
+
+    split_by_or = condition.split("@")
+    if len(split_by_or) > 1:
+        return {
+            "operator": "or",
+            "items": [parse_condition(or_condition) for or_condition in split_by_or]
+        }
+    
+    split_by_and = condition.split("&")
+    if len(split_by_and) > 1:
+        return {
+            "operator": "and",
+            "items": [parse_condition(and_condition) for and_condition in split_by_and]
+        }
+
+    match = condition_pattern.match(condition)
+    key, operator, value = match.groups()
+    return { "operator": operator, "key": key, "value": value }
+
 current.execute(sql)
 # columns = cursor.description
 # for column in columns:
 #     print(column[0])
 
 skill_array = []
-f = current.fetchall()
+for row in current.fetchall():
+    for key in row.keys():
+        if key in parameter_converter:
+            row[key] = parameter_converter[key](row[key])
+    for source, target in condition_object_map.items():
+        row[target] = parse_condition(row[source])
+    skill_array.append(row)
 
-title = [
-    {
-        "name": "string"
-    },
-    {
-        "need_skill_point": "string"
-    },
-    {
-        "description": "string"
-    },
-    {
-        "id": "number"
-    },
-    {
-        "rarity": "number"
-    },
-    {
-        "group_id": "number"
-    },
-    {
-        "group_rate": "number"
-    },
-    {
-        "filter_switch": "number"
-    },
-    {
-        "grade_value": "number"
-    },
-    {
-        "skill_category": "number"
-    },
-    {
-        "tag_id": "string"
-    },
-    {
-        "unique_skill_id_1": "number"
-    },
-    {
-        "unique_skill_id_2": "number"
-    },
-    {
-        "exp_type": "number"
-    },
-    {
-        "potential_per_default": "number"
-    },
-    {
-        "activate_lot": "number"
-    },
-    {
-        "condition_1": "string"
-    },
-    {
-        "float_ability_time_1": "number"
-    },
-    {
-        "float_cooldown_time_1": "number"
-    },
-    {
-        "ability_type_1_1": "number"
-    },
-    {
-        "ability_value_usage_1_1": "number"
-    },
-    {
-        "ability_value_level_usage_1_1": "number"
-    },
-    {
-        "float_ability_value_1_1": "number"
-    },
-    {
-        "target_type_1_1": "number"
-    },
-    {
-        "target_value_1_1": "number"
-    },
-    {
-        "ability_type_1_2": "number"
-    },
-    {
-        "ability_value_usage_1_2": "number"
-    },
-    {
-        "ability_value_level_usage_1_2": "number"
-    },
-    {
-        "float_ability_value_1_2": "number"
-    },
-    {
-        "target_type_1_2": "number"
-    },
-    {
-        "target_value_1_2": "number"
-    },
-    {
-        "ability_type_1_3": "number"
-    },
-    {
-        "ability_value_usage_1_3": "number"
-    },
-    {
-        "ability_value_level_usage_1_3": "number"
-    },
-    {
-        "float_ability_value_1_3": "number"
-    },
-    {
-        "target_type_1_3": "number"
-    },
-    {
-        "target_value_1_3": "number"
-    },
-    {
-        "condition_2": "string"
-    },
-    {
-        "float_ability_time_2": "number"
-    },
-    {
-        "float_cooldown_time_2": "number"
-    },
-    {
-        "ability_type_2_1": "number"
-    },
-    {
-        "ability_value_usage_2_1": "number"
-    },
-    {
-        "ability_value_level_usage_2_1": "number"
-    },
-    {
-        "float_ability_value_2_1": "number"
-    },
-    {
-        "target_type_2_1": "number"
-    },
-    {
-        "target_value_2_1": "number"
-    },
-    {
-        "ability_type_2_2": "number"
-    },
-    {
-        "ability_value_usage_2_2": "number"
-    },
-    {
-        "ability_value_level_usage_2_2": "number"
-    },
-    {
-        "float_ability_value_2_2": "number"
-    },
-    {
-        "target_type_2_2": "number"
-    },
-    {
-        "target_value_2_2": "number"
-    },
-    {
-        "ability_type_2_3": "number"
-    },
-    {
-        "ability_value_usage_2_3": "number"
-    },
-    {
-        "ability_value_level_usage_2_3": "number"
-    },
-    {
-        "float_ability_value_2_3": "number"
-    },
-    {
-        "target_type_2_3": "number"
-    },
-    {
-        "target_value_2_3": "number"
-    },
-    {
-        "popularity_add_param_1": "number"
-    },
-    {
-        "popularity_add_value_1": "number"
-    },
-    {
-        "popularity_add_param_2": "number"
-    },
-    {
-        "popularity_add_value_2": "number"
-    },
-    {
-        "disp_order": "number"
-    },
-    {
-        "icon_id": "number"
-    }
-]
-
-order = []
-
-for i in range(0, len(title)):
-    key = list(title[i].keys())[0]
-    order.append([key, title[i][key]])
-
-for row in f:
+# print(skill_array)
     
-    skill = {}
-    for i in range(0, len(row)):
-#         print(i)
-        if order[i][1] == "number":
-            skill[order[i][0]] = int(row[i])
-        else:
-            skill[order[i][0]] = row[i]
-    skill_array.append(skill)
-
-
-print(skill_array)
-    
-with open('skill.json', 'w', encoding="utf8") as output:
-    json.dump(skill_array, output, ensure_ascii=False)
-
+with open(os.path.join(base_dir, '../src/db/skill.json'), 'w', encoding="utf8") as output:
+    json.dump(skill_array, output, ensure_ascii=False, indent=2)
 
 # rarity: 1:白 2:金 3:非三星固有  4:非三星馬升三星後的固有 5:三星固有
     
