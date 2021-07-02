@@ -1,7 +1,7 @@
 import constant from './constant';
 import {
   DistanceType, GroundType, GroundStatus, CourseDataType, TurnType,
-} from '../../common';
+} from '../common';
 
 class Course {
   private _courseData: CourseDataType;

@@ -4,7 +4,7 @@ import {
   Redirect, HashRouter as Router, Route, Link, Switch,
 } from 'react-router-dom';
 
-import { LocalizationData } from './common';
+import { LocalizationData } from './library/common';
 import RelationGraph from './component/relation/graph';
 import RelationQuery from './component/relation/query';
 import Simulator from './component/simulator/simulator';

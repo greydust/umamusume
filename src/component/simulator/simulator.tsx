@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import {
   CourseCategory, CourseDataType, GroundStatus, GroundType, LocalizationData, ProperRate, RunningStyle,
-} from '../../common';
+} from '../../library/common';
 import {
   IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate, RaceResultData,
 } from './common';
@@ -11,6 +11,7 @@ import CourseData from './course-data';
 import HorseData from './horse-data';
 import RaceResult from './race-result';
 import SimulatorCalculator from './simulator-calculator';
+import SkillSelector from './skill-selector';
 
 import 'antd/dist/antd.css';
 import './simulator.css';
@@ -150,6 +151,11 @@ class Simulator extends Component<IProps, IState> {
         <CourseData
           localization={localization}
           courseCategories={this.courseCategories}
+          setData={this.setData}
+          state={this.state}
+        />
+        <SkillSelector
+          localization={localization}
           setData={this.setData}
           state={this.state}
         />

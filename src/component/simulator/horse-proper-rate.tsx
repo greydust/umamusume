@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { Row, Col, Select } from 'antd';
 import React, { Component } from 'react';
 
-import { LocalizationData } from '../../common';
+import { LocalizationData } from '../../library/common';
 
 import './simulator.css';
 

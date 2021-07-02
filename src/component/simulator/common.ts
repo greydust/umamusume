@@ -1,4 +1,4 @@
-import { ProperRate } from '../../common';
+import { ProperRate } from '../../library/common';
 import { ResultFlag } from '../../library/race/common';
 
 export interface IHorseState {

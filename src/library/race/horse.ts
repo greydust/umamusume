@@ -1,6 +1,6 @@
 import {
   DistanceType, ProperRate, GroundType, RunningStyle,
-} from '../../common';
+} from '../common';
 
 export interface HorseStat {
   speed: number;

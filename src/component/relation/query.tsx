@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import '../../app.css';
 import './relation.css';
 
-import { LocalizationData } from '../../common';
+import { LocalizationData } from '../../library/common';
 import characterJson from '../../db/character.json';
 import relationJson from '../../db/relation.json';
 import relationMemberJson from '../../db/relation_member.json';

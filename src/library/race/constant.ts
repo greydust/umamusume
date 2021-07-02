@@ -1,6 +1,6 @@
 import {
   RunningStyle, CoursePhase, GroundType, GroundStatus,
-} from '../../common';
+} from '../common';
 
 const constant = {
   baseDistance: 2000,

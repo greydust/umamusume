@@ -7,7 +7,7 @@ import Promise from 'bluebird';
 
 import {
   CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, RunningStyle,
-} from '../../common';
+} from '../../library/common';
 import {
   IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate, RaceResultData,
 } from './common';

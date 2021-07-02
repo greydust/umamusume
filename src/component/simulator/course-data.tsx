@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 
 import {
   CourseCategory, CourseDataType, GroundStatus, LocalizationData, RunningStyle,
-} from '../../common';
+} from '../../library/common';
 
 import 'antd/dist/antd.css';
 import './simulator.css';

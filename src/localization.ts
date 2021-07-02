@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { LocalizationData, LocalizationSubData } from './common';
+import { LocalizationData, LocalizationSubData } from './library/common';
 
 class Localization {
   default: {};

@@ -10,7 +10,7 @@ import distanceProperRateJson from '../../db/proper_rate/distance.json';
 import groundProperRateJson from '../../db/proper_rate/ground.json';
 import runningStyleProperRateJson from '../../db/proper_rate/running_style.json';
 import { ResultFlag } from './common';
-import { RunningStyle, CoursePhase } from '../../common';
+import { RunningStyle, CoursePhase } from '../common';
 
 const distanceProperRate = distanceProperRateJson as { [key: string]: { speed: number, power: number } };
 const groundProperRate = groundProperRateJson as { [key: string]: number };
