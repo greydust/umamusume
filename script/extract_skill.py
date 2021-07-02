@@ -157,19 +157,19 @@ current.execute(sql)
 # for column in columns:
 #     print(column[0])
 
-skill_array = []
+skills = {}
 for row in current.fetchall():
     for key in row.keys():
         if key in parameter_converter:
             row[key] = parameter_converter[key](row[key])
     for source, target in condition_object_map.items():
         row[target] = parse_condition(row[source])
-    skill_array.append(row)
+    skills[row["id"]] = row
 
 # print(skill_array)
     
 with open(os.path.join(base_dir, '../src/db/skill.json'), 'w', encoding="utf8") as output:
-    json.dump(skill_array, output, ensure_ascii=False, indent=2)
+    json.dump(skills, output, ensure_ascii=False, indent=2)
 
 # rarity: 1:白 2:金 3:非三星固有  4:非三星馬升三星後的固有 5:三星固有
     

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-import skill_data from '../../db/skill.json';
 import { Skill } from './common';
 import SkillItem from './skill-item';
+
+import skill_data from '../../db/skill.json';
 
 import '../../app.css';
 
@@ -14,9 +15,8 @@ function Skills(props: IProps) {
   // const [effectFilter, setEffectFilter] = useState([]);
 
   function initSkills() {
-    const data = skill_data;
     const skillArray: Skill[] = [];
-    data.forEach((skill) => {
+    for (const [, skill] of Object.entries(skill_data)) {
       skillArray.push({
         name: skill.name,
         need_skill_point: skill.need_skill_point,
@@ -25,7 +25,7 @@ function Skills(props: IProps) {
         rarity: skill.rarity,
         grade_value: skill.grade_value,
       });
-    });
+    }
     return skillArray;
   }
 
