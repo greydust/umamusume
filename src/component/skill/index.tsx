@@ -4,12 +4,14 @@ import skill_data from '../../db/skill.json';
 import { Skill } from './common';
 import SkillItem from './skill-item';
 
+import '../../app.css';
+
 interface IProps {
 }
 
 function Skills(props: IProps) {
   const [skills, setSkills] = useState(initSkills);
-  const [effectFilter, setEffectFilter] = useState([]);
+  // const [effectFilter, setEffectFilter] = useState([]);
 
   function initSkills() {
     const data = skill_data;
@@ -32,7 +34,7 @@ function Skills(props: IProps) {
   const skillTable = () => skills.map((skill, index) => (<SkillItem skill={skill} />));
 
   return (
-    <div>
+    <div className="content">
       {options()}
       <table>
         {skillTable()}
