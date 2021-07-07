@@ -4,13 +4,14 @@ import { Skill } from './common';
 
 interface Props {
   skill: Skill,
+  id: String
 }
 
 const SkillItem: React.FC<Props> = (props) => {
-  const { skill: propSkill } = props;
+  const { skill: propSkill, id: propId } = props;
   const [skill, setSkill] = useState(propSkill);
 
-  const gradeRate = () => ((!skill.need_skill_point) ? skill.grade_value : (skill.grade_value / skill.need_skill_point).toFixed(2));
+  const gradeRate = () => (!(skill.need_skill_point) || (skill.need_skill_point == -1) ? 0 : (skill.grade_value / skill.need_skill_point).toFixed(2));
 
   return (
     <tr>

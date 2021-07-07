@@ -35,6 +35,7 @@
     "@types/react-tabs": "^2.3.2",
     "antd": "^4.16.3",
     "bluebird": "^3.7.2",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
     "newton-raphson-method": "^1.0.2",
     "react": "^17.0.2",
