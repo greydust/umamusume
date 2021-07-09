@@ -2,6 +2,8 @@
   "extends": "./tsconfig.json",
   "include": [
     "babel.config.js",
+    "./config/**/*.js",
+    "./script/**/*.js",
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "./test/**/*.ts",
