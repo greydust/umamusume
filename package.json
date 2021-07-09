@@ -6,9 +6,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "npm install && node scripts/start.js",
-    "build": "npm install && node scripts/build.js",
-    "test": "node scripts/test.js"
+    "start": "npm install && node script/start.js",
+    "build": "npm install && node script/build.js",
+    "test": "node script/test.js"
   },
   "browserslist": {
     "production": [
