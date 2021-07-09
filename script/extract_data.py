@@ -135,12 +135,12 @@ def get_course_param(course):
 
 def extract_course():
     current.execute("SELECT * FROM race_course_set")
-    course_json = {}
+    course_json = []
     for item in current.fetchall():
         item["slope_per"] = get_course_slope_per(item)
         item["param"] = get_course_param(item)
         item["distance"] = int(item["distance"])
-        course_json[item["id"]] = item
+        course_json.append(item)
     with open(os.path.join(base_dir, "../src/db/course.json"), "w", newline='\n') as fp:
         json.dump(course_json, fp, indent=2, sort_keys=True)
 

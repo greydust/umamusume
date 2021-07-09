@@ -12,7 +12,6 @@ import Skill from './component/skill/index';
 import Localization from './localization';
 
 import { DataContext } from './data-context';
-// import skill_data from './db/skill.json';
 
 import 'antd/dist/antd.css';
 import './app.css';

@@ -19,7 +19,7 @@ import '../../app.css';
 
 import courseJson from '../../db/course.json';
 
-const courses = courseJson as { [key: string]: CourseDataType };
+const courses = courseJson as CourseDataType[];
 
 interface IProps {
   localization: LocalizationData;
@@ -126,8 +126,7 @@ class Simulator extends Component<IProps, IState> {
   };
 
   loadCourseData() {
-    for (const courseId of Object.keys(courses)) {
-      const course = courses[courseId];
+    for (const course of courses) {
       if (!(course.race_track_id in this.courseCategories)) {
         this.courseCategories[course.race_track_id] = {};
       }

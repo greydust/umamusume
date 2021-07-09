@@ -157,14 +157,14 @@ current.execute(sql)
 # for column in columns:
 #     print(column[0])
 
-skills = {}
+skills = []
 for row in current.fetchall():
     for key in row.keys():
         if key in parameter_converter:
             row[key] = parameter_converter[key](row[key])
     for source, target in condition_object_map.items():
         row[target] = parse_condition(row[source])
-    skills[row["id"]] = row
+    skills.append(row)
 
 # print(skill_array)
     
