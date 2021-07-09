@@ -39,6 +39,7 @@
     "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
     "newton-raphson-method": "^1.0.2",
+    "rc-tree-select": "^4.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.11.1",
