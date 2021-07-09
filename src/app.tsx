@@ -27,42 +27,19 @@ interface IProps {
 
 interface IState {
   localization: LocalizationData,
-  data: any,
-  setData: any,
-  initData: any,
-  availableData: any
+  data: {[key: string]: any},
+  setData: SetData,
+  initData: InitData,
+  availableData: string[],
 
 }
+
+type SetData = (dataType: string, fileName: string) => void;
+type InitData = (dataType: string) => void;
 
 class App extends Component<IProps, IState> {
   localization: Localization;
   static contextType = DataContext;
-
-  setData = (dataType: string, fileName: string) => {
-    if (!this.state.availableData.includes(dataType)) {
-      console.log("error");
-    }
-    let tmp = this.state;
-    tmp['data'][dataType]['overview'][fileName] = [];
-
-    let dataArray = require('./db/' + dataType + '/overview/' + fileName + '.json');
-    dataArray.forEach((d:any, _:any) => {
-      tmp['data'][dataType]['overview'][fileName].push(d);
-    })
-    this.setState(tmp);
-  }
-
-  initData = (dataType: string) => {
-    if (!this.state.availableData.includes(dataType)) {
-      console.log(this.state.availableData);
-      console.log("error", dataType);
-    }
-
-    let tmp = this.state;
-    tmp['data'][dataType]['detail'] = require('./db/' + dataType + '/detail.json');
-
-    this.setState(tmp);
-  }
 
   constructor(props: {}) {
     super(props);
@@ -80,6 +57,33 @@ class App extends Component<IProps, IState> {
       availableData: ["skill"],
     };
   }
+
+  setData: SetData = (dataType, fileName) => {
+    if (!this.state.availableData.includes(dataType)) {
+      console.log("error");
+    }
+    let tmp = this.state;
+    tmp['data'][dataType]['overview'][fileName] = [];
+
+    let dataArray = require('./db/' + dataType + '/overview/' + fileName + '.json');
+    dataArray.forEach((d:any) => {
+      tmp['data'][dataType]['overview'][fileName].push(d);
+    })
+    this.setState(tmp);
+  }
+
+  initData: InitData = (dataType) => {
+    if (!this.state.availableData.includes(dataType)) {
+      console.log(this.state.availableData);
+      console.log("error", dataType);
+    }
+
+    let tmp = this.state;
+    tmp['data'][dataType]['detail'] = require('./db/' + dataType + '/detail.json');
+
+    this.setState(tmp);
+  }
+
 
   changeLocalization = (locale: string) => {
     this.setState({

@@ -14,35 +14,30 @@ interface IProps {
 
 function Skills(props: IProps) {
 
-  const { data, setData, initData } = useContext(DataContext);
+  const {data, setData, initData} = useContext(DataContext);
 
-  const [skills, setSkills] = useState(initSkills);
-  const [runningStyle, setRunningStyle] = useState(["逃げ","先行", "差し", "追込"]);
-  const [phase, setPhase] = useState(["序盤","中盤", "終盤"]);
-
-  function initSkills() {
-    console.log(data.skill);
-    const skill = data.skill;
-    if (Object.keys(skill.detail).length == 0) {
+  const [skills, setSkills] = useState(() => {    
+    if (Object.keys(data.skill.detail).length == 0) {
       initData("skill");
-    } else if (!("general" in skill.overview)) { 
+    } else if (!("general" in data.skill.overview)) { 
       setData("skill", "general");
     }
     return data.skill.overview.general;
-  }
+  });
 
-  // useEffect(() => {
+  const [runningStyle, setRunningStyle] = useState(["逃げ","先行", "差し", "追込"]);
+  const [phase, setPhase] = useState(["序盤","中盤", "終盤"]);
+  const [option, setOption] = useState({phase: "全部", runningStyle: "全部"});
 
 
-  // });
 
-  const filterButton = (objects:any, label:string) => {
+  const filterButton = (objects: any, label: string) => {
     let tmp = [<label>
                 <input type='radio' name={label} value='all' checked/>
                 全部
               </label>];
-    tmp.push(objects.map((value:any, _:any) => (
-      <label>
+    tmp.push(objects.map( (value:any) => (
+      <label key={value}>
         <input type="radio" id={value} name={label} value={value}/>
         {value}
       </label>
@@ -61,9 +56,13 @@ function Skills(props: IProps) {
 
       </form>
       <table>
-        { skills && 
-          skills.map((skill:any, index:any) => (<SkillItem id={skill.id} skill={skill} />)) 
+        <thead></thead>
+        <tbody>
+        { 
+          skills && 
+          skills.map((skill:any) => <SkillItem key={skill.id} skill={skill} />) 
         }
+        </tbody>
       </table>
     </div>
   );
