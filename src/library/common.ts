@@ -167,7 +167,7 @@ export interface SkillData {
   popularity_add_param_2: number,
   popularity_add_value_2: number,
   disp_order: number,
-  icon_id: number,
+  icon_id: string,
   condition_1_object: SkillConditionObject,
   condition_2_object: SkillConditionObject,
 }

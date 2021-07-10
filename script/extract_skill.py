@@ -56,6 +56,12 @@ def to_float(var):
     except:
         return None
 
+def divide_by_10k(var):
+    try:
+        return float(var) / 10000.0
+    except:
+        return None
+
 parameter_converter = {
     "name": do_nothing,
     "need_skill_point": to_integer,
@@ -74,8 +80,8 @@ parameter_converter = {
     "potential_per_default": to_integer,
     "activate_lot": to_integer,
     "condition_1": do_nothing,
-    "float_ability_time_1": to_integer,
-    "float_cooldown_time_1": to_integer,
+    "float_ability_time_1": divide_by_10k,
+    "float_cooldown_time_1": divide_by_10k,
     "ability_type_1_1": to_integer,
     "ability_value_usage_1_1": to_integer,
     "ability_value_level_usage_1_1": to_integer,
@@ -120,7 +126,7 @@ parameter_converter = {
     "popularity_add_param_2": to_integer,
     "popularity_add_value_2": to_integer,
     "disp_order": to_integer,
-    "icon_id": to_integer,
+    "icon_id": do_nothing,
 }
 
 condition_object_map = {
