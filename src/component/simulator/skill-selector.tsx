@@ -8,7 +8,7 @@ import 'rc-tree-select/assets/index.less';
 
 import skillJson from '../../db/skill.json';
 
-const skills = skillJson as SkillData[];
+const skills = skillJson as { [key: string]: SkillData };
 
 interface IProps {
   localization: LocalizationData,

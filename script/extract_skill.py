@@ -159,21 +159,15 @@ def parse_condition(condition: str):
     return { "operator": operator, "key": key, "value": value }
 
 current.execute(sql)
-# columns = cursor.description
-# for column in columns:
-#     print(column[0])
-
-skills = []
+skills = {}
 for row in current.fetchall():
     for key in row.keys():
         if key in parameter_converter:
             row[key] = parameter_converter[key](row[key])
     for source, target in condition_object_map.items():
         row[target] = parse_condition(row[source])
-    skills.append(row)
+    skills[row["id"]] = (row)
 
-# print(skill_array)
-    
 with open(os.path.join(base_dir, '../src/db/skill.json'), 'w', encoding="utf8") as output:
     json.dump(skills, output, ensure_ascii=False, indent=2)
 
