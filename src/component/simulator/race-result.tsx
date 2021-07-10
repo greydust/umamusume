@@ -8,8 +8,12 @@ import { ResultFlag } from '../../library/race/common';
 
 import './simulator.css';
 
+
+import i18next from 'i18next';
+
+
 interface IProps {
-  localization: LocalizationData;
+  // localization: LocalizationData;
   raceResults: RaceResultData[];
   course?: CourseDataType,
 }
@@ -23,7 +27,7 @@ class RaceResult extends Component<IProps, IState> {
   }
 
   render() {
-    const { localization, raceResults, course } = this.props;
+    const { raceResults, course } = this.props;
     if (course === undefined || raceResults.length === 0) {
       return (
         <>
@@ -34,7 +38,7 @@ class RaceResult extends Component<IProps, IState> {
     const timeAverage = _.meanBy(raceResults, 'time');
     const timeShown: string = (timeAverage * constant.course.finishTimeCoef > parseFloat(course.finish_time_min) / 10000)
       ? Common.secondToTime(timeAverage * constant.course.finishTimeCoef)
-      : localization.site.TimeMin;
+      : i18next.t('TimeMin');
 
     let timeDeviationSum = 0;
     let fullLastSpurtCount = 0;
@@ -49,11 +53,11 @@ class RaceResult extends Component<IProps, IState> {
     return (
       <table>
         <tr>
-          <th>{localization.site.TimeAverage}</th>
-          <th>{localization.site.TimeStandardDeviation}</th>
-          <th>{localization.site.TimeShown}</th>
-          <th>{localization.site.FullLastSpurtRate}</th>
-          <th>{localization.site.HpLeftAverage}</th>
+          <th>{i18next.t('TimeAverage')}</th>
+          <th>{i18next.t('TimeStandardDeviation')}</th>
+          <th>{i18next.t('TimeShown')}</th>
+          <th>{i18next.t('FullLastSpurtRate')}</th>
+          <th>{i18next.t('HpLeftAverage')}</th>
         </tr>
         <tr>
           <td>{timeAverage.toFixed(3)}</td>

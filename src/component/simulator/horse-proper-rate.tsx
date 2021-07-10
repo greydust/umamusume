@@ -6,8 +6,12 @@ import { LocalizationData } from '../../library/common';
 
 import './simulator.css';
 
+
+import i18next from 'i18next';
+
+
 interface IProps {
-  localization: LocalizationData;
+  // localization: LocalizationData;
   setData: (key: string, value: any) => void,
   state: { [key: string]: string },
 
@@ -35,22 +39,22 @@ class HorseProperRate extends Component<IProps, IState> {
   };
 
   render() {
-    const { localization, setData, state } = this.props;
+    const { setData, state } = this.props;
     return (
       <>
         { _.map(HorseProperRate.properRateTypes, (properTypes, properName) => (
           <>
-            <Row gutter={[8, 8]}><Col span={24}>{localization.site[properName]}</Col></Row>
+            <Row gutter={[8, 8]}><Col span={24}>{i18next.t(properName)}</Col></Row>
             <Row gutter={[8, 8]}>
               { _.map(properTypes, (properRateType) => {
                 const camelProperRateType = _.camelCase(properRateType);
                 return (
                   <Col span={4}>
                     <div className="flex">
-                      <span className="select-label">{`${localization.site[properRateType]}:`}</span>
+                      <span className="select-label">{`${i18next.t(properRateType)}:`}</span>
                       <Select className="select" value={state[camelProperRateType]} onChange={(value) => setData(camelProperRateType, value)}>
                         { _.map(HorseProperRate.properRate, (value, key) => (
-                          <Select.Option value={value}>{localization.site[key]}</Select.Option>
+                          <Select.Option value={value}>{i18next.t(key)}</Select.Option>
                         ))}
                       </Select>
                     </div>

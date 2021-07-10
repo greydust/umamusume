@@ -6,8 +6,12 @@ import { LocalizationData } from '../../library/common';
 
 import './simulator.css';
 
+
+import i18next from 'i18next';
+
+
 interface IProps {
-  localization: LocalizationData;
+  // localization: LocalizationData;
   setData: (key: string, value: any) => void,
   state: { [key: string]: number },
 }
@@ -25,13 +29,13 @@ class HorseStatData extends Component<IProps, IState> {
   };
 
   render() {
-    const { localization, setData, state } = this.props;
+    const { setData, state } = this.props;
     return (
       <Row gutter={[8, 8]}>
         { _.map(HorseStatData.stats, (value, key) => (
           <Col span={4}>
             <div className="flex">
-              <span className="select-label">{`${localization.site[value]}:`}</span>
+              <span className="select-label">{`${i18next.t(value)}:`}</span>
               <InputNumber className="select" value={state[key]} min={1} max={1200} onChange={(data) => setData(key, data)} />
             </div>
           </Col>

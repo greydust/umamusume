@@ -14,8 +14,15 @@ const characters = characterJson as { [key: string]: {} };
 const relations = relationJson as { [key: string]: string };
 const relationMembers = relationMemberJson as { [key: string]: string[] };
 
+
+import i18next from 'i18next';
+
+
+
+
+
 interface IProps {
-  localization: LocalizationData
+  // localization: LocalizationData
 }
 
 interface IState {
@@ -56,12 +63,11 @@ class RelationGraph extends Component<IProps, IState> {
   }
 
   idToPortrait(id: string) {
-    const { localization } = this.props;
     return (
       <img
         className="portrait"
         src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${id}.png`}
-        alt={localization.character.name[id]}
+        alt={i18next.t('character.name.' + id)}
       />
     );
   }

@@ -13,8 +13,14 @@ import './simulator.css';
 
 const { Option } = Select;
 
+
+import i18next from 'i18next';
+
+
+
+
 interface IProps {
-  localization: LocalizationData,
+  // localization: LocalizationData,
   courseCategories: CourseCategory,
   setData: (key: string, value: any) => void,
   state: {
@@ -38,17 +44,17 @@ class CourseData extends Component<IProps, IState> {
   }
 
   getStrategyComponent() {
-    const { localization, setData, state } = this.props;
+    const { setData, state } = this.props;
     const { strategy } = state;
     return (
       <Col span={4}>
         <div className="flex">
-          <span className="select-label">{`${localization.site.Strategy}:`}</span>
+          <span className="select-label">{`${i18next.t('Strategy')}:`}</span>
           <Select className="select" value={strategy} onChange={(value) => setData('strategy', value)}>
-            <Option value={RunningStyle.Nige}>{localization.site.RunningStyleNige}</Option>
-            <Option value={RunningStyle.Senko}>{localization.site.RunningStyleSenko}</Option>
-            <Option value={RunningStyle.Sashi}>{localization.site.RunningStyleSashi}</Option>
-            <Option value={RunningStyle.Oikomi}>{localization.site.RunningStyleOikomi}</Option>
+            <Option value={RunningStyle.Nige}>{i18next.t('RunningStyleNige')}</Option>
+            <Option value={RunningStyle.Senko}>{i18next.t('RunningStyleSenko')}</Option>
+            <Option value={RunningStyle.Sashi}>{i18next.t('RunningStyleSashi')}</Option>
+            <Option value={RunningStyle.Oikomi}>{i18next.t('RunningStyleOikomi')}</Option>
           </Select>
         </div>
       </Col>
@@ -56,17 +62,17 @@ class CourseData extends Component<IProps, IState> {
   }
 
   getGroundStatusComponent() {
-    const { localization, setData, state } = this.props;
+    const { setData, state } = this.props;
     const { groundStatus } = state;
     return (
       <Col span={4}>
         <div className="flex">
-          <span className="select-label">{`${localization.site.GroundStatus}:`}</span>
+          <span className="select-label">{`${i18next.t('GroundStatus')}:`}</span>
           <Select className="select" value={groundStatus} onChange={(value) => setData('groundStatus', value)}>
-            <Option value={GroundStatus.Good}>{localization.site.GroundStatusGood}</Option>
-            <Option value={GroundStatus.SlightlyHeavy}>{localization.site.GroundStatusSlightlyHeavy}</Option>
-            <Option value={GroundStatus.Heavy}>{localization.site.GroundStatusHeavy}</Option>
-            <Option value={GroundStatus.Bad}>{localization.site.GroundStatusBad}</Option>
+            <Option value={GroundStatus.Good}>{i18next.t('GroundStatusGood')}</Option>
+            <Option value={GroundStatus.SlightlyHeavy}>{i18next.t('GroundStatusSlightlyHeavy')}</Option>
+            <Option value={GroundStatus.Heavy}>{i18next.t('GroundStatusHeavy')}</Option>
+            <Option value={GroundStatus.Bad}>{i18next.t('GroundStatusBad')}</Option>
           </Select>
         </div>
       </Col>
@@ -74,17 +80,17 @@ class CourseData extends Component<IProps, IState> {
   }
 
   getRacecourseComponent() {
-    const { localization, setData, state } = this.props;
+    const { setData, state } = this.props;
     const { racecourse } = state;
     return (
       <Col span={4}>
         <div className="flex">
-          <span className="select-label">{`${localization.site.Racecourse}:`}</span>
-          <Select className="select" value={racecourse} onChange={(value) => setData('racecourse', value)}>
+          <span className="select-label">{`${i18next.t('Racecourse')}:`}</span>
+{/*          <Select className="select" value={racecourse} onChange={(value) => setData('racecourse', value)}>
             { _.map(localization.course.racecourse, (value: string, key: string) => (
               <Option value={key}>{value}</Option>
             ))}
-          </Select>
+          </Select>*/}
         </div>
       </Col>
     );
@@ -92,7 +98,7 @@ class CourseData extends Component<IProps, IState> {
 
   getGroundComponent() {
     const {
-      localization, courseCategories, setData, state,
+      courseCategories, setData, state,
     } = this.props;
     const { racecourse, ground } = state;
 
@@ -102,10 +108,10 @@ class CourseData extends Component<IProps, IState> {
     return (
       <Col span={4}>
         <div className="flex">
-          <span className="select-label">{`${localization.site.Ground}:`}</span>
+          <span className="select-label">{`${i18next.t('Ground')}:`}</span>
           <Select className="select" value={ground} onChange={(value) => setData('ground', value)}>
             { _.map(courseCategories[racecourse], (value: string, key: string) => (
-              <Option value={key}>{localization.course.ground[key]}</Option>
+              <Option value={key}>{i18next.t('course.ground' + [key])}</Option>
             ))}
           </Select>
         </div>
@@ -115,7 +121,7 @@ class CourseData extends Component<IProps, IState> {
 
   getDistanceComponent() {
     const {
-      localization, courseCategories, setData, state,
+      courseCategories, setData, state,
     } = this.props;
     const { racecourse, ground, distance } = state;
 
@@ -125,7 +131,7 @@ class CourseData extends Component<IProps, IState> {
     return (
       <Col span={4}>
         <div className="flex">
-          <span className="select-label">{`${localization.site.Distance}:`}</span>
+          <span className="select-label">{`${i18next.t('Distance')}:`}</span>
           <Select className="select" value={distance} onChange={(value) => setData('distance', value)}>
             { _.map(courseCategories[racecourse][ground], (value: string, key: number) => (
               <Option value={key}>{key}</Option>

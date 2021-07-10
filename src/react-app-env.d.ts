@@ -1,76 +1,56 @@
-/// <reference types="node" />
-/// <reference types="react" />
-/// <reference types="react-dom" />
+import _ from 'lodash';
+import React, { Component } from 'react';
+import TreeSelect from 'rc-tree-select';
 
-declare namespace NodeJS {
-  interface ProcessEnv {
-    readonly NODE_ENV: 'development' | 'production' | 'test';
-    readonly PUBLIC_URL: string;
+import { LocalizationData, SkillData } from '../../library/common';
+
+import 'rc-tree-select/assets/index.less';
+
+import skillJson from '../../db/skill.json';
+
+const skills = skillJson as SkillData[];
+
+interface IProps {
+  localization: LocalizationData,
+  setData: (key: string, value: any) => void,
+  state: {
+  },
+}
+
+interface IState {
+}
+
+class SkillSelector extends Component<IProps, IState> {
+  private _skillSelectData: { key: string, label: string, value: string, disabled: boolean }[];
+
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+    };
+
+    this._skillSelectData = _.map(skills, (skill) => ({
+      key: skill.id,
+      label: skill.name,
+      value: skill.id,
+      disabled: false,
+    }));
+  }
+
+  render() {
+    return (
+      <TreeSelect
+        className="check-select"
+        dropdownPopupAlign={{
+          overflow: { adjustY: 0, adjustX: 0 },
+          offset: [0, 2],
+        }}
+        treeLine
+        autoClearSearchValue
+        treeData={this._skillSelectData}
+        showCheckedStrategy={TreeSelect.SHOW_PARENT}
+      />
+    );
   }
 }
 
-declare module '*.avif' {
-  const src: string;
-  export default src;
-}
-
-declare module '*.bmp' {
-  const src: string;
-  export default src;
-}
-
-declare module '*.gif' {
-  const src: string;
-  export default src;
-}
-
-declare module '*.jpg' {
-  const src: string;
-  export default src;
-}
-
-declare module '*.jpeg' {
-  const src: string;
-  export default src;
-}
-
-declare module '*.png' {
-  const src: string;
-  export default src;
-}
-
-declare module '*.webp' {
-  const src: string;
-  export default src;
-}
-
-declare module '*.svg' {
-  import * as React from 'react';
-
-  export const ReactComponent: React.FunctionComponent<React.SVGProps<
-  SVGSVGElement
-  > & { title?: string }>;
-
-  const src: string;
-  export default src;
-}
-
-declare module '*.module.css' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
-}
-
-declare module '*.module.scss' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
-}
-
-declare module '*.module.sass' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
-}
-
-declare module '*.module.less' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
-}
+export default SkillSelector;

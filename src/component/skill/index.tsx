@@ -1,60 +1,91 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback  } from 'react';
 import { DataContext } from '../../data-context';
+
+import _ from 'lodash';
 
 import { Skill } from './common';
 import SkillItem from './skill-item';
 
-// import skill_new from '../../db/skill/overview/general.json';
-
 import '../../app.css';
+
+
+import i18next from 'i18next';
+
 
 interface IProps {
 }
 
 function Skills(props: IProps) {
-  const { data, setData, initData } = useContext(DataContext);
 
-  const [skills, setSkills] = useState(() => {
-    if (Object.keys(data.skill.detail).length == 0) {
-      initData('skill');
-    } else if (!('general' in data.skill.overview)) {
-      setData('skill', 'general');
+  const {data, initData} = useContext(DataContext);
+
+  const [skills, setSkills] = useState(() => {    
+    if (!("general" in data.skill.overview)) { 
+      initData("skill", "general");
     }
     return data.skill.overview.general;
   });
 
-  const [runningStyle, setRunningStyle] = useState(['逃げ', '先行', '差し', '追込']);
-  const [phase, setPhase] = useState(['序盤', '中盤', '終盤']);
-  const [option, setOption] = useState({ phase: '全部', runningStyle: '全部' });
+  const [runningStyle, setRunningStyle] = useState({
+    "不限": -1,
+    "逃げ": 1,
+    "先行": 2,
+    "差し": 3,
+    "追込": 4,
+  });
+  const [phase, setPhase] = useState({
+    "不限": -1,
+    "序盤": 0,
+    "中盤": 1, 
+    "終盤": 2
+  });
+
+  const [option, setOption] = useState({
+    phase: -1, 
+    // phase_random: -1, 
+    running_style: -1
+  });
+
+  const onChange = useCallback(e => {
+    let tmp: any = {};
+    tmp[e.target.name] = parseInt(e.target.value);
+    setOption(
+      Object.assign(
+        {}, 
+        option,
+        tmp
+      )
+    )
+  } , [])
+
 
   const filterButton = (objects: any, label: string) => {
-    const tmp = [<label>
-      <input type="radio" name={label} value="all" checked />
-      全部
-    </label>];
-    tmp.push(objects.map((value:any) => (
-      <label key={value}>
-        <input type="radio" id={value} name={label} value={value} />
-        {value}
+    let tmp = Object.entries(objects).map((obj:any) => (
+      <label key={obj[0]}>
+        <input type="radio" id={obj[1]} name={label} value={obj[1]} onChange={onChange}/>
+        {obj[0]}
       </label>
-    )));
-    tmp.push(<br />);
+    ));
     return tmp;
-  };
+  }
+
+  
 
   return (
     <div className="content">
       <form>
-        {filterButton(phase, 'phase')}
-        {filterButton(runningStyle, 'runningStyle')}
+        {filterButton(phase, "phase")}
+        {filterButton(runningStyle, "running_style")}
 
       </form>
       <table>
-        <thead />
+        <thead></thead>
         <tbody>
-          {
+        { 
+          skills && 
           skills
-          && skills.map((skill:any) => <SkillItem key={skill.id} skill={skill} />)
+            .filter((skill:any)=> (skill.tag.phase === option.phase || skill.tag.phase_random === option.phase) && skill.tag.running_style === option.running_style)
+            .map((skill:any) => <SkillItem key={skill.id} skill={skill} />) 
         }
         </tbody>
       </table>

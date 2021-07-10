@@ -1,3 +1,4 @@
+
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
@@ -19,14 +20,10 @@ import '../../app.css';
 
 import courseJson from '../../db/course.json';
 
-
-import i18next from 'i18next';
-
-
-const courses = courseJson as { [key: string]: CourseDataType };
+const courses = courseJson as CourseDataType[];
 
 interface IProps {
-  // localization: LocalizationData;
+  localization: LocalizationData;
 }
 
 interface IProperRate extends IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate {
@@ -130,8 +127,7 @@ class Simulator extends Component<IProps, IState> {
   };
 
   loadCourseData() {
-    for (const courseId of Object.keys(courses)) {
-      const course = courses[courseId];
+    for (const course of courses) {
       if (!(course.race_track_id in this.courseCategories)) {
         this.courseCategories[course.race_track_id] = {};
       }
@@ -143,27 +139,32 @@ class Simulator extends Component<IProps, IState> {
   }
 
   render() {
+    const { localization } = this.props;
     const { raceResults, course } = this.state;
     return (
       <div className="content">
         <HorseData
+          localization={localization}
           setData={this.setData}
           state={this.state}
         />
         <CourseData
+          localization={localization}
           courseCategories={this.courseCategories}
           setData={this.setData}
           state={this.state}
         />
         <SkillSelector
+          localization={localization}
           setData={this.setData}
           state={this.state}
         />
         <SimulatorCalculator
+          localization={localization}
           state={this.state}
           setData={this.setData}
         />
-        <RaceResult raceResults={raceResults} course={course} />
+        <RaceResult localization={localization} raceResults={raceResults} course={course} />
       </div>
     );
   }

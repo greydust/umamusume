@@ -18,6 +18,10 @@ import RaceHorse from '../../library/race/race-horse';
 import 'antd/dist/antd.css';
 import './simulator.css';
 
+
+import i18next from 'i18next';
+
+
 interface SimulatorState extends IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate {
   strategy?: string,
   groundStatus?: string,
@@ -28,7 +32,7 @@ interface SimulatorState extends IHorseState, IGroundProperRate, IDistanceProper
 }
 
 interface IProps {
-  localization: LocalizationData;
+  // localization: LocalizationData;
   setData: (key: string, value: any) => void,
   state: SimulatorState,
 }
@@ -133,7 +137,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
   };
 
   render() {
-    const { localization, state } = this.props;
+    const { state } = this.props;
     const { course } = state;
     const { finished, rounds, running } = this.state;
     const progressPercent = _.round(finished / rounds * 100, 1);
@@ -141,7 +145,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
       <Row gutter={[8, 8]}>
         <Col span={4}>
           <div className="flex">
-            <span className="select-label">{`${localization.site.SimulatorCalculateRounds}:`}</span>
+            <span className="select-label">{`${i18next.t('SimulatorCalculateRounds')}:`}</span>
             <InputNumber
               className="select"
               value={rounds}
@@ -155,7 +159,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
               disabled={course === undefined || running}
               onClick={this.calculate}
             >
-              {localization.site.SimulatorCalculate}
+              {i18next.t('SimulatorCalculate')}
             </Button>
             { running ? <Progress className="select-label" percent={progressPercent} /> : null }
           </div>

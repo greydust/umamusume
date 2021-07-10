@@ -17,6 +17,13 @@ const characters = characterJson as { [key: string]: {} };
 const relations = relationJson as { [key: string]: string };
 const relationMembers = relationMemberJson as { [key: string]: string[] };
 
+
+
+import i18next from 'i18next';
+
+
+
+
 interface HorseRow {
   name: string;
   relation: number;
@@ -24,7 +31,7 @@ interface HorseRow {
 }
 
 interface IProps {
-  localization: LocalizationData;
+  // localization: LocalizationData;
 }
 
 interface IState {
@@ -57,12 +64,11 @@ class RelationQuery extends Component<IProps, IState> {
 
   buildRelationArray() {
     const { horseId } = this.state;
-    const { localization } = this.props;
     let rel: HorseRow[] = [];
     this.horses.forEach((targetHorseId) => {
       if (targetHorseId !== horseId) {
         rel.push({
-          name: localization.character.name[targetHorseId],
+          name: i18next.t('character.name.' + targetHorseId),
           relation: RelationQuery.calculateRelation(horseId, targetHorseId),
           image: `${process.env.PUBLIC_URL}/static/image/character/portrait/${targetHorseId}.png`,
         });
@@ -80,7 +86,6 @@ class RelationQuery extends Component<IProps, IState> {
   }
 
   render() {
-    const { localization } = this.props;
     const relationArray = this.buildRelationArray();
     return (
       <div className="content">
@@ -97,9 +102,9 @@ class RelationQuery extends Component<IProps, IState> {
                   <img
                     className="portrait"
                     src={`${process.env.PUBLIC_URL}/static/image/character/portrait/${targetHorseId}.png`}
-                    alt={localization.character.name[targetHorseId]}
+                    alt={i18next.t('character.name.' + targetHorseId)}
                   />
-                  {localization.character.name[targetHorseId]}
+                  {i18next.t('character.name.' + targetHorseId)}
                 </MenuItem>
               ))}
             </Select>

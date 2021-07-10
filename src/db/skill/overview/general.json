@@ -34,6 +34,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -83,6 +88,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -140,6 +150,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -189,6 +204,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -246,6 +266,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -295,6 +320,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -352,6 +382,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -401,6 +436,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -450,6 +490,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -499,6 +544,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -548,6 +598,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -597,6 +652,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -646,6 +706,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -695,6 +760,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -744,6 +814,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -793,6 +868,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -842,6 +922,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -891,6 +976,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -940,6 +1030,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -989,6 +1084,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -1038,6 +1138,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1087,6 +1192,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1136,6 +1246,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1193,6 +1308,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -1242,6 +1362,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -1291,6 +1416,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1340,6 +1470,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1397,6 +1532,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -1446,6 +1586,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1495,6 +1640,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1544,6 +1694,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "406",
@@ -1593,6 +1748,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1642,6 +1802,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -1691,6 +1856,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1748,6 +1918,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -1797,6 +1972,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1846,6 +2026,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -1895,6 +2080,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -1944,6 +2134,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -1993,6 +2188,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2050,6 +2250,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -2099,6 +2304,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2148,6 +2358,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -2205,6 +2420,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -2254,6 +2474,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2303,6 +2528,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -2352,6 +2582,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2401,6 +2636,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2450,6 +2690,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2499,6 +2744,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2548,6 +2798,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2597,6 +2852,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2661,6 +2921,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401/403",
@@ -2710,6 +2975,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -2759,6 +3029,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2808,6 +3083,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -2857,6 +3137,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -2906,6 +3191,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -2955,6 +3245,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -3004,6 +3299,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -3053,6 +3353,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -3102,6 +3407,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -3151,6 +3461,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -3200,6 +3515,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -3249,6 +3569,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -3298,6 +3623,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -3347,6 +3677,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -3396,6 +3731,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -3445,6 +3785,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -3494,6 +3839,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -3543,6 +3893,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -3592,6 +3947,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -3641,6 +4001,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -3690,6 +4055,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -3739,6 +4109,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -3788,6 +4163,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -3837,6 +4217,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -3886,6 +4271,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -3935,6 +4325,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -3984,6 +4379,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -4033,6 +4433,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -4082,6 +4487,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -4131,6 +4541,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -4180,6 +4595,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -4229,6 +4649,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -4278,6 +4703,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -4327,6 +4757,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -4376,6 +4811,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -4425,6 +4865,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -4474,6 +4919,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -4523,6 +4973,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -4572,6 +5027,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -4621,6 +5081,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -4670,6 +5135,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -4719,6 +5189,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -4768,6 +5243,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -4817,6 +5297,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -4866,6 +5351,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "403",
@@ -4915,6 +5405,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -4964,6 +5459,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -5013,6 +5513,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "403",
@@ -5062,6 +5567,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -5111,6 +5621,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -5160,6 +5675,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -5209,6 +5729,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -5258,6 +5783,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -5307,6 +5837,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -5356,6 +5891,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -5405,6 +5945,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -5454,6 +5999,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -5503,6 +6053,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -5552,6 +6107,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -5601,6 +6161,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -5650,6 +6215,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "404",
@@ -5699,6 +6269,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "404",
@@ -5748,6 +6323,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "404",
@@ -5797,6 +6377,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "404",
@@ -5846,6 +6431,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "404",
@@ -5895,6 +6485,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "404",
@@ -5944,6 +6539,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "404",
@@ -5993,6 +6593,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "404",
@@ -6042,6 +6647,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "404",
@@ -6091,6 +6701,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "405",
@@ -6140,6 +6755,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "405",
@@ -6189,6 +6809,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "405",
@@ -6238,6 +6863,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -6287,6 +6917,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -6336,6 +6971,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -6385,6 +7025,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -6434,6 +7079,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -6483,6 +7133,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -6532,6 +7187,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -6581,6 +7241,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "403",
@@ -6630,6 +7295,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "404",
@@ -6679,6 +7349,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "404",
@@ -6728,6 +7403,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -6777,6 +7457,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -6826,6 +7511,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -6875,6 +7565,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -6924,6 +7619,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -6973,6 +7673,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -7022,6 +7727,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -7071,6 +7781,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -7120,6 +7835,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -7169,6 +7889,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "403",
@@ -7218,6 +7943,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -7267,6 +7997,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -7316,6 +8051,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -7365,6 +8105,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -7414,6 +8159,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -7463,6 +8213,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -7512,6 +8267,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -7561,6 +8321,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -7610,6 +8375,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -7659,6 +8429,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -7708,6 +8483,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -7757,6 +8537,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -7806,6 +8591,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "401",
@@ -7855,6 +8645,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "301/407",
@@ -7904,6 +8699,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "301/407",
@@ -7953,6 +8753,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "301/407",
@@ -8002,6 +8807,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 0,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "301/402",
@@ -8051,6 +8861,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 0,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "301/402",
@@ -8100,6 +8915,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "301/403",
@@ -8149,6 +8969,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "301/403",
@@ -8198,6 +9023,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "302/401",
@@ -8247,6 +9077,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/401",
@@ -8296,6 +9131,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "302/402",
@@ -8345,6 +9185,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/402",
@@ -8394,6 +9239,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "302/402",
@@ -8443,6 +9293,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/402",
@@ -8500,6 +9355,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "303/403",
@@ -8557,6 +9417,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/403",
@@ -8606,6 +9471,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "303/403",
@@ -8655,6 +9525,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/403",
@@ -8704,6 +9579,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "303/401",
@@ -8753,6 +9633,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/401",
@@ -8802,6 +9687,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -8851,6 +9741,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 0,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/301/403",
@@ -8900,6 +9795,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 0,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/301/403",
@@ -8949,6 +9849,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/302/401",
@@ -8998,6 +9903,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/302/401",
@@ -9047,6 +9957,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/303/403",
@@ -9096,6 +10011,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/303/403",
@@ -9145,6 +10065,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/301/402",
@@ -9194,6 +10119,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/301/402",
@@ -9243,6 +10173,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/302/402",
@@ -9292,6 +10227,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/302/402",
@@ -9341,6 +10281,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/303/401",
@@ -9390,6 +10335,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/303/401",
@@ -9439,6 +10389,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/302/401",
@@ -9488,6 +10443,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/302/401",
@@ -9537,6 +10497,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/303/403",
@@ -9586,6 +10551,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/303/403",
@@ -9635,6 +10605,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/303/401",
@@ -9684,6 +10659,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/303/401",
@@ -9733,6 +10713,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/302/402",
@@ -9782,6 +10767,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/302/402",
@@ -9831,6 +10821,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/303/401",
@@ -9880,6 +10875,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/303/401",
@@ -9929,6 +10929,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "303/403",
@@ -9978,6 +10983,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/403",
@@ -10027,6 +11037,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/403",
@@ -10076,6 +11091,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/403",
@@ -10125,6 +11145,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/302/402",
@@ -10174,6 +11199,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/303/401",
@@ -10223,6 +11253,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/303/401",
@@ -10272,6 +11307,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/301/401",
@@ -10321,6 +11361,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/301/401",
@@ -10370,6 +11415,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/301/402",
@@ -10419,6 +11469,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/301/402",
@@ -10468,6 +11523,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/303/403",
@@ -10517,6 +11577,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/303/403",
@@ -10566,6 +11631,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/302/402",
@@ -10615,6 +11685,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/302/402",
@@ -10664,6 +11739,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/302/401",
@@ -10713,6 +11793,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/302/401",
@@ -10762,6 +11847,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/303/401",
@@ -10811,6 +11901,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/303/401",
@@ -10860,6 +11955,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/402",
@@ -10909,6 +12009,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/402",
@@ -10958,6 +12063,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/303/401",
@@ -11007,6 +12117,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/303/401",
@@ -11056,6 +12171,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -11105,6 +12225,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -11154,6 +12279,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/406",
@@ -11203,6 +12333,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/406",
@@ -11252,6 +12387,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "406",
@@ -11301,6 +12441,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "406",
@@ -11350,6 +12495,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "406",
@@ -11399,6 +12549,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "406",
@@ -11448,6 +12603,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "301/406",
@@ -11497,6 +12657,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/406",
@@ -11546,6 +12711,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/406",
@@ -11595,6 +12765,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "301/406",
@@ -11644,6 +12819,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/406",
@@ -11693,6 +12873,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/406",
@@ -11742,6 +12927,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "301/406",
@@ -11791,6 +12981,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/406",
@@ -11840,6 +13035,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/406",
@@ -11889,6 +13089,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "301/406",
@@ -11938,6 +13143,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/406",
@@ -11987,6 +13197,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "303/406",
@@ -12036,6 +13251,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -12085,6 +13305,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -12134,6 +13359,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": -1,
 			"tag_id": "402",
@@ -12183,6 +13413,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/401",
@@ -12232,6 +13467,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/401",
@@ -12281,6 +13521,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/401",
@@ -12330,6 +13575,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/401",
@@ -12379,6 +13629,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/302/401",
@@ -12428,6 +13683,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/302/401",
@@ -12477,6 +13737,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/302/403",
@@ -12526,6 +13791,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/302/403",
@@ -12583,6 +13853,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/302/403",
@@ -12640,6 +13915,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/302/403",
@@ -12689,6 +13969,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/301/406",
@@ -12738,6 +14023,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/301/406",
@@ -12787,6 +14077,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "201/301/406",
@@ -12836,6 +14131,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "201/301/406",
@@ -12885,6 +14185,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/401",
@@ -12934,6 +14239,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/401",
@@ -12983,6 +14293,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/401",
@@ -13032,6 +14347,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/401",
@@ -13081,6 +14401,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/302/401",
@@ -13130,6 +14455,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/302/401",
@@ -13179,6 +14509,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/302/403",
@@ -13228,6 +14563,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/302/403",
@@ -13277,6 +14617,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/401",
@@ -13326,6 +14671,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/401",
@@ -13383,6 +14733,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/302/406",
@@ -13440,6 +14795,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/302/406",
@@ -13489,6 +14849,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "202/302/406",
@@ -13538,6 +14903,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "202/302/406",
@@ -13587,6 +14957,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/401",
@@ -13636,6 +15011,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/401",
@@ -13685,6 +15065,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/401",
@@ -13734,6 +15119,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/401",
@@ -13783,6 +15173,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/301/405",
@@ -13832,6 +15227,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/301/405",
@@ -13889,6 +15289,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/302/403",
@@ -13946,6 +15351,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/302/403",
@@ -13995,6 +15405,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/402",
@@ -14044,6 +15459,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/402",
@@ -14093,6 +15513,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/303/406",
@@ -14142,6 +15567,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/303/406",
@@ -14191,6 +15621,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "203/302/406",
@@ -14240,6 +15675,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "203/302/406",
@@ -14289,6 +15729,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/401",
@@ -14338,6 +15783,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/401",
@@ -14387,6 +15837,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/401",
@@ -14436,6 +15891,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/401",
@@ -14485,6 +15945,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/302/401",
@@ -14534,6 +15999,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/302/401",
@@ -14583,6 +16053,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/402",
@@ -14632,6 +16107,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/303/401",
@@ -14681,6 +16161,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/303/401",
@@ -14738,6 +16223,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/302/406",
@@ -14795,6 +16285,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/302/406",
@@ -14844,6 +16339,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "204/303/406",
@@ -14893,6 +16393,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "204/303/406",
@@ -14942,6 +16447,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/401",
@@ -14991,6 +16501,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/401",
@@ -15040,6 +16555,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/401",
@@ -15089,6 +16609,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/401",
@@ -15138,6 +16663,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 0,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/301/403",
@@ -15187,6 +16717,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 0,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/301/403",
@@ -15236,6 +16771,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 0,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/301/401",
@@ -15285,6 +16825,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/402",
@@ -15334,6 +16879,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/402",
@@ -15383,6 +16933,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/302/403",
@@ -15432,6 +16987,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/302/403",
@@ -15481,6 +17041,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 0,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/301/406",
@@ -15530,6 +17095,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/401",
@@ -15579,6 +17149,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/401",
@@ -15628,6 +17203,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/401",
@@ -15677,6 +17257,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/401",
@@ -15726,6 +17311,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/403",
@@ -15775,6 +17365,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/403",
@@ -15824,6 +17419,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/403",
@@ -15873,6 +17473,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/403",
@@ -15922,6 +17527,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/302/402",
@@ -15971,6 +17581,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/302/402",
@@ -16020,6 +17635,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/302/403",
@@ -16069,6 +17689,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/302/403",
@@ -16118,6 +17743,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/303/402",
@@ -16167,6 +17797,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/303/402",
@@ -16216,6 +17851,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/401",
@@ -16265,6 +17905,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/401",
@@ -16314,6 +17959,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/401",
@@ -16363,6 +18013,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/401",
@@ -16412,6 +18067,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/403",
@@ -16461,6 +18121,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/403",
@@ -16510,6 +18175,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/401",
@@ -16559,6 +18229,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/401",
@@ -16608,6 +18283,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/303/402",
@@ -16657,6 +18337,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/303/402",
@@ -16706,6 +18391,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/302/405",
@@ -16755,6 +18445,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/302/405",
@@ -16804,6 +18499,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/303/406",
@@ -16853,6 +18553,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/303/406",
@@ -16902,6 +18607,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/401",
@@ -16951,6 +18661,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/401",
@@ -17000,6 +18715,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/401",
@@ -17049,6 +18769,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/401",
@@ -17098,6 +18823,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/405",
@@ -17147,6 +18877,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/405",
@@ -17196,6 +18931,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/402",
@@ -17245,6 +18985,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/402",
@@ -17294,6 +19039,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/402",
@@ -17343,6 +19093,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/402",
@@ -17392,6 +19147,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/303/405",
@@ -17441,6 +19201,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/303/405",
@@ -17490,6 +19255,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/303/406",
@@ -17539,6 +19309,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 2,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/303/406",
@@ -17596,6 +19371,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "101/405",
@@ -17653,6 +19433,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "101/405",
@@ -17710,6 +19495,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "102/405",
@@ -17767,6 +19557,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 2
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "102/405",
@@ -17824,6 +19619,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "103/405",
@@ -17881,6 +19681,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 3
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "103/405",
@@ -17938,6 +19743,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "104/405",
@@ -17995,6 +19805,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": 4
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "104/405",
@@ -18060,6 +19875,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -18125,6 +19945,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -18174,6 +19999,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -18223,6 +20053,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -18272,6 +20107,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -18321,6 +20161,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "403",
@@ -18370,6 +20215,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -18419,6 +20269,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "402",
@@ -18468,6 +20323,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -18517,6 +20377,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -18566,6 +20431,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -18615,6 +20485,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "401",
@@ -18664,6 +20539,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "302/401",
@@ -18713,6 +20593,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 1,
 			"tag_id": "302/401",
@@ -18762,6 +20647,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -18811,6 +20701,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -18860,6 +20755,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -18909,6 +20809,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -18958,6 +20863,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19007,6 +20917,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19056,6 +20971,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19113,6 +21033,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401/403",
@@ -19162,6 +21087,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -19211,6 +21141,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19260,6 +21195,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19317,6 +21257,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401/403",
@@ -19366,6 +21311,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19415,6 +21365,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19464,6 +21419,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "406",
@@ -19513,6 +21473,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19562,6 +21527,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -19611,6 +21581,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19668,6 +21643,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401/403",
@@ -19717,6 +21697,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19766,6 +21751,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "403",
@@ -19815,6 +21805,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19864,6 +21859,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -19913,6 +21913,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -19970,6 +21975,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401/403",
@@ -20019,6 +22029,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20068,6 +22083,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -20125,6 +22145,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401/403",
@@ -20174,6 +22199,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20223,6 +22253,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "402",
@@ -20272,6 +22307,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20321,6 +22361,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": 2,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20370,6 +22415,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20419,6 +22469,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20468,6 +22523,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20517,6 +22577,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": 1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401",
@@ -20581,6 +22646,11 @@
 				]
 			}
 		],
+		"tag": {
+			"phase": -1,
+			"phase_random": -1,
+			"running_style": -1
+		},
 		"other": {
 			"group_rate": 2,
 			"tag_id": "401/403",

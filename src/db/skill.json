@@ -1,5 +1,5 @@
-[
-  {
+{
+  "10071": {
     "name": "波乱注意砲！",
     "need_skill_point": null,
     "description": "レース中間からロングスパートをかけて\\n速度がわずかに上がる",
@@ -87,7 +87,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10081": {
     "name": "アクセルX",
     "need_skill_point": null,
     "description": "残り200mを切って前の方にいると\\n競り合いに強くなり速度が少し上がる",
@@ -210,7 +210,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10091": {
     "name": "レッドエース",
     "need_skill_point": null,
     "description": "レース後半で1番を\\nキープし続ける力をわずかに発揮する",
@@ -298,7 +298,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10111": {
     "name": "精神一到",
     "need_skill_point": null,
     "description": "最終直線で後ろの方から追い抜くと\\n末脚を使って速度が少し上がる",
@@ -391,7 +391,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10141": {
     "name": "熱血☆アミーゴ",
     "need_skill_point": null,
     "description": "最終直線で余力を持って前にいると\\nわずかに優位を保ちやすくなる",
@@ -484,7 +484,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10181": {
     "name": "エンプレス・プライド",
     "need_skill_point": null,
     "description": "最終コーナーで後ろから追い抜くと\\n女帝たる走りで速度が少し上がる",
@@ -577,7 +577,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10241": {
     "name": "勝利のキッス☆",
     "need_skill_point": null,
     "description": "最終コーナーで前の方で競り合うと\\n直線でわずかに抜け出しやすくなる",
@@ -670,7 +670,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10271": {
     "name": "燃えろ筋肉！",
     "need_skill_point": null,
     "description": "レース終盤のコーナーで前の位置に\\nつこうとして加速力が少し上がる",
@@ -763,7 +763,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10321": {
     "name": "introduction：My body",
     "need_skill_point": null,
     "description": "レース後半のコーナーで控えていると\\n持久力が少し回復する",
@@ -856,7 +856,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10351": {
     "name": "全力Vサインッ！",
     "need_skill_point": null,
     "description": "最終直線で競り合いに負けない\\n気持ちが湧き、速度が少し上がる",
@@ -949,7 +949,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10411": {
     "name": "学級委員長+速さ＝バクシン",
     "need_skill_point": null,
     "description": "レース後半に前の方で競り合うとバク\\nシン力（？）を発揮、速度が少し上がる",
@@ -1037,7 +1037,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10451": {
     "name": "クリアハート",
     "need_skill_point": null,
     "description": "レース中盤で好位置にいる時に\\n持久力が少し回復する",
@@ -1125,7 +1125,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10521": {
     "name": "ワクワクよーいドン",
     "need_skill_point": null,
     "description": "最終コーナーで後ろの方にいると近くの\\nウマ娘を見て持久力を少し回復する",
@@ -1218,7 +1218,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10561": {
     "name": "来てください来てください！",
     "need_skill_point": null,
     "description": "レース終盤に前方が詰まると\\nお告げの力で少し道を切り開く",
@@ -1306,7 +1306,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10601": {
     "name": "アタシもたまには、ね？",
     "need_skill_point": null,
     "description": "レース終盤で3番手の時に負けそうに\\nなると闘志に火が付き速度が少し上がる",
@@ -1394,7 +1394,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "10611": {
     "name": "Call me KING",
     "need_skill_point": null,
     "description": "レースを冷静に運ぶことができると\\n残り200mで実力発揮、速度が上がる",
@@ -1492,7 +1492,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100011": {
     "name": "シューティングスター",
     "need_skill_point": null,
     "description": "レース終盤に前の方で相手を抜くと\\n勢いに乗って速度が上がる",
@@ -1585,7 +1585,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100021": {
     "name": "先頭の景色は譲らない…！",
     "need_skill_point": null,
     "description": "最終直線で差を付けて先頭にいると\\nさらなる脚を使って、速度を上げる",
@@ -1678,7 +1678,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100031": {
     "name": "究極テイオーステップ",
     "need_skill_point": null,
     "description": "最終直線で前と差が詰まると\\n華麗な脚取りで速度がすごく上がる",
@@ -1776,7 +1776,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100041": {
     "name": "紅焔ギア/LP1211-M",
     "need_skill_point": null,
     "description": "最終コーナー以降で前の方にいると\\nギアを変えて加速力が上がる",
@@ -1864,7 +1864,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100061": {
     "name": "勝利の鼓動",
     "need_skill_point": null,
     "description": "残り200m地点で前の方にいると\\n道を開いてすごく抜け出しやすくなる",
@@ -1962,7 +1962,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100071": {
     "name": "不沈艦、抜錨ォッ！",
     "need_skill_point": null,
     "description": "レース中間からロングスパートをかけて\\n速度が少しずつ上がる",
@@ -2050,7 +2050,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100081": {
     "name": "カッティング×DRIVE！",
     "need_skill_point": null,
     "description": "残り200mを切って前の方にいると\\n競り合いに強くなり速度が上がる",
@@ -2173,7 +2173,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100091": {
     "name": "ブリリアント・レッドエース",
     "need_skill_point": null,
     "description": "レース後半で\\n1番をキープし続ける力を発揮する",
@@ -2261,7 +2261,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100101": {
     "name": "ヴィクトリーショット！",
     "need_skill_point": null,
     "description": "最終コーナーで好位置にいると\\n弾みを付けて加速力が上がる",
@@ -2354,7 +2354,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100111": {
     "name": "精神一到何事か成らざらん",
     "need_skill_point": null,
     "description": "最終直線で後ろの方から追い抜くと\\n末脚を使って速度が上がる",
@@ -2447,7 +2447,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100121": {
     "name": "タイマン！デッドヒート！",
     "need_skill_point": null,
     "description": "最終直線で後ろの方から外を回って\\n追い抜く時、速度を上げる",
@@ -2545,7 +2545,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100131": {
     "name": "貴顕の使命を果たすべく",
     "need_skill_point": null,
     "description": "最終コーナーで前の方にいると\\n抜かさせない覚悟を決めて速度が上がる",
@@ -2633,7 +2633,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100141": {
     "name": "プランチャ☆ガナドール",
     "need_skill_point": null,
     "description": "最終直線で余力を持って前にいると\\nより優位を保ちやすくなる",
@@ -2726,7 +2726,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100151": {
     "name": "ヴィットーリアに捧ぐ舞踏",
     "need_skill_point": null,
     "description": "最終コーナーで前の方で競り合うと\\n王たる輝きで速度が上がる",
@@ -2829,7 +2829,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100161": {
     "name": "Shadow Break",
     "need_skill_point": null,
     "description": "最終コーナー以降で外から追い抜くと\\n怪物的な力で、速度を上げる",
@@ -2927,7 +2927,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100171": {
     "name": "汝、皇帝の神威を見よ",
     "need_skill_point": null,
     "description": "レース終盤に3回追い抜くと\\n最終直線で速度がすごく上がる",
@@ -3015,7 +3015,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100181": {
     "name": "ブレイズ・オブ・プライド",
     "need_skill_point": null,
     "description": "最終コーナーで後ろから追い抜くと\\n女帝たる走りで速度が上がる",
@@ -3108,7 +3108,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100201": {
     "name": "アングリング×スキーミング",
     "need_skill_point": null,
     "description": "レース終盤のコーナーで先頭にいると\\nこれ幸いと加速力を上げる",
@@ -3196,7 +3196,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100231": {
     "name": "∴win Q.E.D.",
     "need_skill_point": null,
     "description": "最終コーナーで前の方で追い抜くと\\n勝利の方程式を導き、速度を上げる",
@@ -3289,7 +3289,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100241": {
     "name": "ひらめき☆ランディング",
     "need_skill_point": null,
     "description": "最終コーナーで前の方で競り合うと\\n直線で抜け出しやすくなる",
@@ -3382,7 +3382,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100261": {
     "name": "G00 1st.F∞;",
     "need_skill_point": null,
     "description": "最終直線までみずから崩れることなく\\n前の方にいると速度が上がる",
@@ -3480,7 +3480,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100271": {
     "name": "レッツ・アナボリック！",
     "need_skill_point": null,
     "description": "レース終盤のコーナーで前の位置に\\nつこうとして加速力が上がる",
@@ -3573,7 +3573,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100301": {
     "name": "ブルーローズチェイサー",
     "need_skill_point": null,
     "description": "最終直線で抜け出した時に\\n強い意志を持って速度が上がる",
@@ -3666,7 +3666,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100321": {
     "name": "U=ma2",
     "need_skill_point": null,
     "description": "レース後半のコーナーで控えていると\\n持久力が回復する",
@@ -3759,7 +3759,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100351": {
     "name": "勝利のチケットを、君にッ！",
     "need_skill_point": null,
     "description": "最終直線で競り合いに負けない\\n強い気持ちが湧き、速度が上がる",
@@ -3852,7 +3852,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100381": {
     "name": "#LookatCurren",
     "need_skill_point": null,
     "description": "レース中間付近で好位置にいる時に\\n追い抜くと勢いづき進出を開始する",
@@ -3950,7 +3950,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100411": {
     "name": "優等生×バクシン＝大勝利ッ",
     "need_skill_point": null,
     "description": "レース後半に前の方で競り合うと\\nバクシン力（？）を発揮、速度が上がる",
@@ -4038,7 +4038,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100451": {
     "name": "ピュリティオブハート",
     "need_skill_point": null,
     "description": "レース中盤で好位置にいる時に\\n持久力が回復する",
@@ -4126,7 +4126,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100461": {
     "name": "キラキラ☆STARDOM",
     "need_skill_point": null,
     "description": "レース中盤の直線で先頭を奪われそうに\\nなると譲らない想いが力になる",
@@ -4219,7 +4219,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100501": {
     "name": "Nemesis",
     "need_skill_point": null,
     "description": "最終コーナーで集団の後方の位置から\\n前へ出る時、切れ味が増し速度が上がる",
@@ -4317,7 +4317,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100521": {
     "name": "ワクワククライマックス",
     "need_skill_point": null,
     "description": "最終コーナーで後ろの方にいると近くの\\nウマ娘を見て持久力を回復する",
@@ -4410,7 +4410,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100561": {
     "name": "来ます来てます来させます！",
     "need_skill_point": null,
     "description": "レース終盤に前方が詰まると\\nお告げの力で道を切り開く",
@@ -4498,7 +4498,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100601": {
     "name": "きっとその先へ…！",
     "need_skill_point": null,
     "description": "レース終盤で3番手の時に負けそうにな\\nると秘めた闘志に火が付き速度が上がる",
@@ -4586,7 +4586,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "100611": {
     "name": "Pride of KING",
     "need_skill_point": null,
     "description": "レースを冷静に運ぶことができると残り\\n200mで実力発揮、速度がすごく上がる",
@@ -4684,7 +4684,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "110031": {
     "name": "絶対は、ボクだ",
     "need_skill_point": null,
     "description": "最終直線で前の方で追いすがっていると\\n不屈の闘志で速度が上がる",
@@ -4787,7 +4787,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "110111": {
     "name": "ゲインヒール・スペリアー",
     "need_skill_point": null,
     "description": "中盤に後ろの方で順位を下げた時に\\n優しい光で持久力を回復する",
@@ -4875,7 +4875,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "110131": {
     "name": "最強の名を懸けて",
     "need_skill_point": null,
     "description": "最終コーナー以降に前めで力が尽きかけ\\n詰め寄られると速度が上がる",
@@ -4978,7 +4978,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "110141": {
     "name": "コンドル猛撃波",
     "need_skill_point": null,
     "description": "最終コーナーで中団から前を狙う時\\n魂を燃え滾らせて加速力を上げる",
@@ -5076,7 +5076,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "110181": {
     "name": "薫風、永遠なる瞬間を",
     "need_skill_point": null,
     "description": "レース中盤で前の方から\\n仕掛け始める時に速度が上がる",
@@ -5169,7 +5169,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "110241": {
     "name": "フラワリー☆マニューバ",
     "need_skill_point": null,
     "description": "最終コーナーで前の方で抜くと速度が\\n後ろの方で抜くと加速力が上がる",
@@ -5291,7 +5291,7 @@
       ]
     }
   },
-  {
+  "200011": {
     "name": "右回り◎",
     "need_skill_point": 110,
     "description": "右回りコースが得意になる",
@@ -5364,7 +5364,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200012": {
     "name": "右回り○",
     "need_skill_point": 90,
     "description": "右回りコースが少し得意になる",
@@ -5437,7 +5437,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200013": {
     "name": "右回り×",
     "need_skill_point": 50,
     "description": "右回りコースが少し苦手になる",
@@ -5510,7 +5510,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200021": {
     "name": "左回り◎",
     "need_skill_point": 110,
     "description": "左回りコースが得意になる",
@@ -5583,7 +5583,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200022": {
     "name": "左回り○",
     "need_skill_point": 90,
     "description": "左回りコースが少し得意になる",
@@ -5656,7 +5656,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200023": {
     "name": "左回り×",
     "need_skill_point": 50,
     "description": "左回りコースが少し苦手になる",
@@ -5729,7 +5729,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200031": {
     "name": "東京レース場◎",
     "need_skill_point": 110,
     "description": "東京レース場が得意になる",
@@ -5802,7 +5802,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200032": {
     "name": "東京レース場○",
     "need_skill_point": 90,
     "description": "東京レース場が少し得意になる",
@@ -5875,7 +5875,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200033": {
     "name": "東京レース場×",
     "need_skill_point": 50,
     "description": "東京レース場が少し苦手になる",
@@ -5948,7 +5948,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200041": {
     "name": "中山レース場◎",
     "need_skill_point": 110,
     "description": "中山レース場が得意になる",
@@ -6021,7 +6021,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200042": {
     "name": "中山レース場○",
     "need_skill_point": 90,
     "description": "中山レース場が少し得意になる",
@@ -6094,7 +6094,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200043": {
     "name": "中山レース場×",
     "need_skill_point": 50,
     "description": "中山レース場が少し苦手になる",
@@ -6167,7 +6167,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200051": {
     "name": "阪神レース場◎",
     "need_skill_point": 110,
     "description": "阪神レース場が得意になる",
@@ -6240,7 +6240,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200052": {
     "name": "阪神レース場○",
     "need_skill_point": 90,
     "description": "阪神レース場が少し得意になる",
@@ -6313,7 +6313,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200053": {
     "name": "阪神レース場×",
     "need_skill_point": 50,
     "description": "阪神レース場が少し苦手になる",
@@ -6386,7 +6386,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200061": {
     "name": "京都レース場◎",
     "need_skill_point": 110,
     "description": "京都レース場が得意になる",
@@ -6459,7 +6459,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200062": {
     "name": "京都レース場○",
     "need_skill_point": 90,
     "description": "京都レース場が少し得意になる",
@@ -6532,7 +6532,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200063": {
     "name": "京都レース場×",
     "need_skill_point": 50,
     "description": "京都レース場が少し苦手になる",
@@ -6605,7 +6605,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200071": {
     "name": "中京レース場◎",
     "need_skill_point": 110,
     "description": "中京レース場が得意になる",
@@ -6678,7 +6678,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200072": {
     "name": "中京レース場○",
     "need_skill_point": 90,
     "description": "中京レース場が少し得意になる",
@@ -6751,7 +6751,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200073": {
     "name": "中京レース場×",
     "need_skill_point": 50,
     "description": "中京レース場が少し苦手になる",
@@ -6824,7 +6824,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200081": {
     "name": "札幌レース場◎",
     "need_skill_point": 90,
     "description": "札幌レース場が得意になる",
@@ -6897,7 +6897,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200082": {
     "name": "札幌レース場○",
     "need_skill_point": 70,
     "description": "札幌レース場が少し得意になる",
@@ -6970,7 +6970,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200083": {
     "name": "札幌レース場×",
     "need_skill_point": 40,
     "description": "札幌レース場が少し苦手になる",
@@ -7043,7 +7043,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200091": {
     "name": "函館レース場◎",
     "need_skill_point": 90,
     "description": "函館レース場が得意になる",
@@ -7116,7 +7116,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200092": {
     "name": "函館レース場○",
     "need_skill_point": 70,
     "description": "函館レース場が少し得意になる",
@@ -7189,7 +7189,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200093": {
     "name": "函館レース場×",
     "need_skill_point": 40,
     "description": "函館レース場が少し苦手になる",
@@ -7262,7 +7262,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200101": {
     "name": "福島レース場◎",
     "need_skill_point": 90,
     "description": "福島レース場が得意になる",
@@ -7335,7 +7335,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200102": {
     "name": "福島レース場○",
     "need_skill_point": 70,
     "description": "福島レース場が少し得意になる",
@@ -7408,7 +7408,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200103": {
     "name": "福島レース場×",
     "need_skill_point": 40,
     "description": "福島レース場が少し苦手になる",
@@ -7481,7 +7481,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200111": {
     "name": "新潟レース場◎",
     "need_skill_point": 90,
     "description": "新潟レース場が得意になる",
@@ -7554,7 +7554,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200112": {
     "name": "新潟レース場○",
     "need_skill_point": 70,
     "description": "新潟レース場が少し得意になる",
@@ -7627,7 +7627,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200113": {
     "name": "新潟レース場×",
     "need_skill_point": 40,
     "description": "新潟レース場が少し苦手になる",
@@ -7700,7 +7700,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200121": {
     "name": "小倉レース場◎",
     "need_skill_point": 90,
     "description": "小倉レース場が得意になる",
@@ -7773,7 +7773,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200122": {
     "name": "小倉レース場○",
     "need_skill_point": 70,
     "description": "小倉レース場が少し得意になる",
@@ -7846,7 +7846,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200123": {
     "name": "小倉レース場×",
     "need_skill_point": 40,
     "description": "小倉レース場が少し苦手になる",
@@ -7919,7 +7919,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200131": {
     "name": "根幹距離◎",
     "need_skill_point": 110,
     "description": "根幹距離（400mの倍数）が\\n得意になる",
@@ -7992,7 +7992,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200132": {
     "name": "根幹距離○",
     "need_skill_point": 90,
     "description": "根幹距離（400mの倍数）が\\n少し得意になる",
@@ -8065,7 +8065,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200133": {
     "name": "根幹距離×",
     "need_skill_point": 50,
     "description": "根幹距離（400mの倍数）が\\n少し苦手になる",
@@ -8138,7 +8138,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200141": {
     "name": "非根幹距離◎",
     "need_skill_point": 110,
     "description": "非根幹距離（400mの倍数以外）が\\n得意になる",
@@ -8211,7 +8211,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200142": {
     "name": "非根幹距離○",
     "need_skill_point": 90,
     "description": "非根幹距離（400mの倍数以外）が\\n少し得意になる",
@@ -8284,7 +8284,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200143": {
     "name": "非根幹距離×",
     "need_skill_point": 50,
     "description": "非根幹距離（400mの倍数以外）が\\n少し苦手になる",
@@ -8357,7 +8357,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200151": {
     "name": "良バ場◎",
     "need_skill_point": 110,
     "description": "「良」のバ場状態が得意になる",
@@ -8430,7 +8430,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200152": {
     "name": "良バ場○",
     "need_skill_point": 90,
     "description": "「良」のバ場状態が少し得意になる",
@@ -8503,7 +8503,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200153": {
     "name": "良バ場×",
     "need_skill_point": 50,
     "description": "「良」のバ場状態が少し苦手になる",
@@ -8576,7 +8576,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200161": {
     "name": "道悪◎",
     "need_skill_point": 110,
     "description": "「稍重」「重」「不良」のバ場状態が\\n得意になる",
@@ -8664,7 +8664,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200162": {
     "name": "道悪○",
     "need_skill_point": 90,
     "description": "「稍重」「重」「不良」のバ場状態が\\n少し得意になる",
@@ -8752,7 +8752,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200163": {
     "name": "道悪×",
     "need_skill_point": 50,
     "description": "「稍重」「重」「不良」のバ場状態が\\n少し苦手になる",
@@ -8840,7 +8840,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200171": {
     "name": "春ウマ娘◎",
     "need_skill_point": 110,
     "description": "春のレースが得意になる",
@@ -8923,7 +8923,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200172": {
     "name": "春ウマ娘○",
     "need_skill_point": 90,
     "description": "春のレースが少し得意になる",
@@ -9006,7 +9006,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200173": {
     "name": "春ウマ娘×",
     "need_skill_point": 50,
     "description": "春のレースが少し苦手になる",
@@ -9089,7 +9089,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200181": {
     "name": "夏ウマ娘◎",
     "need_skill_point": 110,
     "description": "夏のレースが得意になる",
@@ -9162,7 +9162,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200182": {
     "name": "夏ウマ娘○",
     "need_skill_point": 90,
     "description": "夏のレースが少し得意になる",
@@ -9235,7 +9235,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200183": {
     "name": "夏ウマ娘×",
     "need_skill_point": 50,
     "description": "夏のレースが少し苦手になる",
@@ -9308,7 +9308,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200191": {
     "name": "秋ウマ娘◎",
     "need_skill_point": 110,
     "description": "秋のレースが得意になる",
@@ -9381,7 +9381,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200192": {
     "name": "秋ウマ娘○",
     "need_skill_point": 90,
     "description": "秋のレースが少し得意になる",
@@ -9454,7 +9454,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200193": {
     "name": "秋ウマ娘×",
     "need_skill_point": 50,
     "description": "秋のレースが少し苦手になる",
@@ -9527,7 +9527,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200201": {
     "name": "冬ウマ娘◎",
     "need_skill_point": 110,
     "description": "冬のレースが得意になる",
@@ -9600,7 +9600,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200202": {
     "name": "冬ウマ娘○",
     "need_skill_point": 90,
     "description": "冬のレースが少し得意になる",
@@ -9673,7 +9673,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200203": {
     "name": "冬ウマ娘×",
     "need_skill_point": 50,
     "description": "冬のレースが少し苦手になる",
@@ -9746,7 +9746,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200211": {
     "name": "晴れの日◎",
     "need_skill_point": 110,
     "description": "晴れの日のレースが得意になる",
@@ -9819,7 +9819,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200212": {
     "name": "晴れの日○",
     "need_skill_point": 90,
     "description": "晴れの日のレースが少し得意になる",
@@ -9892,7 +9892,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200221": {
     "name": "曇りの日◎",
     "need_skill_point": 110,
     "description": "曇りの日のレースが得意になる",
@@ -9965,7 +9965,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200222": {
     "name": "曇りの日○",
     "need_skill_point": 90,
     "description": "曇りの日のレースが少し得意になる",
@@ -10038,7 +10038,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200231": {
     "name": "雨の日◎",
     "need_skill_point": 110,
     "description": "雨の日のレースが得意になる",
@@ -10111,7 +10111,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200232": {
     "name": "雨の日○",
     "need_skill_point": 90,
     "description": "雨の日のレースが少し得意になる",
@@ -10184,7 +10184,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200233": {
     "name": "雨の日×",
     "need_skill_point": 50,
     "description": "雨の日のレースが少し苦手になる",
@@ -10257,7 +10257,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200241": {
     "name": "雪の日◎",
     "need_skill_point": 110,
     "description": "雪の日のレースが得意になる",
@@ -10330,7 +10330,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200242": {
     "name": "雪の日○",
     "need_skill_point": 90,
     "description": "雪の日のレースが少し得意になる",
@@ -10403,7 +10403,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200251": {
     "name": "内枠得意◎",
     "need_skill_point": 110,
     "description": "枠番が1～3のレースが得意になる",
@@ -10476,7 +10476,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200252": {
     "name": "内枠得意○",
     "need_skill_point": 90,
     "description": "枠番が1～3のレースが少し得意になる",
@@ -10549,7 +10549,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200253": {
     "name": "内枠苦手",
     "need_skill_point": 50,
     "description": "枠番が1～3のレースが少し苦手になる",
@@ -10622,7 +10622,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200261": {
     "name": "外枠得意◎",
     "need_skill_point": 110,
     "description": "枠番が6～8のレースが得意になる",
@@ -10695,7 +10695,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200262": {
     "name": "外枠得意○",
     "need_skill_point": 90,
     "description": "枠番が6～8のレースが少し得意になる",
@@ -10768,7 +10768,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200263": {
     "name": "外枠苦手",
     "need_skill_point": 50,
     "description": "枠番が6～8のレースが少し苦手になる",
@@ -10841,7 +10841,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200271": {
     "name": "おひとり様◎",
     "need_skill_point": 110,
     "description": "自分と同じ作戦のウマ娘がいないと\\n能力を発揮しやすい",
@@ -10914,7 +10914,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200272": {
     "name": "おひとり様○",
     "need_skill_point": 90,
     "description": "自分と同じ作戦のウマ娘がいないと\\n能力を少し発揮しやすい",
@@ -10987,7 +10987,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200281": {
     "name": "対抗意識◎",
     "need_skill_point": 110,
     "description": "自分と同じ作戦のウマ娘が6人以上だと\\n能力を発揮しやすい",
@@ -11060,7 +11060,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200282": {
     "name": "対抗意識○",
     "need_skill_point": 90,
     "description": "自分と同じ作戦のウマ娘が6人以上だと\\n能力を少し発揮しやすい",
@@ -11133,7 +11133,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200283": {
     "name": "引っ込み思案",
     "need_skill_point": 50,
     "description": "自分と同じ作戦のウマ娘が6人以上だと\\n能力を少し発揮しにくい",
@@ -11206,7 +11206,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200291": {
     "name": "徹底マーク◎",
     "need_skill_point": 110,
     "description": "1番人気のウマ娘と作戦が同じだと\\n能力を発揮しやすい",
@@ -11279,7 +11279,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200292": {
     "name": "徹底マーク○",
     "need_skill_point": 90,
     "description": "1番人気のウマ娘と作戦が同じだと\\n能力を少し発揮しやすい",
@@ -11352,7 +11352,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200301": {
     "name": "伏兵◎",
     "need_skill_point": 110,
     "description": "4番人気以下のレースで\\n能力を発揮しやすい",
@@ -11425,7 +11425,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200302": {
     "name": "伏兵○",
     "need_skill_point": 90,
     "description": "4番人気以下のレースで\\n能力を少し発揮しやすい",
@@ -11498,7 +11498,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200311": {
     "name": "GⅠ苦手",
     "need_skill_point": 50,
     "description": "GⅠなどの大舞台のレースが\\n少し苦手になる",
@@ -11571,7 +11571,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200321": {
     "name": "小心者",
     "need_skill_point": 50,
     "description": "1番人気になる事が少し苦手になる",
@@ -11644,7 +11644,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200331": {
     "name": "弧線のプロフェッサー",
     "need_skill_point": 180,
     "description": "コーナーが得意になり\\n速度が上がる",
@@ -11737,7 +11737,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200332": {
     "name": "コーナー巧者○",
     "need_skill_point": 180,
     "description": "コーナーが得意になり\\n速度がわずかに上がる",
@@ -11830,7 +11830,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200333": {
     "name": "コーナー巧者×",
     "need_skill_point": 100,
     "description": "コーナーが苦手になり\\n速度が少し下がる",
@@ -11923,7 +11923,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200341": {
     "name": "曲線のソムリエ",
     "need_skill_point": 180,
     "description": "華麗なコーナーワークで\\n加速力が上がる",
@@ -12016,7 +12016,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200342": {
     "name": "コーナー加速○",
     "need_skill_point": 180,
     "description": "華麗なコーナーワークで\\n加速力がわずかに上がる",
@@ -12109,7 +12109,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200343": {
     "name": "コーナー加速×",
     "need_skill_point": 100,
     "description": "ぎこちないコーナーワークで\\n加速力が少し下がる",
@@ -12202,7 +12202,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200351": {
     "name": "円弧のマエストロ",
     "need_skill_point": 170,
     "description": "無駄のないコーナリングで\\n持久力が回復する",
@@ -12295,7 +12295,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200352": {
     "name": "コーナー回復○",
     "need_skill_point": 170,
     "description": "無駄のないコーナリングで\\n持久力がわずかに回復する",
@@ -12388,7 +12388,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200353": {
     "name": "コーナー回復×",
     "need_skill_point": 100,
     "description": "無駄の多いコーナリングで\\n持久力が少し減少する",
@@ -12481,7 +12481,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200361": {
     "name": "ハヤテ一文字",
     "need_skill_point": 170,
     "description": "直線で速度が上がる",
@@ -12554,7 +12554,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200362": {
     "name": "直線巧者",
     "need_skill_point": 170,
     "description": "直線で速度がわずかに上がる",
@@ -12627,7 +12627,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200371": {
     "name": "一陣の風",
     "need_skill_point": 170,
     "description": "直線で加速力が上がる",
@@ -12700,7 +12700,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200372": {
     "name": "直線加速",
     "need_skill_point": 170,
     "description": "直線で加速力がわずかに上がる",
@@ -12773,7 +12773,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200381": {
     "name": "好転一息",
     "need_skill_point": 170,
     "description": "直線で持久力が回復する",
@@ -12846,7 +12846,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200382": {
     "name": "直線回復",
     "need_skill_point": 170,
     "description": "直線で持久力がわずかに回復する",
@@ -12919,7 +12919,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200391": {
     "name": "坂苦手",
     "need_skill_point": 100,
     "description": "上り坂で少し\\n疲れてしまいがちになる",
@@ -12992,7 +12992,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200401": {
     "name": "バ群嫌い",
     "need_skill_point": 100,
     "description": "周りを囲まれると\\n持久力が少し減少する",
@@ -13075,7 +13075,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200411": {
     "name": "あきらめ癖",
     "need_skill_point": 100,
     "description": "最終直線で最後方付近にいると\\n少しあきらめてしまいがちになる",
@@ -13173,7 +13173,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200421": {
     "name": "手抜き癖",
     "need_skill_point": 100,
     "description": "残り200m付近で先頭だと\\n少し油断しがちになる",
@@ -13261,7 +13261,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200431": {
     "name": "コンセントレーション",
     "need_skill_point": 140,
     "description": "スタートが得意になり\\n出遅れる時間が少なくなる",
@@ -13334,7 +13334,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200432": {
     "name": "集中力",
     "need_skill_point": 140,
     "description": "スタートが得意になり\\n出遅れる時間がわずかに少なくなる",
@@ -13407,7 +13407,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200433": {
     "name": "ゲート難",
     "need_skill_point": 70,
     "description": "スタートが苦手になり\\n出遅れる時間が少し増える",
@@ -13480,7 +13480,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200441": {
     "name": "鋼の意志",
     "need_skill_point": 160,
     "description": "レース序盤に前が詰まった時に\\n強い意志を保ち持久力が回復する",
@@ -13568,7 +13568,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200442": {
     "name": "隠れ蓑",
     "need_skill_point": 160,
     "description": "レース序盤に前が詰まった時に\\n隠れて持久力がわずかに回復する",
@@ -13656,7 +13656,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200451": {
     "name": "注目の踊り子",
     "need_skill_point": 120,
     "description": "レース序盤にコース取りがうまくなる",
@@ -13729,7 +13729,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200452": {
     "name": "ポジションセンス",
     "need_skill_point": 120,
     "description": "レース序盤にコース取りが\\n少しうまくなる",
@@ -13802,7 +13802,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200461": {
     "name": "アガッてきた！",
     "need_skill_point": 170,
     "description": "レース中盤に追い抜くと\\n速度が上がる",
@@ -13885,7 +13885,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200462": {
     "name": "ペースアップ",
     "need_skill_point": 170,
     "description": "レース中盤に追い抜くと\\n速度がわずかに上がる",
@@ -13968,7 +13968,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200471": {
     "name": "不屈の心",
     "need_skill_point": 170,
     "description": "レース中盤に追い抜かれると\\n持久力が回復する",
@@ -14051,7 +14051,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200472": {
     "name": "ペースキープ",
     "need_skill_point": 170,
     "description": "レース中盤に追い抜かれると\\n持久力がわずかに回復する",
@@ -14134,7 +14134,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200481": {
     "name": "どこ吹く風",
     "need_skill_point": 170,
     "description": "レース中盤に囲まれると\\n持久力が回復する",
@@ -14217,7 +14217,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200482": {
     "name": "ウマ込み冷静",
     "need_skill_point": 170,
     "description": "レース中盤に囲まれると\\n持久力がわずかに回復する",
@@ -14300,7 +14300,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200491": {
     "name": "ノンストップガール",
     "need_skill_point": 150,
     "description": "ラストスパートで前が塞がれた時の\\n立ち回りがうまくなる",
@@ -14388,7 +14388,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200492": {
     "name": "垂れウマ回避",
     "need_skill_point": 150,
     "description": "ラストスパートで前が塞がれた時の\\n立ち回りがわずかにうまくなる",
@@ -14476,7 +14476,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200501": {
     "name": "レーンの魔術師",
     "need_skill_point": 120,
     "description": "レース終盤にコース取りがうまくなる",
@@ -14549,7 +14549,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200502": {
     "name": "臨機応変",
     "need_skill_point": 120,
     "description": "レース終盤にコース取りが\\n少しうまくなる",
@@ -14622,7 +14622,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200511": {
     "name": "全身全霊",
     "need_skill_point": 170,
     "description": "ラストスパートで速度が上がる",
@@ -14705,7 +14705,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200512": {
     "name": "末脚",
     "need_skill_point": 170,
     "description": "ラストスパートで速度がわずかに上がる",
@@ -14788,7 +14788,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200521": {
     "name": "空回り",
     "need_skill_point": 100,
     "description": "先頭で大きくリードし過ぎると\\n少し疲れてしまいがちになる",
@@ -14876,7 +14876,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200531": {
     "name": "先手必勝",
     "need_skill_point": 120,
     "description": "レース序盤で\\n前に行きやすくなる＜作戦・逃げ＞",
@@ -14964,7 +14964,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200532": {
     "name": "先駆け",
     "need_skill_point": 120,
     "description": "レース序盤でわずかに\\n前に行きやすくなる＜作戦・逃げ＞",
@@ -15052,7 +15052,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200541": {
     "name": "脱出術",
     "need_skill_point": 180,
     "description": "レース中盤で\\n前に行きやすくなる＜作戦・逃げ＞",
@@ -15140,7 +15140,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200542": {
     "name": "急ぎ足",
     "need_skill_point": 180,
     "description": "レース中盤でわずかに\\n前に行きやすくなる＜作戦・逃げ＞",
@@ -15228,7 +15228,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200551": {
     "name": "逃亡者",
     "need_skill_point": 180,
     "description": "最終コーナーで先頭を\\nキープしやすくなる＜作戦・逃げ＞",
@@ -15316,7 +15316,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200552": {
     "name": "押し切り準備",
     "need_skill_point": 180,
     "description": "最終コーナーで先頭をわずかに\\nキープしやすくなる＜作戦・逃げ＞",
@@ -15404,7 +15404,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200561": {
     "name": "余裕綽々",
     "need_skill_point": 180,
     "description": "レース序盤で疲れにくくなる\\n＜作戦・先行＞",
@@ -15497,7 +15497,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200562": {
     "name": "スタミナキープ",
     "need_skill_point": 180,
     "description": "レース序盤でわずかに疲れにくくなる\\n＜作戦・先行＞",
@@ -15590,7 +15590,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200571": {
     "name": "レースプランナー",
     "need_skill_point": 180,
     "description": "レース中盤で疲れにくくなる\\n＜作戦・先行＞",
@@ -15678,7 +15678,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200572": {
     "name": "好位追走",
     "need_skill_point": 180,
     "description": "レース中盤でわずかに疲れにくくなる\\n＜作戦・先行＞",
@@ -15766,7 +15766,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200581": {
     "name": "スピードスター",
     "need_skill_point": 180,
     "description": "最終コーナーで抜け出しやすくなる\\n＜作戦・先行＞",
@@ -15854,7 +15854,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200582": {
     "name": "抜け出し準備",
     "need_skill_point": 180,
     "description": "最終コーナーでわずかに\\n抜け出しやすくなる＜作戦・先行＞",
@@ -15942,7 +15942,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200591": {
     "name": "迅速果断",
     "need_skill_point": 180,
     "description": "レース中盤で速度が上がる\\n＜作戦・差し＞",
@@ -16030,7 +16030,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200592": {
     "name": "位置取り押し上げ",
     "need_skill_point": 180,
     "description": "レース中盤で速度がわずかに上がる\\n＜作戦・差し＞",
@@ -16118,7 +16118,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200601": {
     "name": "乗り換え上手",
     "need_skill_point": 180,
     "description": "レース終盤で加速力が上がる\\n＜作戦・差し＞",
@@ -16206,7 +16206,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200602": {
     "name": "差し切り体勢",
     "need_skill_point": 180,
     "description": "レース終盤で加速力がわずかに上がる\\n＜作戦・差し＞",
@@ -16294,7 +16294,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200611": {
     "name": "昇り龍",
     "need_skill_point": 180,
     "description": "最終コーナーで外から追い抜くと\\n速度が上がる＜作戦・差し＞",
@@ -16392,7 +16392,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200612": {
     "name": "外差し準備",
     "need_skill_point": 180,
     "description": "最終コーナーで外から追い抜くと\\n速度がわずかに上がる＜作戦・差し＞",
@@ -16490,7 +16490,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200621": {
     "name": "眠れる獅子",
     "need_skill_point": 180,
     "description": "レース中盤に脚を溜めて\\n疲れにくくなる＜作戦・追込＞",
@@ -16578,7 +16578,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200622": {
     "name": "後方待機",
     "need_skill_point": 180,
     "description": "レース中盤に脚を溜めて\\nわずかに疲れにくくなる＜作戦・追込＞",
@@ -16666,7 +16666,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200631": {
     "name": "疾風怒濤",
     "need_skill_point": 180,
     "description": "レース終盤に追い込み態勢に入り\\n位置を上げる＜作戦・追込＞",
@@ -16754,7 +16754,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200632": {
     "name": "仕掛け抜群",
     "need_skill_point": 180,
     "description": "レース終盤に追い込み態勢に入り\\n位置をわずかに上げる＜作戦・追込＞",
@@ -16842,7 +16842,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200641": {
     "name": "迫る影",
     "need_skill_point": 180,
     "description": "ラストスパートの直線で\\n加速力が上がる＜作戦・追込＞",
@@ -16930,7 +16930,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200642": {
     "name": "直線一気",
     "need_skill_point": 180,
     "description": "ラストスパートの直線で\\n加速力がわずかに上がる＜作戦・追込＞",
@@ -17018,7 +17018,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200651": {
     "name": "スプリントターボ",
     "need_skill_point": 160,
     "description": "直線で加速力が上がる\\n＜短距離＞",
@@ -17101,7 +17101,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200652": {
     "name": "スプリントギア",
     "need_skill_point": 160,
     "description": "直線で加速力がわずかに上がる\\n＜短距離＞",
@@ -17184,7 +17184,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200662": {
     "name": "様子見",
     "need_skill_point": 160,
     "description": "レース中盤に後ろの方だと\\nわずかに疲れにくくなる＜短距離＞",
@@ -17272,7 +17272,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200671": {
     "name": "電撃の煌めき",
     "need_skill_point": 160,
     "description": "レース終盤に後ろの方だと\\nスパートしやすくなる＜短距離＞",
@@ -17360,7 +17360,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200672": {
     "name": "詰め寄り",
     "need_skill_point": 160,
     "description": "レース終盤に後ろの方だとわずかに\\nスパートしやすくなる＜短距離＞",
@@ -17448,7 +17448,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200681": {
     "name": "マイルの支配者",
     "need_skill_point": 160,
     "description": "レース序盤に先頭だと\\n差を広げやすくなる＜マイル＞",
@@ -17541,7 +17541,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200682": {
     "name": "積極策",
     "need_skill_point": 160,
     "description": "レース序盤に先頭だとわずかに\\n差を広げやすくなる＜マイル＞",
@@ -17634,7 +17634,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200691": {
     "name": "慧眼",
     "need_skill_point": 160,
     "description": "レース序盤に後ろの方だと\\n疲れにくくなる＜マイル＞",
@@ -17727,7 +17727,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200692": {
     "name": "展開窺い",
     "need_skill_point": 160,
     "description": "レース序盤に後ろの方だと\\nわずかに疲れにくくなる＜マイル＞",
@@ -17820,7 +17820,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200701": {
     "name": "豪脚",
     "need_skill_point": 160,
     "description": "レース終盤に後ろの方だと\\n追い抜く力が上がる＜マイル＞",
@@ -17908,7 +17908,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200702": {
     "name": "上昇気流",
     "need_skill_point": 160,
     "description": "レース終盤に後ろの方だと\\n追い抜く力がわずかに上がる＜マイル＞",
@@ -17996,7 +17996,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200711": {
     "name": "切り開く者",
     "need_skill_point": 160,
     "description": "レース中盤に先頭だと\\n疲れにくくなる＜中距離＞",
@@ -18084,7 +18084,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200712": {
     "name": "前途洋々",
     "need_skill_point": 160,
     "description": "レース中盤に先頭だと\\nわずかに疲れにくくなる＜中距離＞",
@@ -18172,7 +18172,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200721": {
     "name": "キラーチューン",
     "need_skill_point": 160,
     "description": "レース中盤に前の方だと\\n好位置を取りやすくなる＜中距離＞",
@@ -18260,7 +18260,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200722": {
     "name": "テンポアップ",
     "need_skill_point": 160,
     "description": "レース中盤に前の方だとわずかに\\n好位置を取りやすくなる＜中距離＞",
@@ -18348,7 +18348,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200731": {
     "name": "勝利への執念",
     "need_skill_point": 160,
     "description": "最終コーナーで追い抜かれると\\n差し返しやすくなる＜中距離＞",
@@ -18441,7 +18441,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200732": {
     "name": "食い下がり",
     "need_skill_point": 160,
     "description": "最終コーナーで追い抜かれると\\nわずかに差し返しやすくなる＜中距離＞",
@@ -18534,7 +18534,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200741": {
     "name": "クールダウン",
     "need_skill_point": 160,
     "description": "直線に入ると息を入れて疲れにくくなる\\n＜長距離＞",
@@ -18617,7 +18617,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200742": {
     "name": "深呼吸",
     "need_skill_point": 160,
     "description": "直線に入ると息を入れてわずかに\\n疲れにくくなる＜長距離＞",
@@ -18700,7 +18700,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200751": {
     "name": "内的体験",
     "need_skill_point": 160,
     "description": "最終コーナーで内ラチ側にいると\\n速度が上がる＜長距離＞",
@@ -18793,7 +18793,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200752": {
     "name": "内弁慶",
     "need_skill_point": 160,
     "description": "最終コーナーで内ラチ側にいると\\n速度がわずかに上がる＜長距離＞",
@@ -18886,7 +18886,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200761": {
     "name": "火事場のバ鹿力",
     "need_skill_point": 160,
     "description": "力を出し切った時に\\n走る気力が復活する＜長距離＞",
@@ -18969,7 +18969,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200762": {
     "name": "別腹タンク",
     "need_skill_point": 160,
     "description": "力を出し切った時に\\n走る気力がわずかに復活する＜長距離＞",
@@ -19052,7 +19052,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200771": {
     "name": "トリック（前）",
     "need_skill_point": 140,
     "description": "レース中盤に前の方にいると後ろの\\n掛かったウマ娘がわずかに疲れる",
@@ -19140,7 +19140,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200781": {
     "name": "トリック（後）",
     "need_skill_point": 140,
     "description": "レース中盤に後ろの方にいると前の\\n掛かったウマ娘がわずかに疲れる",
@@ -19228,7 +19228,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200791": {
     "name": "逃げ駆け引き",
     "need_skill_point": 130,
     "description": "作戦が逃げのウマ娘が掛かると\\n落ち着くまで時間がかかる",
@@ -19311,7 +19311,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200801": {
     "name": "先行駆け引き",
     "need_skill_point": 130,
     "description": "作戦が先行のウマ娘が掛かると\\n落ち着くまで時間がかかる",
@@ -19394,7 +19394,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200811": {
     "name": "差し駆け引き",
     "need_skill_point": 130,
     "description": "作戦が差しのウマ娘が掛かると\\n落ち着くまで時間がかかる",
@@ -19477,7 +19477,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200821": {
     "name": "追込駆け引き",
     "need_skill_point": 130,
     "description": "作戦が追込のウマ娘が掛かると\\n落ち着くまで時間がかかる",
@@ -19560,7 +19560,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200831": {
     "name": "逃げけん制",
     "need_skill_point": 130,
     "description": "レース序盤に作戦・逃げのウマ娘を\\nけん制してわずかに疲れやすくする",
@@ -19648,7 +19648,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200841": {
     "name": "逃げ焦り",
     "need_skill_point": 130,
     "description": "レース中盤に作戦・逃げのウマ娘を\\n焦らせてわずかに疲れやすくする",
@@ -19731,7 +19731,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200851": {
     "name": "逃げためらい",
     "need_skill_point": 130,
     "description": "レース終盤に作戦・逃げのウマ娘を\\nためらわせて速度をわずかに下げる",
@@ -19814,7 +19814,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200861": {
     "name": "先行けん制",
     "need_skill_point": 130,
     "description": "レース序盤に作戦・先行のウマ娘を\\nけん制してわずかに疲れやすくする",
@@ -19902,7 +19902,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200871": {
     "name": "先行焦り",
     "need_skill_point": 130,
     "description": "レース中盤に作戦・先行のウマ娘を\\n焦らせてわずかに疲れやすくする",
@@ -19985,7 +19985,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200881": {
     "name": "先行ためらい",
     "need_skill_point": 130,
     "description": "レース終盤に作戦・先行のウマ娘を\\nためらわせて速度をわずかに下げる",
@@ -20068,7 +20068,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200891": {
     "name": "差しけん制",
     "need_skill_point": 130,
     "description": "レース序盤に作戦・差しのウマ娘を\\nけん制してわずかに疲れやすくする",
@@ -20156,7 +20156,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200901": {
     "name": "差し焦り",
     "need_skill_point": 130,
     "description": "レース中盤に作戦・差しのウマ娘を\\n焦らせてわずかに疲れやすくする",
@@ -20239,7 +20239,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200911": {
     "name": "差しためらい",
     "need_skill_point": 130,
     "description": "レース終盤に作戦・差しのウマ娘を\\nためらわせて速度をわずかに下げる",
@@ -20322,7 +20322,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200921": {
     "name": "追込けん制",
     "need_skill_point": 130,
     "description": "レース序盤に作戦・追込のウマ娘を\\nけん制してわずかに疲れやすくする",
@@ -20410,7 +20410,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200931": {
     "name": "追込焦り",
     "need_skill_point": 130,
     "description": "レース中盤に作戦・追込のウマ娘を\\n焦らせてわずかに疲れやすくする",
@@ -20493,7 +20493,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200941": {
     "name": "追込ためらい",
     "need_skill_point": 130,
     "description": "レース終盤に作戦・追込のウマ娘を\\nためらわせて速度をわずかに下げる",
@@ -20576,7 +20576,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200951": {
     "name": "大井レース場◎",
     "need_skill_point": 110,
     "description": "大井レース場が得意になる",
@@ -20649,7 +20649,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200952": {
     "name": "大井レース場○",
     "need_skill_point": 90,
     "description": "大井レース場が少し得意になる",
@@ -20722,7 +20722,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200953": {
     "name": "大井レース場×",
     "need_skill_point": 50,
     "description": "大井レース場が少し苦手になる",
@@ -20795,7 +20795,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200961": {
     "name": "短距離直線◎",
     "need_skill_point": 110,
     "description": "直線で速度が少し上がる＜短距離＞",
@@ -20878,7 +20878,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200962": {
     "name": "短距離直線○",
     "need_skill_point": 100,
     "description": "直線で速度がわずかに上がる＜短距離＞",
@@ -20961,7 +20961,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200971": {
     "name": "短距離コーナー◎",
     "need_skill_point": 110,
     "description": "コーナーで速度が少し上がる\\n＜短距離＞",
@@ -21094,7 +21094,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200972": {
     "name": "短距離コーナー○",
     "need_skill_point": 100,
     "description": "コーナーで速度がわずかに上がる\\n＜短距離＞",
@@ -21227,7 +21227,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200981": {
     "name": "圧倒的リード",
     "need_skill_point": 170,
     "description": "レース中盤に大きく差をつけ先頭だと\\nリードを保ちやすい＜短距離＞",
@@ -21320,7 +21320,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200982": {
     "name": "大きなリード",
     "need_skill_point": 170,
     "description": "レース中盤に大きく差をつけ先頭だと\\nリードをわずかに保ちやすい＜短距離＞",
@@ -21413,7 +21413,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200991": {
     "name": "プランX",
     "need_skill_point": 160,
     "description": "レース中盤に前の方にいると\\n抜かしやすくなる＜短距離＞",
@@ -21506,7 +21506,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "200992": {
     "name": "善後策",
     "need_skill_point": 160,
     "description": "レース中盤に前の方にいると\\nわずかに抜かしやすくなる＜短距離＞",
@@ -21599,7 +21599,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201001": {
     "name": "準備万全！",
     "need_skill_point": 140,
     "description": "レース中盤でゴールに向けて\\n準備を整える＜短距離＞",
@@ -21682,7 +21682,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201002": {
     "name": "仕掛け準備",
     "need_skill_point": 140,
     "description": "レース中盤でゴールに向けて\\n準備を少し整える＜短距離＞",
@@ -21765,7 +21765,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201011": {
     "name": "悩殺術",
     "need_skill_point": 170,
     "description": "レース序盤に前の方にいると\\n後方のウマ娘が萎縮する＜短距離＞",
@@ -21858,7 +21858,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201012": {
     "name": "後方釘付",
     "need_skill_point": 170,
     "description": "レース序盤に前の方にいると\\n後方のウマ娘が少し萎縮する＜短距離＞",
@@ -21951,7 +21951,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201021": {
     "name": "逃亡禁止令",
     "need_skill_point": 170,
     "description": "レース序盤に後ろの方にいると\\n前方のウマ娘が焦る＜短距離＞",
@@ -22044,7 +22044,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201022": {
     "name": "抜け駆け禁止",
     "need_skill_point": 170,
     "description": "レース序盤に後ろの方にいると前方の\\nウマ娘がわずかに焦る＜短距離＞",
@@ -22137,7 +22137,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201031": {
     "name": "マイル直線◎",
     "need_skill_point": 110,
     "description": "直線で速度が少し上がる＜マイル＞",
@@ -22220,7 +22220,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201032": {
     "name": "マイル直線○",
     "need_skill_point": 100,
     "description": "直線で速度がわずかに上がる＜マイル＞",
@@ -22303,7 +22303,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201041": {
     "name": "マイルコーナー◎",
     "need_skill_point": 110,
     "description": "コーナーで速度が少し上がる\\n＜マイル＞",
@@ -22436,7 +22436,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201042": {
     "name": "マイルコーナー○",
     "need_skill_point": 100,
     "description": "コーナーで速度がわずかに上がる\\n＜マイル＞",
@@ -22569,7 +22569,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201051": {
     "name": "ギアチェンジ",
     "need_skill_point": 160,
     "description": "レース中盤に前の方にいると\\n抜かしやすくなる＜マイル＞",
@@ -22657,7 +22657,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201052": {
     "name": "ギアシフト",
     "need_skill_point": 160,
     "description": "レース中盤に前の方にいると\\nわずかに抜かしやすくなる＜マイル＞",
@@ -22745,7 +22745,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201061": {
     "name": "アクセル全開！",
     "need_skill_point": 160,
     "description": "レース中盤に追い抜くと\\n加速力が上がる＜マイル＞",
@@ -22833,7 +22833,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201062": {
     "name": "アクセラレーション",
     "need_skill_point": 160,
     "description": "レース中盤に追い抜くと\\n加速力がわずかに上がる＜マイル＞",
@@ -22921,7 +22921,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201071": {
     "name": "姉御肌",
     "need_skill_point": 120,
     "description": "追い抜きが成功しやすくなる\\n＜マイル＞",
@@ -23009,7 +23009,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201072": {
     "name": "負けん気",
     "need_skill_point": 120,
     "description": "追い抜きがわずかに成功しやすくなる\\n＜マイル＞",
@@ -23097,7 +23097,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201081": {
     "name": "スピードグリード",
     "need_skill_point": 160,
     "description": "レース中盤に先頭にいると\\n後ろの速度を少し奪う＜マイル＞",
@@ -23185,7 +23185,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201082": {
     "name": "スピードイーター",
     "need_skill_point": 160,
     "description": "レース中盤に先頭にいると\\n後ろの速度をわずかに奪う＜マイル＞",
@@ -23273,7 +23273,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201091": {
     "name": "布陣",
     "need_skill_point": 160,
     "description": "レース序盤に後ろにいると\\n前の動きを鈍くする＜マイル＞",
@@ -23366,7 +23366,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201092": {
     "name": "布石",
     "need_skill_point": 160,
     "description": "レース序盤に後ろにいると\\n前の動きをわずかに鈍くする＜マイル＞",
@@ -23459,7 +23459,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201101": {
     "name": "中距離直線◎",
     "need_skill_point": 110,
     "description": "直線で速度が少し上がる＜中距離＞",
@@ -23542,7 +23542,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201102": {
     "name": "中距離直線○",
     "need_skill_point": 100,
     "description": "直線で速度がわずかに上がる＜中距離＞",
@@ -23625,7 +23625,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201111": {
     "name": "中距離コーナー◎",
     "need_skill_point": 110,
     "description": "コーナーで速度が少し上がる\\n＜中距離＞",
@@ -23758,7 +23758,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201112": {
     "name": "中距離コーナー○",
     "need_skill_point": 100,
     "description": "コーナーで速度がわずかに上がる\\n＜中距離＞",
@@ -23891,7 +23891,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201121": {
     "name": "千里眼",
     "need_skill_point": 110,
     "description": "レース序盤に観察力が高まり\\n視野を広く持てる＜中距離＞",
@@ -23974,7 +23974,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201122": {
     "name": "ホークアイ",
     "need_skill_point": 110,
     "description": "レース序盤に観察力が高まり\\n視野を少し広く持てる＜中距離＞",
@@ -24057,7 +24057,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201131": {
     "name": "ライトニングステップ",
     "need_skill_point": 140,
     "description": "レース中盤に後ろの方にいると\\n囲まれにくくなる＜中距離＞",
@@ -24145,7 +24145,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201132": {
     "name": "イナズマステップ",
     "need_skill_point": 140,
     "description": "レース中盤に後ろの方にいると\\n少し囲まれにくくなる＜中距離＞",
@@ -24233,7 +24233,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201141": {
     "name": "神業ステップ",
     "need_skill_point": 160,
     "description": "左右に動いても疲れにくくなる\\n＜中距離＞",
@@ -24346,7 +24346,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201142": {
     "name": "軽やかステップ",
     "need_skill_point": 160,
     "description": "左右に動いてもわずかに疲れにくくなる\\n＜中距離＞",
@@ -24459,7 +24459,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201151": {
     "name": "独占力",
     "need_skill_point": 160,
     "description": "レース終盤に後ろの方にいると\\n前の速度を下げる＜中距離＞",
@@ -24547,7 +24547,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201152": {
     "name": "束縛",
     "need_skill_point": 160,
     "description": "レース終盤に後ろの方にいると\\n前の速度をわずかに下げる＜中距離＞",
@@ -24635,7 +24635,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201161": {
     "name": "魅惑のささやき",
     "need_skill_point": 160,
     "description": "レース中盤にすぐ前のウマ娘を\\n戸惑わせる＜中距離＞",
@@ -24723,7 +24723,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201162": {
     "name": "ささやき",
     "need_skill_point": 160,
     "description": "レース中盤にすぐ前のウマ娘を\\nわずかに戸惑わせる＜中距離＞",
@@ -24811,7 +24811,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201171": {
     "name": "長距離直線◎",
     "need_skill_point": 110,
     "description": "直線で速度が少し上がる＜長距離＞",
@@ -24894,7 +24894,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201172": {
     "name": "長距離直線○",
     "need_skill_point": 100,
     "description": "直線で速度がわずかに上がる＜長距離＞",
@@ -24977,7 +24977,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201181": {
     "name": "長距離コーナー◎",
     "need_skill_point": 110,
     "description": "コーナーで速度が少し上がる\\n＜長距離＞",
@@ -25110,7 +25110,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201182": {
     "name": "長距離コーナー○",
     "need_skill_point": 100,
     "description": "コーナーで速度がわずかに上がる\\n＜長距離＞",
@@ -25243,7 +25243,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201191": {
     "name": "先陣の心得",
     "need_skill_point": 160,
     "description": "レース中盤に大きく差をつけ先頭だと\\nリードを保ちやすい＜長距離＞",
@@ -25336,7 +25336,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201192": {
     "name": "リードキープ",
     "need_skill_point": 160,
     "description": "レース中盤に大きく差をつけ先頭だと\\nリードをわずかに保ちやすい＜長距離＞",
@@ -25429,7 +25429,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201202": {
     "name": "パス上手",
     "need_skill_point": 160,
     "description": "追い抜く気持ちが湧き\\nわずかに疲れにくくなる＜長距離＞",
@@ -25517,7 +25517,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201211": {
     "name": "怒涛の追い上げ",
     "need_skill_point": 160,
     "description": "レース終盤で追い抜くと\\n速度が上がる＜長距離＞",
@@ -25605,7 +25605,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201212": {
     "name": "追い上げ",
     "need_skill_point": 160,
     "description": "レース終盤で追い抜くと\\n速度がわずかに上がる＜長距離＞",
@@ -25693,7 +25693,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201221": {
     "name": "スタミナグリード",
     "need_skill_point": 160,
     "description": "レース中盤で後ろの方にいると\\n前方の持久力を少し奪う＜長距離＞",
@@ -25781,7 +25781,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201222": {
     "name": "スタミナイーター",
     "need_skill_point": 160,
     "description": "レース中盤で後ろの方にいると\\n前方の持久力をちょっと奪う＜長距離＞",
@@ -25869,7 +25869,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201231": {
     "name": "奇術師",
     "need_skill_point": 110,
     "description": "レース終盤で前方のウマ娘の\\n視野が狭くなる＜長距離＞",
@@ -25952,7 +25952,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201232": {
     "name": "目くらまし",
     "need_skill_point": 110,
     "description": "レース終盤で前方のウマ娘の\\n視野が少し狭くなる＜長距離＞",
@@ -26035,7 +26035,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201241": {
     "name": "逃げ直線◎",
     "need_skill_point": 140,
     "description": "直線で速度が少し上がる\\n＜作戦・逃げ＞",
@@ -26118,7 +26118,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201242": {
     "name": "逃げ直線○",
     "need_skill_point": 130,
     "description": "直線で速度がわずかに上がる\\n＜作戦・逃げ＞",
@@ -26201,7 +26201,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201251": {
     "name": "逃げコーナー◎",
     "need_skill_point": 140,
     "description": "コーナーで速度が少し上がる\\n＜作戦・逃げ＞",
@@ -26334,7 +26334,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201252": {
     "name": "逃げコーナー○",
     "need_skill_point": 130,
     "description": "コーナーで速度がわずかに上がる\\n＜作戦・逃げ＞",
@@ -26467,7 +26467,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201261": {
     "name": "シックスセンス",
     "need_skill_point": 110,
     "description": "レース序盤に囲まれにくくなる\\n＜作戦・逃げ＞",
@@ -26555,7 +26555,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201262": {
     "name": "危険回避",
     "need_skill_point": 110,
     "description": "レース序盤に少し囲まれにくくなる\\n＜作戦・逃げ＞",
@@ -26643,7 +26643,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201272": {
     "name": "先頭プライド",
     "need_skill_point": 180,
     "description": "レース序盤にわずかに\\n追い抜かれにくくなる＜作戦・逃げ＞",
@@ -26736,7 +26736,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201281": {
     "name": "じゃじゃウマ娘",
     "need_skill_point": 180,
     "description": "上り坂で疲れにくくなる\\n＜作戦・逃げ＞",
@@ -26824,7 +26824,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201282": {
     "name": "勢い任せ",
     "need_skill_point": 180,
     "description": "上り坂でわずかに疲れにくくなる\\n＜作戦・逃げ＞",
@@ -26912,7 +26912,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201291": {
     "name": "再燃焼",
     "need_skill_point": 180,
     "description": "レース中盤に後ろにいると\\n加速力が上がる＜作戦・逃げ＞",
@@ -27000,7 +27000,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201292": {
     "name": "二の矢",
     "need_skill_point": 180,
     "description": "レース中盤に後ろにいると\\n加速力がわずかに上がる＜作戦・逃げ＞",
@@ -27088,7 +27088,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201302": {
     "name": "リスタート",
     "need_skill_point": 130,
     "description": "レース序盤に逃げに失敗した時\\n前がわずかに動揺する＜作戦・逃げ＞",
@@ -27181,7 +27181,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201311": {
     "name": "先行直線◎",
     "need_skill_point": 140,
     "description": "直線で速度が少し上がる\\n＜作戦・先行＞",
@@ -27264,7 +27264,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201312": {
     "name": "先行直線○",
     "need_skill_point": 130,
     "description": "直線で速度がわずかに上がる\\n＜作戦・先行＞",
@@ -27347,7 +27347,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201321": {
     "name": "先行コーナー◎",
     "need_skill_point": 140,
     "description": "コーナーで速度が少し上がる\\n＜作戦・先行＞",
@@ -27480,7 +27480,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201322": {
     "name": "先行コーナー○",
     "need_skill_point": 130,
     "description": "コーナーで速度がわずかに上がる\\n＜作戦・先行＞",
@@ -27613,7 +27613,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201331": {
     "name": "技巧派",
     "need_skill_point": 120,
     "description": "コース取りが少しスムーズになる\\n＜作戦・先行＞",
@@ -27716,7 +27716,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201332": {
     "name": "巧みなステップ",
     "need_skill_point": 120,
     "description": "コース取りがわずかにスムーズになる\\n＜作戦・先行＞",
@@ -27819,7 +27819,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201341": {
     "name": "決意の直滑降",
     "need_skill_point": 120,
     "description": "下り坂が少し得意になる\\n＜作戦・先行＞",
@@ -27902,7 +27902,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201342": {
     "name": "直滑降",
     "need_skill_point": 120,
     "description": "下り坂がわずかに得意になる\\n＜作戦・先行＞",
@@ -27985,7 +27985,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201351": {
     "name": "食いしん坊",
     "need_skill_point": 180,
     "description": "レース中盤に持久力が回復する\\n＜作戦・先行＞",
@@ -28068,7 +28068,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201352": {
     "name": "栄養補給",
     "need_skill_point": 180,
     "description": "レース中盤に持久力がわずかに回復する\\n＜作戦・先行＞",
@@ -28151,7 +28151,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201361": {
     "name": "くじけぬ精神",
     "need_skill_point": 120,
     "description": "レース中盤に後ろの方にいると\\n加速力が少し上がる＜作戦・先行＞",
@@ -28239,7 +28239,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201362": {
     "name": "まき直し",
     "need_skill_point": 120,
     "description": "レース中盤に後ろの方にいると\\n加速力がわずかに上がる＜作戦・先行＞",
@@ -28327,7 +28327,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201371": {
     "name": "幻惑のかく乱",
     "need_skill_point": 110,
     "description": "レース終盤に前の方にいると後方の\\n視野が少し狭くなる＜作戦・先行＞",
@@ -28415,7 +28415,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201372": {
     "name": "かく乱",
     "need_skill_point": 110,
     "description": "レース終盤に前の方にいると後方の\\n視野がわずかに狭くなる＜作戦・先行＞",
@@ -28503,7 +28503,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201381": {
     "name": "差し直線◎",
     "need_skill_point": 140,
     "description": "直線で速度が少し上がる\\n＜作戦・差し＞",
@@ -28586,7 +28586,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201382": {
     "name": "差し直線○",
     "need_skill_point": 130,
     "description": "直線で速度がわずかに上がる\\n＜作戦・差し＞",
@@ -28669,7 +28669,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201391": {
     "name": "差しコーナー◎",
     "need_skill_point": 140,
     "description": "コーナーで速度が少し上がる\\n＜作戦・差し＞",
@@ -28802,7 +28802,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201392": {
     "name": "差しコーナー○",
     "need_skill_point": 130,
     "description": "コーナーで速度がわずかに上がる\\n＜作戦・差し＞",
@@ -28935,7 +28935,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201401": {
     "name": "努力家",
     "need_skill_point": 120,
     "description": "追い抜きが少し成功しやすくなる\\n＜作戦・差し＞",
@@ -29023,7 +29023,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201402": {
     "name": "がんばり屋",
     "need_skill_point": 120,
     "description": "追い抜きがわずかに成功しやすくなる\\n＜作戦・差し＞",
@@ -29111,7 +29111,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201411": {
     "name": "百万バリキ",
     "need_skill_point": 120,
     "description": "上り坂で速度が上がる\\n＜作戦・差し＞",
@@ -29194,7 +29194,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201412": {
     "name": "十万バリキ",
     "need_skill_point": 120,
     "description": "上り坂で速度がわずかに上がる\\n＜作戦・差し＞",
@@ -29277,7 +29277,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201421": {
     "name": "リラックス",
     "need_skill_point": 180,
     "description": "レース終盤に持久力が回復する\\n＜作戦・差し＞",
@@ -29360,7 +29360,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201422": {
     "name": "小休憩",
     "need_skill_point": 180,
     "description": "レース終盤に持久力がわずかに回復する\\n＜作戦・差し＞",
@@ -29443,7 +29443,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201431": {
     "name": "大局観",
     "need_skill_point": 120,
     "description": "レース中盤に観察力が高まり\\n視野を広く持てる＜作戦・差し＞",
@@ -29526,7 +29526,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201432": {
     "name": "読解力",
     "need_skill_point": 120,
     "description": "レース中盤に観察力が高まり視野を\\nわずかに広く持てる＜作戦・差し＞",
@@ -29609,7 +29609,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201441": {
     "name": "八方にらみ",
     "need_skill_point": 180,
     "description": "レース終盤に他のウマ娘が\\n動揺する＜作戦・差し＞",
@@ -29697,7 +29697,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201442": {
     "name": "鋭い眼光",
     "need_skill_point": 180,
     "description": "レース終盤に他のウマ娘が\\nわずかに動揺する＜作戦・差し＞",
@@ -29785,7 +29785,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201451": {
     "name": "追込直線◎",
     "need_skill_point": 140,
     "description": "直線で速度が少し上がる\\n＜作戦・追込＞",
@@ -29868,7 +29868,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201452": {
     "name": "追込直線○",
     "need_skill_point": 130,
     "description": "直線で速度がわずかに上がる\\n＜作戦・追込＞",
@@ -29951,7 +29951,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201461": {
     "name": "追込コーナー◎",
     "need_skill_point": 140,
     "description": "コーナーで速度が少し上がる\\n＜作戦・追込＞",
@@ -30084,7 +30084,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201462": {
     "name": "追込コーナー○",
     "need_skill_point": 130,
     "description": "コーナーで速度がわずかに上がる\\n＜作戦・追込＞",
@@ -30217,7 +30217,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201471": {
     "name": "視界良好！異常なし！",
     "need_skill_point": 110,
     "description": "左右に移動すると状況を把握して\\n視野が少し広くなる＜作戦・追込＞",
@@ -30320,7 +30320,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201472": {
     "name": "お見通し",
     "need_skill_point": 110,
     "description": "左右に移動すると状況を把握して\\n視野がわずかに広くなる＜作戦・追込＞",
@@ -30423,7 +30423,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201481": {
     "name": "下校後のスペシャリスト",
     "need_skill_point": 170,
     "description": "下り坂で疲れにくくなる\\n＜作戦・追込＞",
@@ -30511,7 +30511,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201482": {
     "name": "下校の楽しみ",
     "need_skill_point": 170,
     "description": "下り坂でわずかに疲れにくくなる\\n＜作戦・追込＞",
@@ -30599,7 +30599,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201491": {
     "name": "冷静沈着",
     "need_skill_point": 180,
     "description": "前が詰まった時に落ち着いて\\n態勢を立て直す＜作戦・追込＞",
@@ -30687,7 +30687,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201492": {
     "name": "冷静",
     "need_skill_point": 180,
     "description": "前が詰まった時に落ち着いて\\n態勢をわずかに立て直す＜作戦・追込＞",
@@ -30775,7 +30775,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201501": {
     "name": "天命士",
     "need_skill_point": 110,
     "description": "レース終盤に後ろの方にいると\\n視野が広くなる＜作戦・追込＞",
@@ -30863,7 +30863,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201502": {
     "name": "策士",
     "need_skill_point": 110,
     "description": "レース終盤に後ろの方にいると\\n視野がわずかに広くなる＜作戦・追込＞",
@@ -30951,7 +30951,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201511": {
     "name": "熱いまなざし",
     "need_skill_point": 180,
     "description": "レース終盤に目を付けたウマ娘の\\n緊張感が増す＜作戦・追込＞",
@@ -31039,7 +31039,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201512": {
     "name": "まなざし",
     "need_skill_point": 180,
     "description": "レース終盤に目を付けたウマ娘の\\n緊張感がわずかに増す＜作戦・追込＞",
@@ -31127,7 +31127,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201521": {
     "name": "逃げのコツ◎",
     "need_skill_point": 130,
     "description": "良い位置につきやすくなる\\n＜作戦・逃げ＞",
@@ -31200,7 +31200,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201522": {
     "name": "逃げのコツ○",
     "need_skill_point": 110,
     "description": "良い位置に少しつきやすくなる\\n＜作戦・逃げ＞",
@@ -31273,7 +31273,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201531": {
     "name": "先行のコツ◎",
     "need_skill_point": 130,
     "description": "良い位置につきやすくなる\\n＜作戦・先行＞",
@@ -31346,7 +31346,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201532": {
     "name": "先行のコツ○",
     "need_skill_point": 110,
     "description": "良い位置に少しつきやすくなる\\n＜作戦・先行＞",
@@ -31419,7 +31419,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201541": {
     "name": "差しのコツ◎",
     "need_skill_point": 130,
     "description": "良い位置につきやすくなる\\n＜作戦・差し＞",
@@ -31492,7 +31492,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201542": {
     "name": "差しのコツ○",
     "need_skill_point": 110,
     "description": "良い位置に少しつきやすくなる\\n＜作戦・差し＞",
@@ -31565,7 +31565,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201551": {
     "name": "追込のコツ◎",
     "need_skill_point": 130,
     "description": "良い位置につきやすくなる\\n＜作戦・追込＞",
@@ -31638,7 +31638,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201552": {
     "name": "追込のコツ○",
     "need_skill_point": 110,
     "description": "良い位置に少しつきやすくなる\\n＜作戦・追込＞",
@@ -31711,7 +31711,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201561": {
     "name": "スーパーラッキーセブン",
     "need_skill_point": 110,
     "description": "枠番が7の時に\\n良いことが起きる場合がある",
@@ -31794,7 +31794,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201562": {
     "name": "ラッキーセブン",
     "need_skill_point": 110,
     "description": "枠番が7の時に少し\\n良いことが起きる場合がある",
@@ -31877,7 +31877,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201571": {
     "name": "スリーセブン",
     "need_skill_point": 160,
     "description": "残り距離が777mの時に\\nわずかに元気が出る",
@@ -31960,7 +31960,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201581": {
     "name": "登山家",
     "need_skill_point": 160,
     "description": "上り坂がわずかに上手くなる",
@@ -32033,7 +32033,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201591": {
     "name": "ウマ好み",
     "need_skill_point": 160,
     "description": "近くにウマ娘がたくさんいると\\n速度がわずかに上がる",
@@ -32126,7 +32126,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201601": {
     "name": "地固め",
     "need_skill_point": 100,
     "description": "レース序盤にスキルを多く発動すると\\n加速力がわずかに上がる",
@@ -32199,7 +32199,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201611": {
     "name": "尻尾上がり",
     "need_skill_point": 100,
     "description": "レース中盤にスキルを多く発動すると\\n速度がわずかに上がる",
@@ -32272,7 +32272,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201621": {
     "name": "ふり絞り",
     "need_skill_point": 100,
     "description": "レース終盤にスキルを多く発動すると\\n持久力がわずかに回復する",
@@ -32345,7 +32345,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201631": {
     "name": "シンパシー",
     "need_skill_point": 70,
     "description": "シンパシーの心を持つウマ娘が多い\\nレースだと少し能力が上がる",
@@ -32418,7 +32418,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201641": {
     "name": "一匹狼",
     "need_skill_point": 70,
     "description": "自分だけが一匹狼の心を持つレースで\\n少し能力が上がる",
@@ -32491,7 +32491,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201651": {
     "name": "スリップストリーム",
     "need_skill_point": 160,
     "description": "前のウマ娘のすぐ後ろに付けると\\n風の抵抗をわずかに受けにくくなる",
@@ -32574,7 +32574,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201661": {
     "name": "遊びはおしまいっ！",
     "need_skill_point": 160,
     "description": "すぐ後ろにウマ娘が長くいると\\n速度がわずかに上がる",
@@ -32657,7 +32657,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201671": {
     "name": "チャート急上昇！",
     "need_skill_point": 180,
     "description": "レース中盤に競り合うと\\n速度が上がる＜ダート＞",
@@ -32745,7 +32745,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "201672": {
     "name": "レコメンド",
     "need_skill_point": 180,
     "description": "レース中盤に競り合うと\\n速度がわずかに上がる＜ダート＞",
@@ -32833,7 +32833,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900011": {
     "name": "シューティングスター",
     "need_skill_point": 200,
     "description": "レース終盤に前の方で相手を抜くと\\n速度がわずかに上がる",
@@ -32926,7 +32926,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900021": {
     "name": "先頭の景色は譲らない…！",
     "need_skill_point": 200,
     "description": "最終直線で差を付けて先頭にいると\\n速度をわずかに上げる",
@@ -33019,7 +33019,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900031": {
     "name": "究極テイオーステップ",
     "need_skill_point": 200,
     "description": "最終直線で前と差が詰まると\\n速度が少し上がる",
@@ -33117,7 +33117,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900041": {
     "name": "紅焔ギア/LP1211-M",
     "need_skill_point": 200,
     "description": "最終コーナー以降で前の方にいると\\n加速力がわずかに上がる",
@@ -33205,7 +33205,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900061": {
     "name": "勝利の鼓動",
     "need_skill_point": 200,
     "description": "残り200m地点で前の方にいると\\n少し抜け出しやすくなる",
@@ -33303,7 +33303,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900071": {
     "name": "不沈艦、抜錨ォッ！",
     "need_skill_point": 200,
     "description": "レース中間からロングスパートをかけて\\n速度がちょっとずつ上がる",
@@ -33391,7 +33391,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900081": {
     "name": "カッティング×DRIVE！",
     "need_skill_point": 200,
     "description": "残り200mを切って前の方にいると\\n速度がわずかに上がる",
@@ -33514,7 +33514,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900091": {
     "name": "ブリリアント・レッドエース",
     "need_skill_point": 200,
     "description": "レース後半で1番を\\nキープし続ける力をちょっと発揮する",
@@ -33602,7 +33602,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900101": {
     "name": "ヴィクトリーショット！",
     "need_skill_point": 200,
     "description": "最終コーナーで好位置にいると\\n加速力がわずかに上がる",
@@ -33695,7 +33695,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900111": {
     "name": "精神一到何事か成らざらん",
     "need_skill_point": 200,
     "description": "最終直線で後ろの方から追い抜くと\\n速度がわずかに上がる",
@@ -33788,7 +33788,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900121": {
     "name": "タイマン！デッドヒート！",
     "need_skill_point": 200,
     "description": "最終直線で後ろの方から外を回って\\n追い抜く時、速度をわずかに上げる",
@@ -33886,7 +33886,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900131": {
     "name": "貴顕の使命を果たすべく",
     "need_skill_point": 200,
     "description": "最終コーナーで前の方にいると\\n速度がわずかに上がる",
@@ -33974,7 +33974,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900141": {
     "name": "プランチャ☆ガナドール",
     "need_skill_point": 200,
     "description": "最終直線で余力を持って前にいると\\nちょっと優位を保ちやすくなる",
@@ -34067,7 +34067,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900151": {
     "name": "ヴィットーリアに捧ぐ舞踏",
     "need_skill_point": 200,
     "description": "最終コーナーで前の方で競り合うと\\n速度がわずかに上がる",
@@ -34170,7 +34170,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900161": {
     "name": "Shadow Break",
     "need_skill_point": 200,
     "description": "最終コーナー以降で外から追い抜くと\\n速度をわずかに上げる",
@@ -34268,7 +34268,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900171": {
     "name": "汝、皇帝の神威を見よ",
     "need_skill_point": 200,
     "description": "レース終盤に3回追い抜くと\\n最終直線で速度が少し上がる",
@@ -34356,7 +34356,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900181": {
     "name": "ブレイズ・オブ・プライド",
     "need_skill_point": 200,
     "description": "最終コーナーで後ろから追い抜くと\\n速度がわずかに上がる",
@@ -34449,7 +34449,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900201": {
     "name": "アングリング×スキーミング",
     "need_skill_point": 200,
     "description": "レース終盤のコーナーで先頭にいると\\n加速力をわずかに上げる",
@@ -34537,7 +34537,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900231": {
     "name": "∴win Q.E.D.",
     "need_skill_point": 200,
     "description": "最終コーナーで前の方で追い抜くと\\n速度をわずかに上げる",
@@ -34630,7 +34630,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900241": {
     "name": "ひらめき☆ランディング",
     "need_skill_point": 200,
     "description": "最終コーナーで前の方で競り合うと\\n直線でちょっと抜け出しやすくなる",
@@ -34723,7 +34723,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900261": {
     "name": "G00 1st.F∞;",
     "need_skill_point": 200,
     "description": "最終直線までみずから崩れることなく\\n前の方にいるとわずかに速度が上がる",
@@ -34821,7 +34821,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900271": {
     "name": "レッツ・アナボリック！",
     "need_skill_point": 200,
     "description": "レース終盤のコーナーで前の位置に\\nつこうとして加速力がわずかに上がる",
@@ -34914,7 +34914,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900301": {
     "name": "ブルーローズチェイサー",
     "need_skill_point": 200,
     "description": "最終直線で抜け出した時に\\n速度がわずかに上がる",
@@ -35007,7 +35007,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900321": {
     "name": "U=ma2",
     "need_skill_point": 200,
     "description": "レース後半のコーナーで控えていると\\n持久力がわずかに回復する",
@@ -35100,7 +35100,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900351": {
     "name": "勝利のチケットを、君にッ！",
     "need_skill_point": 200,
     "description": "最終直線で競り合いに負けない\\n気持ちが湧けば、速度がわずかに上がる",
@@ -35193,7 +35193,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900381": {
     "name": "#LookatCurren",
     "need_skill_point": 200,
     "description": "レース中間付近で好位置にいる時に\\n追い抜くとちょっと進出を開始する",
@@ -35291,7 +35291,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900411": {
     "name": "優等生×バクシン＝大勝利ッ",
     "need_skill_point": 200,
     "description": "レース後半に前の方で競り合うと\\n速度がわずかに上がる",
@@ -35379,7 +35379,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900451": {
     "name": "ピュリティオブハート",
     "need_skill_point": 200,
     "description": "レース中盤で好位置にいる時に\\n持久力がわずかに回復する",
@@ -35467,7 +35467,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900461": {
     "name": "キラキラ☆STARDOM",
     "need_skill_point": 200,
     "description": "レース中盤の直線で先頭を奪われそうに\\nなると譲らない想いがちょっと力になる",
@@ -35560,7 +35560,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900501": {
     "name": "Nemesis",
     "need_skill_point": 200,
     "description": "最終コーナーで集団の後方の位置から\\n前へ出る時、速度がわずかに上がる",
@@ -35658,7 +35658,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900521": {
     "name": "ワクワククライマックス",
     "need_skill_point": 200,
     "description": "最終コーナーで後ろの方にいると近くの\\nウマ娘を見て持久力をわずかに回復する",
@@ -35751,7 +35751,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900561": {
     "name": "来ます来てます来させます！",
     "need_skill_point": 200,
     "description": "レース終盤に前方が詰まると\\nお告げ次第で道をわずかに切り開く",
@@ -35839,7 +35839,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900601": {
     "name": "きっとその先へ…！",
     "need_skill_point": 200,
     "description": "レース終盤で3番手の時に負けそうに\\nなると速度がわずかに上がる",
@@ -35927,7 +35927,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "900611": {
     "name": "Pride of KING",
     "need_skill_point": 200,
     "description": "レースを冷静に運ぶことができると残り\\n200mで実力発揮、速度が少し上がる",
@@ -36025,7 +36025,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "910031": {
     "name": "絶対は、ボクだ",
     "need_skill_point": 200,
     "description": "最終直線で前の方で追いすがっていると\\n速度がわずかに上がる",
@@ -36128,7 +36128,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "910111": {
     "name": "ゲインヒール・スペリアー",
     "need_skill_point": 200,
     "description": "中盤に後ろの方で順位を下げた時に\\n持久力をわずかに回復する",
@@ -36140,11 +36140,11 @@
     "grade_value": 180,
     "skill_category": 5,
     "tag_id": "402",
-    "unique_skill_id_1": "110111",
+    "unique_skill_id_1": "0",
     "unique_skill_id_2": "0",
     "exp_type": 0,
     "potential_per_default": 0,
-    "activate_lot": 1,
+    "activate_lot": 0,
     "condition_1": "phase==1&change_order_onetime>0&order_rate>=40",
     "float_ability_time_1": 0,
     "float_cooldown_time_1": 5000000,
@@ -36216,7 +36216,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "910131": {
     "name": "最強の名を懸けて",
     "need_skill_point": 200,
     "description": "最終コーナー以降に前めで力が尽きかけ\\n詰め寄られると速度がわずかに上がる",
@@ -36319,7 +36319,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "910141": {
     "name": "コンドル猛撃波",
     "need_skill_point": 200,
     "description": "最終コーナーで中団から前を狙う時\\n加速力をわずかに上げる",
@@ -36331,11 +36331,11 @@
     "grade_value": 180,
     "skill_category": 5,
     "tag_id": "403",
-    "unique_skill_id_1": "110141",
+    "unique_skill_id_1": "0",
     "unique_skill_id_2": "0",
     "exp_type": 0,
     "potential_per_default": 0,
-    "activate_lot": 1,
+    "activate_lot": 0,
     "condition_1": "is_finalcorner==1&corner!=0&is_overtake==1&order>=4&order_rate<=75",
     "float_ability_time_1": 24000,
     "float_cooldown_time_1": 5000000,
@@ -36417,7 +36417,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "910181": {
     "name": "薫風、永遠なる瞬間を",
     "need_skill_point": 200,
     "description": "レース中盤で前の方から\\n仕掛け始める時に速度がわずかに上がる",
@@ -36510,7 +36510,7 @@
     },
     "condition_2_object": {}
   },
-  {
+  "910241": {
     "name": "フラワリー☆マニューバ",
     "need_skill_point": 200,
     "description": "最終コーナーで前の方で抜くと速度が後\\nろの方で抜くと加速力がわずかに上がる",
@@ -36632,4 +36632,4 @@
       ]
     }
   }
-]
+}
