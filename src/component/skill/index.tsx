@@ -39,7 +39,6 @@ function Skills(props: IProps) {
     "中盤": 1, 
     "終盤": 2
   });
-
   const [option, setOption] = useState({
     phase: -1, 
     // phase_random: -1, 
@@ -58,7 +57,6 @@ function Skills(props: IProps) {
     )
   } , [])
 
-
   const filterButton = (objects: any, label: string) => {
     let tmp = Object.entries(objects).map((obj:any) => (
       <label key={obj[0]}>
@@ -69,14 +67,11 @@ function Skills(props: IProps) {
     return tmp;
   }
 
-  
-
   return (
     <div className="content">
       <form>
-        {filterButton(phase, "phase")}
+        {filterButton(phase, "phase")} <br/>
         {filterButton(runningStyle, "running_style")}
-
       </form>
       <table>
         <thead></thead>

@@ -42,6 +42,7 @@ type InitData = (dataType: string, fileName: string) => void;
 
 const App: React.FC = () => {
 
+
   const [data, setData] = useState(() => {
     let tmp:any = {};
     ENV.avalData.forEach((name: string) => {
@@ -51,24 +52,21 @@ const App: React.FC = () => {
       };
     })
     return tmp;
-
   });
   const [avalData, setAvalData] = useState(ENV.avalData);
+
 
   const initData: InitData = (dataType, fileName) => {
     if (!avalData.includes(dataType)) {
       console.log("error", dataType);
     }
     let tmp: any = data[dataType];
-
     if (Object.keys(tmp.detail).length == 0) {
       tmp["detail"] = require('./db/' + dataType + '/detail.json'); 
     }
-
     if (fileName != "") {
       tmp["overview"][fileName] = require('./db/' + dataType + '/overview/' + fileName + '.json');
     }
-
     setData(Object.assign({}, data, Object.assign({}, data[dataType], tmp)));
   }
 
@@ -99,18 +97,14 @@ const App: React.FC = () => {
             <Route path="/relation/graph" component={RelationGraph} />
             <Route path="/relation/query" component={RelationQuery} />
             <Route path="/simulator" component={Simulator} />
-
             <DataContext.Provider value={{ data, initData }}>
               <Route path="/skill" component={Skill} />
             </DataContext.Provider>
-
           </Switch>
         </Content>
       </Layout>
     </Router>
   )
-
-
 
 }
 
