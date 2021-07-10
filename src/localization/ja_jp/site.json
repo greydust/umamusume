@@ -52,5 +52,19 @@
   "TimeShown": "表示時間",
   "FullLastSpurtRate": "フールスパート率",
   "HpLeftAverage": "平均残りHP",
-  "TimeMin": "世界記録"
+  "TimeMin": "世界記録",
+
+  "SkillSelector": "スキル",
+  "SkillPassive": "パッシブ",
+  "SkillActive": "アクティブ",
+  "SkillSpeed": "速度",
+  "SkillAccel": "加速力",
+  "SkillHeal": "持久力",
+  "SkillLane": "コース取り",
+  "SkillSight": "視野",
+  "SkillGate": "スタート",
+  "SkillDebuff": "デバフ",
+  "SkillTemptation": "掛かり",
+  "SkillNormal": "ノーマル",
+  "SkillRare": "レア"
 }

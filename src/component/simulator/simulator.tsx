@@ -34,6 +34,7 @@ interface IState extends IHorseState, IProperRate {
   ground?: GroundType,
   distance?: number,
   groundStatus?: GroundStatus,
+  skills?: string[],
 
   course?: CourseDataType,
   raceResults: RaceResultData[],
@@ -118,6 +119,9 @@ class Simulator extends Component<IProps, IState> {
         break;
       case 'raceResults':
         this.setState({ raceResults: value });
+        break;
+      case 'skills':
+        this.setState({ skills: value as string[] });
         break;
       default:
         this.setState({ [key]: value } as Pick<IProperRate, keyof IProperRate>);

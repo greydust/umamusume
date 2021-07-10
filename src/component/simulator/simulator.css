@@ -18,3 +18,16 @@
 table, th, td {
   border: 1px solid black;
 }
+
+.skillIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.skill_1 {
+  background: #fff;
+}
+
+.skill_2 {
+  background: #ff0;
+}
