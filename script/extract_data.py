@@ -106,7 +106,8 @@ def get_course_param(course):
     item = meta_current.fetchone()
     course_definition = {
         "straight": [],
-        "corner": [{}, {}, {}, {}],
+        "corner": [],
+        "corner_index": [-1, -1, -1, -1],
     }
     if item:
         assets = UnityPy.load(os.path.join(asset_folder, "dat", item["hash"][:2], item["hash"]))
@@ -116,11 +117,13 @@ def get_course_param(course):
                     tree = obj.read_typetree()
                     params = tree["courseParams"]
                     for param in params:
-                        if param["_paramType"] == 0 and 1 <= param["_values"][0] <= 4:
-                            course_definition["corner"][param["_values"][0] - 1] = {
+                        if param["_paramType"] == 0:
+                            course_definition["corner"].append({
                                 "start": param["_distance"],
                                 "end": param["_distance"] + param["_values"][1],
-                            }
+                            })
+                            if 1 <= param["_values"][0] <= 4:
+                                course_definition["corner_index"][param["_values"][0] - 1] = len(course_definition["corner"]) - 1
                         elif param["_paramType"] == 2:
                             if param["_values"][0] == 1:
                                 last_straight_start = param["_distance"]
