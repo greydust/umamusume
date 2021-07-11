@@ -69,17 +69,13 @@
   "SkillNormal": "ノーマル",
   "SkillRare": "レア",
 
-  "CoursePositionKeep": "ポジションキープ",
-  "CourseStartPhase": "序盤",
+  "CoursePositionKeepEnd": "ポジションキープ終了",
   "CourseMiddlePhase": "中盤",
   "CourseEndPhase": "終盤",
-  "CourseCorner": "コーナ",
   "CourseSlope": "坂",
   "CourseCornerDefault": "コーナ",
   "CourseCorner1": "コーナ1",
   "CourseCorner2": "コーナ2",
   "CourseCorner3": "コーナ3",
-  "CourseCorner4": "コーナ4",
-  "CourseStart": "始まり",
-  "CourseEnd": "終了"
+  "CourseCorner4": "コーナ4"
 }

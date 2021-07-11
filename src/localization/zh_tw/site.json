@@ -1,6 +1,7 @@
 {
   "Relation Graph": "相性表",
   "Relation Query": "相性查詢",
+  "Course": "跑道檢視",
   "Simulator": "模擬器",
 
   "SimulatorCalculate": "模擬",
@@ -9,5 +10,15 @@
   "Stamina": "耐力",
   "Power": "力量",
   "Guts": "毅力",
-  "Wiz": "智力"
+  "Wiz": "智力",
+
+  "CoursePositionKeepEnd": "位置意識結束",
+  "CourseMiddlePhase": "中盤",
+  "CourseEndPhase": "終盤",
+  "CourseSlope": "坡度",
+  "CourseCornerDefault": "彎道",
+  "CourseCorner1": "第一彎道",
+  "CourseCorner2": "第二彎道",
+  "CourseCorner3": "第三彎道",
+  "CourseCorner4": "第四彎道"
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  ComposedChart, Line, XAxis, YAxis, Area, Tooltip, ReferenceLine, Legend, ReferenceArea, Label,
+  ComposedChart, Line, XAxis, YAxis, Tooltip, ReferenceLine, Legend, ReferenceArea, Label,
 } from 'recharts';
 
 import {
@@ -40,7 +40,7 @@ const CORNER_COLOR: { [key: string]: any } = {
     fill: '#003300',
     fillOpacity: 0.3,
   },
-}
+};
 
 interface IProps {
   localization: LocalizationData
@@ -93,6 +93,8 @@ class CourseChart extends Component<IProps, IState> {
       referenceAreas.push(<ReferenceArea
         x1={course.param.corner[i].start}
         x2={course.param.corner[i].end}
+        y1={-2.5}
+        y2={-3}
         stroke={CORNER_COLOR[index].stroke}
         strokeOpacity={CORNER_COLOR[index].strokeOpacity}
         fill={CORNER_COLOR[index].fill}
@@ -114,17 +116,17 @@ class CourseChart extends Component<IProps, IState> {
         <ReferenceLine
           x={blockDistance * 10}
           stroke="red"
-          label={`${localization.site.CoursePositionKeep}${localization.site.CourseEnd}`}
+          label={<Label position="insideTop">{localization.site.CoursePositionKeepEnd}</Label>}
         />
         <ReferenceLine
           x={blockDistance * 4}
           stroke="red"
-          label={`${localization.site.CourseMiddlePhase}`}
+          label={<Label position="insideTop">{localization.site.CourseMiddlePhase}</Label>}
         />
         <ReferenceLine
           x={blockDistance * 16}
           stroke="red"
-          label={`${localization.site.CourseEndPhase}`}
+          label={<Label position="insideTop">{localization.site.CourseEndPhase}</Label>}
         />
         { referenceAreas }
       </ComposedChart>

@@ -70,12 +70,14 @@ class Simulator extends Component<IProps, IState> {
       runningStyleSashi: ProperRate.A,
       runningStyleOikomi: ProperRate.A,
 
-      strategy: RunningStyle.Nige,
-      racecourse: '10001',
+      racecourse: '10006',
       ground: GroundType.Turf,
-      distance: 1200,
+      distance: 1600,
+      course: this.courseCategories['10006'][GroundType.Turf][1600],
+
+      strategy: RunningStyle.Nige,
       groundStatus: GroundStatus.Good,
-      course: this.courseCategories['10001'][GroundType.Turf][1200],
+
       raceResults: [],
     };
   }
