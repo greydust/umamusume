@@ -5,11 +5,11 @@ import {
 import React, { Component } from 'react';
 
 import {
-  CourseCategory, CourseDataType, GroundStatus, LocalizationData, RunningStyle,
-} from '../../library/common';
+  CourseCategory, CourseDataType, LocalizationData,
+} from '../library/common';
 
 import 'antd/dist/antd.css';
-import './simulator.css';
+import './component.css';
 
 const { Option } = Select;
 
@@ -18,8 +18,6 @@ interface IProps {
   courseCategories: CourseCategory,
   setData: (key: string, value: any) => void,
   state: {
-    strategy?: string,
-    groundStatus?: string,
     racecourse?: string,
     ground?: string,
     distance?: number,
@@ -35,42 +33,6 @@ class CourseData extends Component<IProps, IState> {
     super(props);
     this.state = {
     };
-  }
-
-  getStrategyComponent() {
-    const { localization, setData, state } = this.props;
-    const { strategy } = state;
-    return (
-      <Col span={4}>
-        <div className="flex">
-          <span className="select-label">{`${localization.site.Strategy}:`}</span>
-          <Select className="select" value={strategy} onChange={(value) => setData('strategy', value)}>
-            <Option value={RunningStyle.Nige}>{localization.site.RunningStyleNige}</Option>
-            <Option value={RunningStyle.Senko}>{localization.site.RunningStyleSenko}</Option>
-            <Option value={RunningStyle.Sashi}>{localization.site.RunningStyleSashi}</Option>
-            <Option value={RunningStyle.Oikomi}>{localization.site.RunningStyleOikomi}</Option>
-          </Select>
-        </div>
-      </Col>
-    );
-  }
-
-  getGroundStatusComponent() {
-    const { localization, setData, state } = this.props;
-    const { groundStatus } = state;
-    return (
-      <Col span={4}>
-        <div className="flex">
-          <span className="select-label">{`${localization.site.GroundStatus}:`}</span>
-          <Select className="select" value={groundStatus} onChange={(value) => setData('groundStatus', value)}>
-            <Option value={GroundStatus.Good}>{localization.site.GroundStatusGood}</Option>
-            <Option value={GroundStatus.SlightlyHeavy}>{localization.site.GroundStatusSlightlyHeavy}</Option>
-            <Option value={GroundStatus.Heavy}>{localization.site.GroundStatusHeavy}</Option>
-            <Option value={GroundStatus.Bad}>{localization.site.GroundStatusBad}</Option>
-          </Select>
-        </div>
-      </Col>
-    );
   }
 
   getRacecourseComponent() {
@@ -137,16 +99,12 @@ class CourseData extends Component<IProps, IState> {
   }
 
   render() {
-    const strategyComponent = this.getStrategyComponent();
-    const groundStatusComponent = this.getGroundStatusComponent();
     const racecourseComponent = this.getRacecourseComponent();
     const groundComponent = this.getGroundComponent();
     const distanceComponent = this.getDistanceComponent();
 
     return (
       <Row gutter={[8, 8]}>
-        {strategyComponent}
-        {groundStatusComponent}
         {racecourseComponent}
         {groundComponent}
         {distanceComponent}

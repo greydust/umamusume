@@ -10,6 +10,7 @@ import { LocalizationData } from './library/common';
 import RelationGraph from './component/relation/graph';
 import RelationQuery from './component/relation/query';
 import Simulator from './component/simulator/simulator';
+import Course from './component/course/course';
 import Skill from './component/skill/index';
 import Localization from './localization';
 
@@ -105,6 +106,9 @@ class App extends Component<IProps, IState> {
                 <Link to="/relation/query" className="link">{localization.site['Relation Query']}</Link>
               </Menu.Item>
               <Menu.Item key="3">
+                <Link to="/course" className="link">{localization.site.Course}</Link>
+              </Menu.Item>
+              <Menu.Item key="4">
                 <Link to="/simulator" className="link">{localization.site.Simulator}</Link>
               </Menu.Item>
             </Menu>
@@ -117,6 +121,7 @@ class App extends Component<IProps, IState> {
               <Route path="/relation/graph" render={() => (<RelationGraph localization={localization} />)} />
               <Route path="/relation/query" render={() => (<RelationQuery localization={localization} />)} />
               <Route path="/simulator" render={() => (<Simulator localization={localization} />)} />
+              <Route path="/course" render={() => (<Course localization={localization} />)} />
 
               <DataContext.Provider value={{ data, setData, initData }}>
                 <Route path="/skill" render={() => (<Skill />)} />

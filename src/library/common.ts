@@ -99,7 +99,8 @@ export interface CourseDataType {
   param: {
     corner: { start?: number, end?: number }[],
     straight: { start: number, end: number }[],
-  }
+    corner_index: number[],
+  },
   slope_per: { distance: number, slope_per: number }[],
 }
 

@@ -7,7 +7,7 @@ import { LocalizationData, SkillData } from '../../library/common';
 import skillJson from '../../db/skill.json';
 
 import 'antd/dist/antd.css';
-import './simulator.css';
+import '../component.css';
 
 interface SkillSelectorDefinition {
   categoryName: string,

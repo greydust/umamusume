@@ -16,7 +16,7 @@ import Course from '../../library/race/course';
 import RaceHorse from '../../library/race/race-horse';
 
 import 'antd/dist/antd.css';
-import './simulator.css';
+import '../component.css';
 
 interface SimulatorState extends IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate {
   strategy?: string,

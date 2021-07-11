@@ -7,14 +7,15 @@ import {
 import {
   IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate, RaceResultData,
 } from './common';
-import CourseData from './course-data';
+import CourseData from '../course-data';
 import HorseData from './horse-data';
+import RaceData from './race-data';
 import RaceResult from './race-result';
 import SimulatorCalculator from './simulator-calculator';
 import SkillSelector from './skill-selector';
 
 import 'antd/dist/antd.css';
-import './simulator.css';
+import '../component.css';
 import '../../app.css';
 
 import courseJson from '../../db/course.json';
@@ -29,14 +30,16 @@ interface IProperRate extends IGroundProperRate, IDistanceProperRate, IRunningSt
 }
 
 interface IState extends IHorseState, IProperRate {
-  strategy?: RunningStyle,
+  skills?: string[],
+
   racecourse?: string,
   ground?: GroundType,
   distance?: number,
-  groundStatus?: GroundStatus,
-  skills?: string[],
-
   course?: CourseDataType,
+
+  strategy?: RunningStyle,
+  groundStatus?: GroundStatus,
+
   raceResults: RaceResultData[],
 }
 
@@ -159,6 +162,11 @@ class Simulator extends Component<IProps, IState> {
         <CourseData
           localization={localization}
           courseCategories={this.courseCategories}
+          setData={this.setData}
+          state={this.state}
+        />
+        <RaceData
+          localization={localization}
           setData={this.setData}
           state={this.state}
         />

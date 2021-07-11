@@ -6,7 +6,7 @@ import { RaceResultData } from './common';
 import constant from '../../library/race/constant';
 import { ResultFlag } from '../../library/race/common';
 
-import './simulator.css';
+import '../component.css';
 
 interface IProps {
   localization: LocalizationData;

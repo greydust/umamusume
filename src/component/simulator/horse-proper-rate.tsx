@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import { LocalizationData } from '../../library/common';
 
-import './simulator.css';
+import '../component.css';
 
 interface IProps {
   localization: LocalizationData;
