@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  ComposedChart, Line, XAxis, YAxis, Area, Tooltip, ReferenceLine, Legend,
+  ComposedChart, Line, XAxis, YAxis, Area, Tooltip, ReferenceLine, Legend, ReferenceArea, Label,
 } from 'recharts';
 
 import {
@@ -8,6 +8,39 @@ import {
 } from '../../library/common';
 
 import 'react-tabs/style/react-tabs.css';
+
+const CORNER_COLOR: { [key: string]: any } = {
+  Default: {
+    stroke: '#00ff00',
+    strokeOpacity: 0.3,
+    fill: '#00ff00',
+    fillOpacity: 0.3,
+  },
+  1: {
+    stroke: '#00bb00',
+    strokeOpacity: 0.3,
+    fill: '#00bb00',
+    fillOpacity: 0.3,
+  },
+  2: {
+    stroke: '#009900',
+    strokeOpacity: 0.3,
+    fill: '#009900',
+    fillOpacity: 0.3,
+  },
+  3: {
+    stroke: '#00f660',
+    strokeOpacity: 0.3,
+    fill: '#006600',
+    fillOpacity: 0.3,
+  },
+  4: {
+    stroke: '#003300',
+    strokeOpacity: 0.3,
+    fill: '#003300',
+    fillOpacity: 0.3,
+  },
+}
 
 interface IProps {
   localization: LocalizationData
@@ -51,27 +84,21 @@ class CourseChart extends Component<IProps, IState> {
       lastSlopePerDistance = slope.distance;
     }
 
+    const referenceAreas = [];
     for (let i = 0; i < course.param.corner.length; i += 1) {
+      let index = 'Default';
       if (course.param.corner_index.includes(i)) {
-        const index = course.param.corner_index.indexOf(i) + 1;
-        data.push({
-          distance: course.param.corner[i].start,
-          [`corner${index}`]: [-3, 3],
-        });
-        data.push({
-          distance: course.param.corner[i].end,
-          [`corner${index}`]: [-3, 3],
-        });
-      } else {
-        data.push({
-          distance: course.param.corner[i].start,
-          corner: [-3, 3],
-        });
-        data.push({
-          distance: course.param.corner[i].end,
-          corner: [-3, 3],
-        });
+        index = (course.param.corner_index.indexOf(i) + 1).toString();
       }
+      referenceAreas.push(<ReferenceArea
+        x1={course.param.corner[i].start}
+        x2={course.param.corner[i].end}
+        stroke={CORNER_COLOR[index].stroke}
+        strokeOpacity={CORNER_COLOR[index].strokeOpacity}
+        fill={CORNER_COLOR[index].fill}
+        fillOpacity={CORNER_COLOR[index].fillOpacity}
+        label={<Label position="insideTop">{localization.site[`CourseCorner${index}`]}</Label>}
+      />);
     }
     return (
       <ComposedChart
@@ -83,7 +110,7 @@ class CourseChart extends Component<IProps, IState> {
         <YAxis domain={[-3, 3]} />
         <Tooltip />
         <Legend />
-        <Line name={localization.site.CourseSlope} type="monotone" dataKey="slopePer" stroke="#8884d8" />
+        <Line dot={false} name={localization.site.CourseSlope} type="monotone" dataKey="slopePer" stroke="#8884d8" />
         <ReferenceLine
           x={blockDistance * 10}
           stroke="red"
@@ -99,11 +126,7 @@ class CourseChart extends Component<IProps, IState> {
           stroke="red"
           label={`${localization.site.CourseEndPhase}`}
         />
-        <Area name={localization.site.CourseCorner} type="monotone" dataKey="corner" fill="#00ff00" stroke="#00ff00" />
-        <Area name={localization.site.CourseCorner1} type="monotone" dataKey="corner1" fill="#00bb00" stroke="#00bb00" />
-        <Area name={localization.site.CourseCorner2} type="monotone" dataKey="corner2" fill="#009900" stroke="#009900" />
-        <Area name={localization.site.CourseCorner3} type="monotone" dataKey="corner3" fill="#006600" stroke="#006600" />
-        <Area name={localization.site.CourseCorner4} type="monotone" dataKey="corner4" fill="#003300" stroke="#003300" />
+        { referenceAreas }
       </ComposedChart>
     );
   }
