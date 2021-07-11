@@ -68,12 +68,11 @@ def extract_proper_rate():
         json.dump(proper_running_style_json, fp, indent=2, sort_keys=True)
 
 def get_course_slope_per(course):
-    target_file_name = 'race/course/{race_track_id}/pos/an_pos_race{race_track_id}_00_{distance}_{ground}_{inout}_{turn}'.format(
+    target_file_name = 'race/course/{race_track_id}/pos/an_pos_race{race_track_id}_00_{distance}_{ground}_{inout}_0'.format(
         race_track_id = course["race_track_id"],
         distance = course["distance"],
         ground = str(int(course["ground"]) - 1).zfill(2),
         inout = int(course["inout"]) - 1,
-        turn = int(course["turn"]) - 1,
     )
     meta_current.execute('SELECT n as name, h as hash from a WHERE n = "{target_file_name}"'.format(
         target_file_name = target_file_name,
