@@ -151,14 +151,14 @@ class Simulator extends Component<IProps, IState> {
           setData={this.setData}
           state={this.state}
         />
-        <CourseData
+        <SkillSelector
           localization={localization}
-          courseCategories={this.courseCategories}
           setData={this.setData}
           state={this.state}
         />
-        <SkillSelector
+        <CourseData
           localization={localization}
+          courseCategories={this.courseCategories}
           setData={this.setData}
           state={this.state}
         />

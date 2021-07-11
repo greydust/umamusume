@@ -1,4 +1,6 @@
-import { Layout, Menu, Select } from 'antd';
+import {
+  Layout, Menu, Select, Row, Col,
+} from 'antd';
 import React, { Component } from 'react';
 import {
   Redirect, HashRouter as Router, Route, Link, Switch,
@@ -122,12 +124,23 @@ class App extends Component<IProps, IState> {
 
             </Switch>
           </Content>
-          <Footer className="footer">
-            <Select className="localizationSelector" defaultValue="ja-jp" onChange={this.changeLocalization}>
-              <Option value="zh-tw">繁體中文</Option>
-              <Option value="ja-jp">日本語</Option>
-              <Option value="en-us">English</Option>
-            </Select>
+          <Footer className="footer" style={{ padding: '5px' }}>
+            <Row gutter={[8, 8]}>
+              <Col span={20} />
+              <Col span={2}>
+                <a className="github" href="https://github.com/greydust/umamusume" target="_blank" rel="noreferrer">
+                  <img src={`${process.env.PUBLIC_URL}/static/image/github.png`} height="30" alt="GitHub" />
+                  GitHub
+                </a>
+              </Col>
+              <Col span={2}>
+                <Select className="localizationSelector" defaultValue="ja-jp" onChange={this.changeLocalization}>
+                  <Option value="zh-tw">繁體中文</Option>
+                  <Option value="ja-jp">日本語</Option>
+                  <Option value="en-us">English</Option>
+                </Select>
+              </Col>
+            </Row>
           </Footer>
         </Layout>
       </Router>

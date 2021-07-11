@@ -10,12 +10,12 @@ img.portrait {
 
 .header {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .tabs {
   padding: 10px;
-  height: calc(100vh - 148px);
+  height: calc(100vh - 104px);
   width: 100%;
 }
 
@@ -27,11 +27,6 @@ img.portrait {
 
 .footer {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  height: 64px;
-}
-
-.localizationSelector {
-  float: right;
+  margin-top: 0px;
+  height: 40px;
 }
