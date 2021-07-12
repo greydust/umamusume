@@ -6,7 +6,7 @@ import Select from '@material-ui/core/Select';
 import React, { Component } from 'react';
 
 import '../../app.css';
-import './relation.css';
+import './query.css';
 
 import characterJson from '../../db/character.json';
 import relationJson from '../../db/relation.json';
@@ -65,9 +65,9 @@ class RelationQuery extends Component<IProps, IState> {
 
     return rel.map((value, index) => (
       <tr>
-        <td>{value[0]}</td>
+        <td><big>{value[0]}</big></td>
         <td><img className="portrait" src={value[2]} alt={value[0]} /></td>
-        <td>{value[1]}</td>
+        <td className="text1">{value[1]}</td>
       </tr>
     ));
   }
@@ -98,6 +98,7 @@ class RelationQuery extends Component<IProps, IState> {
             </Select>
           </FormControl>
         </div>
+        <br/>
         <table>
           {relationArray}
         </table>

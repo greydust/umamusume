@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import 'react-tabs/style/react-tabs.css';
 
 import '../../app.css';
-import './relation.css';
+import './graph.css';
 
 import characterJson from '../../db/character.json';
 import relationJson from '../../db/relation.json';
@@ -49,7 +49,7 @@ class RelationGraph extends Component<IProps, IState> {
     return (
       <tr>
         <th>{this.idToPortrait(id)}</th>
-        { _.map(this.characterIds, (targetId) => <th>{ RelationGraph.calculateRelation(id, targetId) }</th>) }
+        { _.map(this.characterIds, (targetId) => <td className="text1">{ RelationGraph.calculateRelation(id, targetId) }</td>) }
       </tr>
     );
   }
@@ -71,8 +71,8 @@ class RelationGraph extends Component<IProps, IState> {
         <table>
           <tbody>
             <tr>
-              <th />
-              { _.map(this.characterIds, (id) => <th>{this.idToPortrait(id)}</th>) }
+              <td />
+              { _.map(this.characterIds, (id) => <td>{this.idToPortrait(id)}</td>) }
             </tr>
             { _.map(this.characterIds, (id) => this.createRow(id)) }
           </tbody>
