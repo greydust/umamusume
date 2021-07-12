@@ -83,6 +83,12 @@ class CourseChart extends Component<IProps, IState> {
       lastSlopePer = slope.slope_per;
       lastSlopePerDistance = slope.distance;
     }
+    if (lastSlopePer !== course.distance) {
+      data.push({
+        slopePer: 0,
+        distance: course.distance,
+      });
+    }
 
     const referenceAreas = [];
     for (let i = 0; i < course.param.corner.length; i += 1) {
