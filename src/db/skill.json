@@ -982,6 +982,54 @@
       }
     ]
   },
+  "100051": {
+    "id": "100051",
+    "name": "煌星のヴォードヴィル",
+    "rarity": 5,
+    "description": "最終直線で前の方で少し抜け出ていると\\n輝きを増し速度がすごく上がる",
+    "icon_id": "20013",
+    "need_skill_point": null,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": "==",
+              "key": "is_finalcorner",
+              "value": "1"
+            },
+            {
+              "operator": "==",
+              "key": "corner",
+              "value": "0"
+            },
+            {
+              "operator": "<=",
+              "key": "order_rate",
+              "value": "30"
+            },
+            {
+              "operator": ">=",
+              "key": "behind_near_lane_time",
+              "value": "1"
+            }
+          ]
+        },
+        "condition_raw": "is_finalcorner==1&corner==0&order_rate<=30&behind_near_lane_time>=1",
+        "ability_time": 5.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "27",
+            "ability_value": 0.45,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
   "100061": {
     "id": "100061",
     "name": "勝利の鼓動",
@@ -16112,6 +16160,54 @@
           {
             "ability_type": "31",
             "ability_value": 0.2,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "900051": {
+    "id": "900051",
+    "name": "煌星のヴォードヴィル",
+    "rarity": 1,
+    "description": "最終直線で前の方で少し抜け出ていると\\n速度が少し上がる",
+    "icon_id": "20011",
+    "need_skill_point": 200,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": "==",
+              "key": "is_finalcorner",
+              "value": "1"
+            },
+            {
+              "operator": "==",
+              "key": "corner",
+              "value": "0"
+            },
+            {
+              "operator": "<=",
+              "key": "order_rate",
+              "value": "30"
+            },
+            {
+              "operator": ">=",
+              "key": "behind_near_lane_time",
+              "value": "1"
+            }
+          ]
+        },
+        "condition_raw": "is_finalcorner==1&corner==0&order_rate<=30&behind_near_lane_time>=1",
+        "ability_time": 3.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "27",
+            "ability_value": 0.25,
             "target_type": "1",
             "target_value": 0
           }
