@@ -10,6 +10,7 @@ if sys.version_info.major < 3 or (sys.version_info.major == 3 and sys.version_in
     exit()
 
 base_dir = os.path.dirname(__file__)
+DISTANCE_PRECISION = 1000
 
 def db_dict_factory(cursor, row):
     result = {}
@@ -86,13 +87,13 @@ def get_course_slope_per(course):
                     tree = obj.read_typetree()
                     rotations = tree["key"]["rotation"]
                     slope_pers = [-math.tan(math.asin(min(max(2*(r["w"]*r["x"]-r["y"]*r["z"]), -1), 1)))*100 for r in rotations]
-                    part_distance = float(course["distance"]) / (len(slope_pers) - 1)
+                    part_distance = int(course["distance"]) * DISTANCE_PRECISION / (len(slope_pers) - 1)
                     current_distance = 0
                     course_slope_per = []
                     for slope_per in slope_pers:
                         real_slope_per = 0 if -1 < slope_per < 1 else slope_per
                         if not course_slope_per or course_slope_per[-1]["slope_per"] != real_slope_per:
-                            course_slope_per.append({ "distance": current_distance, "slope_per": real_slope_per })
+                            course_slope_per.append({ "distance": current_distance / DISTANCE_PRECISION, "slope_per": real_slope_per })
                         current_distance += part_distance
                     return course_slope_per
     return []
