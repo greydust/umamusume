@@ -1,0 +1,9 @@
+table, th, td {
+  text-align:center;
+  padding:8px;
+  border: 1px solid black;
+}
+
+.text1 {
+  font-size: 25px;
+}

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import 'react-tabs/style/react-tabs.css';
 
 import '../../app.css';
-import './relation.css';
+import './graph.css';
 
 import { LocalizationData } from '../../library/common';
 import characterJson from '../../db/character.json';
@@ -50,7 +50,7 @@ class RelationGraph extends Component<IProps, IState> {
     return (
       <tr key={`relation_row_${id}`}>
         <th key={`portrait_row_${id}`}>{this.idToPortrait(id)}</th>
-        { _.map(this.characterIds, (targetId) => <th key={`relation_${id}_${targetId}`}>{ RelationGraph.calculateRelation(id, targetId) }</th>) }
+        { _.map(this.characterIds, (targetId) => <th className="text1" key={`relation_${id}_${targetId}`}>{ RelationGraph.calculateRelation(id, targetId) }</th>) }
       </tr>
     );
   }
@@ -72,8 +72,8 @@ class RelationGraph extends Component<IProps, IState> {
         <table>
           <tbody>
             <tr>
-              <th />
-              { _.map(this.characterIds, (id) => <th key={`portrait_column_${id}`}>{this.idToPortrait(id)}</th>) }
+              <td />
+              { _.map(this.characterIds, (id) => <td key={`portrait_column_${id}`}>{this.idToPortrait(id)}</td>) }
             </tr>
             { _.map(this.characterIds, (id) => this.createRow(id)) }
           </tbody>

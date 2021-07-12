@@ -6,7 +6,7 @@ import Select from '@material-ui/core/Select';
 import React, { Component } from 'react';
 
 import '../../app.css';
-import './relation.css';
+import './query.css';
 
 import { LocalizationData } from '../../library/common';
 import characterJson from '../../db/character.json';
