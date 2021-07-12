@@ -5,12 +5,17 @@ import util from 'util';
 import constant from './constant';
 import Course from './course';
 import Horse, { HorseStat } from './horse';
+import Skill from './skill';
+import {
+  RaceResultData, ResultFlag, Season, Weather, IRaceHorse,
+} from './common';
+import {
+  RunningStyle, CoursePhase, SkillEffectData, SkillData, SkillAbilityData,
+} from '../common';
 
 import distanceProperRateJson from '../../db/proper_rate/distance.json';
 import groundProperRateJson from '../../db/proper_rate/ground.json';
 import runningStyleProperRateJson from '../../db/proper_rate/running_style.json';
-import { ResultFlag } from './common';
-import { RunningStyle, CoursePhase } from '../common';
 
 const distanceProperRate = distanceProperRateJson as { [key: string]: { speed: number, power: number } };
 const groundProperRate = groundProperRateJson as { [key: string]: number };
@@ -27,7 +32,7 @@ enum BreakPoint {
 
   LastSpurt = '2000',
   PositionSense = '2010',
-  Skill = '2020',
+  TriggerSkill = '2020',
   DownSlopeAccelMode = '2030',
   ZeroHp = '2040',
 
@@ -52,7 +57,7 @@ interface BreakPointSet {
 
   [BreakPoint.LastSpurt]?: BreakPointData,
   [BreakPoint.PositionSense]?: BreakPointData,
-  [BreakPoint.Skill]?: BreakPointData[],
+  [BreakPoint.TriggerSkill]?: BreakPointData[],
   [BreakPoint.DownSlopeAccelMode]?: BreakPointData,
   [BreakPoint.ZeroHp]?: BreakPointData,
 
@@ -81,12 +86,34 @@ interface LastSpurtCandidate {
   lastSpurtDistance: number,
 }
 
-class RaceHorse {
+class RaceHorse implements IRaceHorse {
   private _course: Course;
 
   private _horse: Horse;
 
   private _runningStyle: RunningStyle;
+
+  private _season: Season;
+
+  private _weather: Weather;
+
+  private _postNumber: number;
+
+  private _popularity: number;
+
+  private _sameRunningStyleCount: number;
+
+  private _popularityFirstRunningStyle: RunningStyle;
+
+  private _statAddition: HorseStat;
+
+  private _stat: HorseStat;
+
+  private _generalSkills: SkillData[] = [];
+
+  private _activateCountSkills: SkillData[] = [];
+
+  private _skillCooldown: { [key: string]: number } = {};
 
   private _speedWizRandomRange: [number, number] = [0, 0];
 
@@ -112,35 +139,91 @@ class RaceHorse {
 
   private _slopePer: number = 0;
 
-  resultFlag: Set<ResultFlag> = new Set<ResultFlag>();
+  raceResult: RaceResultData;
 
-  constructor({ horse, runningStyle, course }: {
+  constructor({
+    horse, course, runningStyle, season, weather, postNumber, popularity, sameRunningStyle, popularityFirstRunningStyle,
+  }: {
     horse: Horse,
-    runningStyle: RunningStyle,
     course: Course,
+    runningStyle: RunningStyle,
+    season: Season,
+    weather: Weather,
+    postNumber: number;
+    popularity: number;
+    sameRunningStyle: number;
+    popularityFirstRunningStyle: RunningStyle,
   }) {
     this._horse = horse;
     this._course = course;
     this._runningStyle = runningStyle;
+    this._season = season;
+    this._weather = weather;
+    this._postNumber = postNumber;
+    this._popularity = popularity;
+    this._sameRunningStyleCount = sameRunningStyle;
+    this._popularityFirstRunningStyle = popularityFirstRunningStyle;
+    this._statAddition = {
+      speed: 0,
+      stamina: 0,
+      pow: 0,
+      guts: 0,
+      wiz: 0,
+    };
+    this._stat = _.clone(this._horse.stat);
+    this.raceResult = {
+      time: 0,
+      hpLeft: 0,
+      resultFlags: new Set<ResultFlag>(),
+      skillsActivated: {},
+      temptation: {
+        triggered: false,
+        time: 0,
+      },
+    };
+  }
 
-    const upperBound = (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1) * constant.targetSpeed.baseTargetSpeedRandomCoefficient
-      * Math.log10(this.stat.wiz * constant.targetSpeed.baseTargetSpeedRandomLogCoefficient);
-    const lowerBound = constant.targetSpeed.baseTargetSpeedRandomMinusVal1
-      + (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1) * constant.targetSpeed.baseTargetSpeedRandomCoefficient
-      * Math.log10(this.stat.wiz * constant.targetSpeed.baseTargetSpeedRandomLogCoefficient);
-    this._speedWizRandomRange = [lowerBound, upperBound];
-    this.refreshSpeedRandomValue();
+  get course(): Course {
+    return this._course;
+  }
+
+  get season(): Season {
+    return this._season;
+  }
+
+  get weather(): Weather {
+    return this._weather;
+  }
+
+  get postNumber(): number {
+    return this._postNumber;
+  }
+
+  get popularity(): number {
+    return this._popularity;
+  }
+
+  get sameRunningStyleCount(): number {
+    return this._sameRunningStyleCount;
+  }
+
+  get popularityFirstRunningStyle(): RunningStyle {
+    return this._popularityFirstRunningStyle;
+  }
+
+  get runningStyle(): RunningStyle {
+    return this._runningStyle;
   }
 
   get maxHp(): number {
     return this._course.distance + this.stat.stamina * constant.hp.hpMaxCoef[this._runningStyle] * constant.hp.hpInitialVal1;
   }
 
-  get hp(): number {
+  private get hp(): number {
     return this._hp;
   }
 
-  get time(): number {
+  private get time(): number {
     return this._time;
   }
 
@@ -148,14 +231,16 @@ class RaceHorse {
     return constant.lastSpurt.determineRateBase + constant.lastSpurt.determineRateWizMultiplier * this.stat.wiz;
   }
 
+  private get originalStat(): HorseStat {
+    return this._horse.stat;
+  }
+
   private get stat(): HorseStat {
-    return {
-      speed: this._horse.stat.speed,
-      stamina: this._horse.stat.stamina,
-      pow: this._horse.stat.pow,
-      guts: this._horse.stat.guts,
-      wiz: this._horse.stat.wiz,
-    };
+    return this._stat;
+  }
+
+  private get skillActivateRate(): number {
+    return Math.max(constant.skill.activatePerMin, constant.skill.lotActivatePerVal1 - constant.skill.lotActivatePerVal2 / this.originalStat.wiz);
   }
 
   private get minSpeed(): number {
@@ -523,7 +608,7 @@ class RaceHorse {
     const { hpCost, finalSpeed } = this.calculateAccelAndRun(this._course.distance - constant.lastSpurt.targetDistanceFromGoal);
     this._mode.delete(Mode.LastSpurt);
     if (hpCost <= this._hp && finalSpeed === this._lastSpurtTargetSpeed) {
-      this.resultFlag.add(ResultFlag.FullLastSpurt);
+      this.raceResult.resultFlags.add(ResultFlag.FullLastSpurt);
       return {
         lastSpurtDistance: this._distance,
         lastSpurtTargetSpeed: finalSpeed,
@@ -651,13 +736,22 @@ class RaceHorse {
       } else {
         this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
       }
-    } else {
-      if (Math.random() <= this.stat.wiz * constant.slope.downSlopeAccelModeChanceBase) {
-        this._mode.add(Mode.DownSlopeAccel);
-        this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
-      }
+    } else if (Math.random() <= this.stat.wiz * constant.slope.downSlopeAccelModeChanceBase) {
+      this._mode.add(Mode.DownSlopeAccel);
+      this._breakPoints[BreakPoint.DownSlopeAccelMode] = { time: this._time + 1 };
     }
   };
+
+  private activateAbility({ skillId, ability }: { skillId: string, ability: SkillAbilityData }) {
+    if (!(skillId in this.raceResult.skillsActivated)) {
+      this.raceResult.skillsActivated[skillId] = { count: 1 };
+    } else {
+      this.raceResult.skillsActivated[skillId].count += 1;
+    }
+
+    for (const effect of ability.effects) {
+    }
+  }
 
   private triggerSkill = () => {};
 
@@ -678,7 +772,7 @@ class RaceHorse {
     [BreakPoint.ZeroHp]: this.zeroHp,
     [BreakPoint.Slope]: this.changeSlope,
     [BreakPoint.DownSlopeAccelMode]: this.checkDownSlopeAccelMode,
-    [BreakPoint.Skill]: this.triggerSkill,
+    [BreakPoint.TriggerSkill]: this.triggerSkill,
     [BreakPoint.Goal]: this.reachGoal,
   };
 
@@ -696,7 +790,7 @@ class RaceHorse {
 
   addBreakPoint(type: BreakPoint, data: BreakPointData) {
     switch (type) {
-      case BreakPoint.Skill:
+      case BreakPoint.TriggerSkill:
       case BreakPoint.Slope:
         if (!(type in this._breakPoints)) {
           this._breakPoints[type] = [data];
@@ -712,7 +806,7 @@ class RaceHorse {
 
   removeBreakPoint(type: BreakPoint) {
     switch (type) {
-      case BreakPoint.Skill:
+      case BreakPoint.TriggerSkill:
       case BreakPoint.Slope:
         this._breakPoints[type]?.pop();
         if (this._breakPoints[type]?.length === 0) {
@@ -725,6 +819,34 @@ class RaceHorse {
     }
   }
 
+  getSkillTriggerStat(skill: SkillData): { distances: number[], specific: boolean } {
+    const course = this._course;
+    return { distances: [], specific: false };
+  }
+
+  populateSkills() {
+    const { skillActivateRate } = this;
+    const generalTriggerDistances = new Set<number>();
+    const specificTriggerDistances = [];
+    for (const skill of this._horse.skills) {
+      if (Skill.matchBase(skill, this) && Math.random() <= skillActivateRate) {
+        if (skill.abilities[0].ability_time === -0.0001) {
+          this.activateAbility({ skillId: skill.id, ability: skill.abilities[0] });
+        } else {
+          const { distances, specific } = this.getSkillTriggerStat(skill);
+          if (specific) {
+            specificTriggerDistances.push({ distances, skill });
+          } else {
+            for (const distance of distances) {
+              generalTriggerDistances.add(distance);
+            }
+            this._generalSkills.push(skill);
+          }
+        }
+      }
+    }
+  }
+
   simulate() {
     this._speed = constant.course.startSpeed;
     this._time = 0;
@@ -733,6 +855,27 @@ class RaceHorse {
     this._mode = new Set();
     this._phase = CoursePhase.Start;
     this._breakPoints = {};
+    this._statAddition = {
+      speed: 0,
+      stamina: 0,
+      pow: 0,
+      guts: 0,
+      wiz: 0,
+    };
+    this._stat = _.clone(this._horse.stat);
+    this._generalSkills = [];
+    this._activateCountSkills = [];
+    this._skillCooldown = {};
+
+    this.populateSkills();
+
+    const upperBound = (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1) * constant.targetSpeed.baseTargetSpeedRandomCoefficient
+    * Math.log10(this.stat.wiz * constant.targetSpeed.baseTargetSpeedRandomLogCoefficient);
+    const lowerBound = constant.targetSpeed.baseTargetSpeedRandomMinusVal1
+      + (this.stat.wiz / constant.targetSpeed.baseTargetSpeedRandomPlusVal1) * constant.targetSpeed.baseTargetSpeedRandomCoefficient
+      * Math.log10(this.stat.wiz * constant.targetSpeed.baseTargetSpeedRandomLogCoefficient);
+    this._speedWizRandomRange = [lowerBound, upperBound];
+    this.refreshSpeedRandomValue();
 
     this.buildSlopeBreakPoints();
     this.doGateOpen();
@@ -748,6 +891,9 @@ class RaceHorse {
       }
       this.debugOutput();
     }
+
+    this.raceResult.time = this._time;
+    this.raceResult.hpLeft = this._hp;
   }
 
   debugOutput() {

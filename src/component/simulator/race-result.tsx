@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 import _ from 'lodash';
 import Common, { CourseDataType, LocalizationData } from '../../library/common';
-import { RaceResultData } from './common';
 import constant from '../../library/race/constant';
-import { ResultFlag } from '../../library/race/common';
+import { RaceResultData, ResultFlag } from '../../library/race/common';
 
 import '../component.css';
 

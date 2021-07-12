@@ -72,6 +72,10 @@ class Course {
   get allSlopePers(): { distance: number, slope_per: number }[] {
     return this._courseData.slope_per;
   }
+
+  get trackId(): string {
+    return this._courseData.race_track_id;
+  }
 }
 
 export default Course;

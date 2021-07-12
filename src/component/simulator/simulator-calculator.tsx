@@ -6,25 +6,33 @@ import React, { Component } from 'react';
 import Promise from 'bluebird';
 
 import {
-  CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, RunningStyle,
+  CourseDataType, DistanceType, GroundStatus, GroundType, LocalizationData, RunningStyle, SkillData,
 } from '../../library/common';
+import { RaceResultData, Season, Weather } from '../../library/race/common';
 import {
-  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate, RaceResultData,
+  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate,
 } from './common';
 import Horse from '../../library/race/horse';
 import Course from '../../library/race/course';
 import RaceHorse from '../../library/race/race-horse';
 
+import skillJson from '../../db/skill.json';
+
 import 'antd/dist/antd.css';
 import '../component.css';
+
+const skillData = skillJson as { [key: string]: SkillData };
 
 interface SimulatorState extends IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate {
   strategy?: string,
   groundStatus?: string,
+
   racecourse?: string,
   ground?: string,
   distance?: number,
   course?: CourseDataType,
+
+  skills?: string[],
 }
 
 interface IProps {
@@ -60,6 +68,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
     const {
       speed, stamina, pow, guts, wiz,
       strategy, groundStatus, course,
+      skills,
       groundTypeTurf, groundTypeDirt,
       distanceTypeShort, distanceTypeMile, distanceTypeMiddle, distanceTypeLong,
       runningStyleNige, runningStyleSenko, runningStyleSashi, runningStyleOikomi,
@@ -92,6 +101,7 @@ class SimulatorCalculator extends Component<IProps, IState> {
           [RunningStyle.Oikomi]: runningStyleOikomi,
         },
       },
+      skills: _.map(skills, (skillId) => (skillData[skillId])),
     });
 
     let counter = 0;
@@ -102,25 +112,20 @@ class SimulatorCalculator extends Component<IProps, IState> {
       new Array(SimulatorCalculator.concurrency),
       async () => {
         const raceHorse = new RaceHorse({
-          horse: targetHorse, course: targetCourse, runningStyle: strategy as RunningStyle,
+          horse: targetHorse,
+          course: targetCourse,
+          runningStyle: strategy as RunningStyle,
+          season: Season.Spring,
+          weather: Weather.Sunny,
+          postNumber: 1,
+          popularity: 1,
+          sameRunningStyle: 0,
+          popularityFirstRunningStyle: strategy as RunningStyle,
         });
         for (let i = 0; i < worksPerThread && started < rounds; i += 1) {
           started += 1;
           raceHorse.simulate();
-          raceResults.push({
-            time: raceHorse.time,
-            resultFlags: raceHorse.resultFlag,
-            hpLeft: raceHorse.hp > 0 ? raceHorse.hp : 0,
-            skills: {
-              normal: 0,
-              rare: 0,
-              unique: false,
-            },
-            temptation: {
-              triggered: false,
-              time: 0,
-            },
-          });
+          raceResults.push(raceHorse.raceResult);
           counter += 1;
           this.setState({ finished: counter });
           await Promise.delay(0);

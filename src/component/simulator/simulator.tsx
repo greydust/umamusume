@@ -5,7 +5,7 @@ import {
   CourseCategory, CourseDataType, GroundStatus, GroundType, LocalizationData, ProperRate, RunningStyle,
 } from '../../library/common';
 import {
-  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate, RaceResultData,
+  IHorseState, IGroundProperRate, IDistanceProperRate, IRunningStyleProperRate,
 } from './common';
 import CourseData from '../course-data';
 import HorseData from './horse-data';
@@ -19,6 +19,7 @@ import '../component.css';
 import '../../app.css';
 
 import courseJson from '../../db/course.json';
+import { RaceResultData } from '../../library/race/common';
 
 const courses = courseJson as CourseDataType[];
 

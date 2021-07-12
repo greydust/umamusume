@@ -153,6 +153,13 @@ const constant = {
     downSlopeAccelModeChanceBase: 0.0004,
     downSlopeEndChance: 0.2,
   },
+  skill: {
+    activatePerMin: 0.2,
+    lotActivatePerVal1: 1,
+    lotActivatePerVal2: 90,
+    abilityTimeDivideDistance: 1000,
+    coolDownTimeDivideDistance: 1000,
+  },
 };
 
 export default constant;

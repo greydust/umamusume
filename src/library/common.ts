@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 export interface LocalizationData {
   character: {
     name: LocalizationMap,
@@ -105,72 +106,53 @@ export interface CourseDataType {
 }
 
 export interface SkillData {
-  name: string,
-  need_skill_point: number | null,
-  description: string,
   id: string,
+  name: string,
   rarity: number,
-  grade_value: number,
-  group_id: string,
-  group_rate: number,
-  filter_switch: number,
-  skill_category: number,
-  tag_id: string,
-  unique_skill_id_1: string,
-  unique_skill_id_2: string,
-  exp_type: number,
-  potential_per_default: number,
-  activate_lot: number,
-  condition_1: string,
-  float_ability_time_1: number,
-  float_cooldown_time_1: number,
-  ability_type_1_1: number,
-  ability_value_usage_1_1: number,
-  ability_value_level_usage_1_1: number,
-  float_ability_value_1_1: number,
-  target_type_1_1: number,
-  target_value_1_1: number,
-  ability_type_1_2: number,
-  ability_value_usage_1_2: number,
-  ability_value_level_usage_1_2: number,
-  float_ability_value_1_2: number,
-  target_type_1_2: number,
-  target_value_1_2: number,
-  ability_type_1_3: number,
-  ability_value_usage_1_3: number,
-  ability_value_level_usage_1_3: number,
-  float_ability_value_1_3: number,
-  target_type_1_3: number,
-  target_value_1_3: number,
-  condition_2: string,
-  float_ability_time_2: number,
-  float_cooldown_time_2: number,
-  ability_type_2_1: number,
-  ability_value_usage_2_1: number,
-  ability_value_level_usage_2_1: number,
-  float_ability_value_2_1: number,
-  target_type_2_1: number,
-  target_value_2_1: number,
-  ability_type_2_2: number,
-  ability_value_usage_2_2: number,
-  ability_value_level_usage_2_2: number,
-  float_ability_value_2_2:number,
-  target_type_2_2: number,
-  target_value_2_2: number,
-  ability_type_2_3: number,
-  ability_value_usage_2_3: number,
-  ability_value_level_usage_2_3: number,
-  float_ability_value_2_3: number,
-  target_type_2_3: number,
-  target_value_2_3: number,
-  popularity_add_param_1: number,
-  popularity_add_value_1: number,
-  popularity_add_param_2: number,
-  popularity_add_value_2: number,
-  disp_order: number,
+  description: string,
   icon_id: string,
-  condition_1_object: SkillConditionObject,
-  condition_2_object: SkillConditionObject,
+  need_skill_point: number | null,
+  abilities: SkillAbilityData[],
+}
+
+export interface SkillAbilityData {
+  condition_raw: string,
+  condition: SkillConditionObject,
+  ability_time: number,
+  cooldown_time: number,
+  effects: SkillEffectData[],
+}
+
+export interface SkillEffectData {
+  ability_type: SkillAbilityType,
+  ability_value: number,
+  target_type: SkillAbilityTargetType,
+  target_value: number,
+}
+
+export enum SkillAbilityType {
+  AddSpeed = '1',
+  AddStamina = '2',
+  AddPow = '3',
+  AddGuts = '4',
+  AddWiz = '5',
+  AddSight = '8',
+  AddHp = '9',
+  ExtendTemptation = '13',
+  AddTargetSpeed = '27',
+  AddLaneAccel = '28',
+  AddAccel = '31',
+}
+
+export enum SkillAbilityTargetType {
+  Self = '1',
+  FrontInSight = '4',
+  FrontAll = '9',
+  BehindAll = '10',
+  RunningStyle = '18',
+  DistanceFront = '19',
+  DistanceBehind = '20',
+  RunningStyleInTemptation = '21',
 }
 
 enum SkillConditionOperatorsLogical {
@@ -178,7 +160,7 @@ enum SkillConditionOperatorsLogical {
   Or = 'or',
 }
 
-enum SkillConditionOperatorsFormula {
+export enum SkillConditionOperatorsFormula {
   GreaterThan = '>',
   GreaterThanOrEqualTo = '>=',
   LessThan = '<',
@@ -187,18 +169,18 @@ enum SkillConditionOperatorsFormula {
   NotEqualTo = '!=',
 }
 
-interface SkillConditionObjectLogical {
+export interface SkillConditionObjectLogical {
   operator: SkillConditionOperatorsLogical,
   items: SkillConditionObject[],
 }
 
-interface SkillConditionObjectFormula {
+export interface SkillConditionObjectFormula {
   operator: SkillConditionOperatorsFormula,
   key: string,
   value: string,
 }
 
-type SkillConditionObject = SkillConditionObjectLogical | SkillConditionObjectFormula | {};
+export type SkillConditionObject = SkillConditionObjectLogical | SkillConditionObjectFormula | {};
 
 class Common {
   static secondToTime(time: number): string {

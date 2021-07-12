@@ -1,5 +1,5 @@
 import {
-  DistanceType, ProperRate, GroundType, RunningStyle,
+  DistanceType, ProperRate, GroundType, RunningStyle, SkillData,
 } from '../common';
 
 export interface HorseStat {
@@ -21,14 +21,18 @@ class Horse {
 
   properRate: HorseProperRate;
 
+  skills: SkillData[];
+
   constructor(
-    { stat, properRate }: {
+    { stat, properRate, skills }: {
       stat: HorseStat,
       properRate: HorseProperRate,
+      skills: SkillData[],
     },
   ) {
     this.stat = stat;
     this.properRate = properRate;
+    this.skills = skills;
   }
 }
 

@@ -185,7 +185,7 @@ class SkillSelector extends Component<IProps, IState> {
                   <img
                     className="skillIcon"
                     src={`${process.env.PUBLIC_URL}/static/image/skill/${skill.icon_id}.png`}
-                    alt={localization.site.Speed}
+                    alt={skill.name}
                   />
                   {skill.name}
                 </span>
