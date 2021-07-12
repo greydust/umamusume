@@ -48,15 +48,9 @@ class RelationGraph extends Component<IProps, IState> {
 
   createRow(id: string) {
     return (
-<<<<<<< HEAD
       <tr key={`relation_row_${id}`}>
         <th key={`portrait_row_${id}`}>{this.idToPortrait(id)}</th>
         { _.map(this.characterIds, (targetId) => <th className="text1" key={`relation_${id}_${targetId}`}>{ RelationGraph.calculateRelation(id, targetId) }</th>) }
-=======
-      <tr>
-        <th>{this.idToPortrait(id)}</th>
-        { _.map(this.characterIds, (targetId) => <td className="text1">{ RelationGraph.calculateRelation(id, targetId) }</td>) }
->>>>>>> 306707833f0be2dcabd325d05e3bf69f1caa9768
       </tr>
     );
   }

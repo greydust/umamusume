@@ -72,15 +72,9 @@ class RelationQuery extends Component<IProps, IState> {
 
     return rel.map((horseRow) => (
       <tr>
-<<<<<<< HEAD
         <td>{horseRow.name}</td>
         <td><img className="portrait" src={horseRow.image} alt={horseRow.name} /></td>
         <td>{horseRow.relation}</td>
-=======
-        <td><big>{value[0]}</big></td>
-        <td><img className="portrait" src={value[2]} alt={value[0]} /></td>
-        <td className="text1">{value[1]}</td>
->>>>>>> 306707833f0be2dcabd325d05e3bf69f1caa9768
       </tr>
     ));
   }
