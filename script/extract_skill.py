@@ -82,44 +82,44 @@ parameter_converter = {
     "condition_1": do_nothing,
     "float_ability_time_1": divide_by_10k,
     "float_cooldown_time_1": divide_by_10k,
-    "ability_type_1_1": to_integer,
+    "ability_type_1_1": do_nothing,
     "ability_value_usage_1_1": to_integer,
     "ability_value_level_usage_1_1": to_integer,
     "float_ability_value_1_1": divide_by_10k,
-    "target_type_1_1": to_integer,
+    "target_type_1_1": do_nothing,
     "target_value_1_1": to_integer,
-    "ability_type_1_2": to_integer,
+    "ability_type_1_2": do_nothing,
     "ability_value_usage_1_2": to_integer,
     "ability_value_level_usage_1_2": to_integer,
     "float_ability_value_1_2": divide_by_10k,
-    "target_type_1_2": to_integer,
+    "target_type_1_2": do_nothing,
     "target_value_1_2": to_integer,
-    "ability_type_1_3": to_integer,
+    "ability_type_1_3": do_nothing,
     "ability_value_usage_1_3": to_integer,
     "ability_value_level_usage_1_3": to_integer,
     "float_ability_value_1_3": divide_by_10k,
-    "target_type_1_3": to_integer,
+    "target_type_1_3": do_nothing,
     "target_value_1_3": to_integer,
     "condition_2": do_nothing,
     "float_ability_time_2": divide_by_10k,
     "float_cooldown_time_2": divide_by_10k,
-    "ability_type_2_1": to_integer,
+    "ability_type_2_1": do_nothing,
     "ability_value_usage_2_1": to_integer,
     "ability_value_level_usage_2_1": to_integer,
     "float_ability_value_2_1": divide_by_10k,
-    "target_type_2_1": to_integer,
+    "target_type_2_1": do_nothing,
     "target_value_2_1": to_integer,
-    "ability_type_2_2": to_integer,
+    "ability_type_2_2": do_nothing,
     "ability_value_usage_2_2": to_integer,
     "ability_value_level_usage_2_2": to_integer,
     "float_ability_value_2_2": divide_by_10k,
-    "target_type_2_2": to_integer,
+    "target_type_2_2": do_nothing,
     "target_value_2_2": to_integer,
-    "ability_type_2_3": to_integer,
+    "ability_type_2_3": do_nothing,
     "ability_value_usage_2_3": to_integer,
     "ability_value_level_usage_2_3": to_integer,
     "float_ability_value_2_3": divide_by_10k,
-    "target_type_2_3": to_integer,
+    "target_type_2_3": do_nothing,
     "target_value_2_3": to_integer,
     "popularity_add_param_1": to_integer,
     "popularity_add_value_1": to_integer,
@@ -158,6 +158,42 @@ def parse_condition(condition: str):
     key, operator, value = match.groups()
     return { "operator": operator, "key": key, "value": value }
 
+def convert_skill(skill):
+    return {
+        "id": skill["id"],
+        "name": skill["name"],
+        "rarity": skill["rarity"],
+        "description": skill["description"],
+        "icon_id": skill["icon_id"],
+        "need_skill_point": skill["need_skill_point"],
+        "abilities": convert_skill_abilities(skill)
+    }
+
+def convert_skill_abilities(skill):
+    abilities = []
+    for i in range(1, 3):
+        if skill["condition_" + str(i)] != "":
+            abilities.append({
+                "condition": skill["condition_" + str(i) + "_object"],
+                "condition_raw": skill["condition_" + str(i)],
+                "ability_time": skill["float_ability_time_" + str(i)],
+                "cooldown_time": skill["float_cooldown_time_" + str(i)],
+                "effects": convert_skill_effects(skill, str(i)),
+            })
+    return abilities
+
+def convert_skill_effects(skill, ability):
+    effects = []
+    for i in range(1, 4):
+        if skill["ability_type_" + ability + "_" + str(i)] != "0":
+            effects.append({
+                "ability_type": skill["ability_type_" + ability + "_" + str(i)],
+                "ability_value": skill["float_ability_value_" + ability + "_" + str(i)],
+                "target_type": skill["target_type_" + ability + "_" + str(i)],
+                "target_value": skill["target_value_" + ability + "_" + str(i)],
+            })
+    return effects
+
 current.execute(sql)
 skills = {}
 for row in current.fetchall():
@@ -166,37 +202,7 @@ for row in current.fetchall():
             row[key] = parameter_converter[key](row[key])
     for source, target in condition_object_map.items():
         row[target] = parse_condition(row[source])
-    skills[row["id"]] = (row)
+    skills[row["id"]] = convert_skill(row)
 
 with open(os.path.join(base_dir, '../src/db/skill.json'), 'w', encoding="utf8") as output:
     json.dump(skills, output, ensure_ascii=False, indent=2)
-
-# rarity: 1:白 2:金 3:非三星固有  4:非三星馬升三星後的固有 5:三星固有
-    
-# group_id: 同種技能同group
-# group_rate: -1:X 1:白 2:金or固有
-
-# filter_switch: 不明 一律為0
-
-# skill_category: 0:綠技 1:序盤 2:中盤 3:終盤 4:其他 5:固有
-
-# tag_id: 
-# 101~104:逃先差追
-# 201~204:短英中長
-# 301~303:序中終
-# 401:與速度or速度提升有關
-# 402:與耐力or回體有關
-# 403:與力量or加速度or走位有關
-# 404:與根性有關
-# 405:與賢or視野有關
-# 406:與紅有關(不確定?)
-# 407:與出閘有關
-
-# unique_skill_id_1:繼承固有的原先id (非繼承沒有)
-# unique_skill_id_2:升級大招的原先id (一開始就三星的馬沒有)
-# exp_type: 1為固有技能 繼承&其餘為0
-# potential_per_default: 不明 但0為固有技能(含繼承) 其餘為10
-# activate_lot: 不明
-
-# disp_order: 猜 單純只是位置排序
-

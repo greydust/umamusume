@@ -11,10 +11,7 @@ import RelationGraph from './component/relation/graph';
 import RelationQuery from './component/relation/query';
 import Simulator from './component/simulator/simulator';
 import Course from './component/course/course';
-import Skill from './component/skill/index';
 import Localization from './localization';
-
-import { DataContext } from './data-context';
 
 import 'antd/dist/antd.css';
 import './app.css';
@@ -27,15 +24,7 @@ interface IProps {
 
 interface IState {
   localization: LocalizationData,
-  data: { [key: string]: any },
-  setData: SetData,
-  initData: InitData,
-  availableData: string[],
-
 }
-
-type SetData = (dataType: string, fileName: string) => void;
-type InitData = (dataType: string) => void;
 
 class App extends Component<IProps, IState> {
   localization: Localization;
@@ -45,43 +34,8 @@ class App extends Component<IProps, IState> {
     this.localization = new Localization();
     this.state = {
       localization: this.localization.getLocalization('ja-jp'),
-      data: {
-        skill: {
-          overview: {},
-          detail: {},
-        },
-      },
-      setData: this.setData,
-      initData: this.initData,
-      availableData: ['skill'],
     };
   }
-
-  setData: SetData = (dataType, fileName) => {
-    if (!this.state.availableData.includes(dataType)) {
-      console.log('error');
-    }
-    const tmp = this.state;
-    tmp.data[dataType].overview[fileName] = [];
-
-    const dataArray = require(`./db/${dataType}/overview/${fileName}.json`);
-    dataArray.forEach((d:any) => {
-      tmp.data[dataType].overview[fileName].push(d);
-    });
-    this.setState(tmp);
-  };
-
-  initData: InitData = (dataType) => {
-    if (!this.state.availableData.includes(dataType)) {
-      console.log(this.state.availableData);
-      console.log('error', dataType);
-    }
-
-    const tmp = this.state;
-    tmp.data[dataType].detail = require(`./db/${dataType}/detail.json`);
-
-    this.setState(tmp);
-  };
 
   changeLocalization = (locale: string) => {
     this.setState({
@@ -90,9 +44,7 @@ class App extends Component<IProps, IState> {
   };
 
   render() {
-    const {
-      localization, data, setData, initData,
-    } = this.state;
+    const { localization } = this.state;
 
     return (
       <Router>
@@ -122,11 +74,6 @@ class App extends Component<IProps, IState> {
               <Route path="/relation/query" render={() => (<RelationQuery localization={localization} />)} />
               <Route path="/simulator" render={() => (<Simulator localization={localization} />)} />
               <Route path="/course" render={() => (<Course localization={localization} />)} />
-
-              <DataContext.Provider value={{ data, setData, initData }}>
-                <Route path="/skill" render={() => (<Skill />)} />
-              </DataContext.Provider>
-
             </Switch>
           </Content>
           <Footer className="footer" style={{ padding: '5px' }}>
