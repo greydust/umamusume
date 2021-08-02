@@ -2150,6 +2150,54 @@
       }
     ]
   },
+  "100401": {
+    "id": "100401",
+    "name": "KEEP IT REAL.",
+    "rarity": 5,
+    "description": "レース後半に中団から仕掛け始める時に\\n持てるパフォーマンスを発揮して\\n加速力を少しずつ上げる",
+    "icon_id": "20043",
+    "need_skill_point": null,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": ">=",
+              "key": "distance_rate",
+              "value": "50"
+            },
+            {
+              "operator": ">=",
+              "key": "order_rate",
+              "value": "40"
+            },
+            {
+              "operator": "<=",
+              "key": "order_rate",
+              "value": "70"
+            },
+            {
+              "operator": "==",
+              "key": "is_overtake",
+              "value": "1"
+            }
+          ]
+        },
+        "condition_raw": "distance_rate>=50&order_rate>=40&order_rate<=70&is_overtake==1",
+        "ability_time": 6.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "31",
+            "ability_value": 0.3,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
   "100411": {
     "id": "100411",
     "name": "優等生×バクシン＝大勝利ッ",
@@ -2530,6 +2578,54 @@
       }
     ]
   },
+  "110011": {
+    "id": "110011",
+    "name": "わやかわ♪マリンダイヴ",
+    "rarity": 5,
+    "description": "中盤で2回スキルを使うと\\nよりリラックスして持久力が回復する",
+    "icon_id": "20023",
+    "need_skill_point": null,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": "==",
+              "key": "phase",
+              "value": "1"
+            },
+            {
+              "operator": ">=",
+              "key": "order",
+              "value": "2"
+            },
+            {
+              "operator": "<=",
+              "key": "order_rate",
+              "value": "70"
+            },
+            {
+              "operator": ">=",
+              "key": "activate_count_middle",
+              "value": "2"
+            }
+          ]
+        },
+        "condition_raw": "phase==1&order>=2&order_rate<=70&activate_count_middle>=2",
+        "ability_time": 0.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "9",
+            "ability_value": 0.055,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
   "110031": {
     "id": "110031",
     "name": "絶対は、ボクだ",
@@ -2575,6 +2671,49 @@
           ]
         },
         "condition_raw": "is_finalcorner==1&corner==0&is_overtake==1&order<=5&order_rate<=50&overtake_target_no_order_up_time>=2",
+        "ability_time": 5.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "27",
+            "ability_value": 0.35,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "110041": {
+    "id": "110041",
+    "name": "グッときて♪Chu",
+    "rarity": 5,
+    "description": "スキルで持久力を回復すると\\nレース後半で前のほうにいる時に\\nレッツラゴー！と速度を上げる",
+    "icon_id": "20013",
+    "need_skill_point": null,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": ">=",
+              "key": "distance_rate",
+              "value": "50"
+            },
+            {
+              "operator": ">=",
+              "key": "activate_count_heal",
+              "value": "1"
+            },
+            {
+              "operator": "<=",
+              "key": "order",
+              "value": "3"
+            }
+          ]
+        },
+        "condition_raw": "distance_rate>=50&activate_count_heal>=1&order<=3",
         "ability_time": 5.0,
         "cooldown_time": 500.0,
         "effects": [
@@ -15975,6 +16114,62 @@
       }
     ]
   },
+  "300011": {
+    "id": "300011",
+    "name": "癒えない渇き",
+    "rarity": 1,
+    "description": "レースへの渇望により\\n能力が少し発揮しやすくなる",
+    "icon_id": "10021",
+    "need_skill_point": null,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "==",
+          "key": "track_id",
+          "value": "10008"
+        },
+        "condition_raw": "track_id==10008",
+        "ability_time": -0.0001,
+        "cooldown_time": 0.0,
+        "effects": [
+          {
+            "ability_type": "2",
+            "ability_value": 40.0,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "300021": {
+    "id": "300021",
+    "name": "変わらぬままで",
+    "rarity": 2,
+    "description": "かつての走りとは違うがあの頃と\\n変わらない想いが能力をすごく上げる",
+    "icon_id": "10012",
+    "need_skill_point": null,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "==",
+          "key": "season",
+          "value": "4"
+        },
+        "condition_raw": "season==4",
+        "ability_time": -0.0001,
+        "cooldown_time": 0.0,
+        "effects": [
+          {
+            "ability_type": "1",
+            "ability_value": 80.0,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
   "900011": {
     "id": "900011",
     "name": "シューティングスター",
@@ -17335,6 +17530,54 @@
       }
     ]
   },
+  "900401": {
+    "id": "900401",
+    "name": "KEEP IT REAL.",
+    "rarity": 1,
+    "description": "レース後半に中団から仕掛け始める時に\\n加速力をちょっとずつ上げる",
+    "icon_id": "20041",
+    "need_skill_point": 200,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": ">=",
+              "key": "distance_rate",
+              "value": "50"
+            },
+            {
+              "operator": ">=",
+              "key": "order_rate",
+              "value": "40"
+            },
+            {
+              "operator": "<=",
+              "key": "order_rate",
+              "value": "70"
+            },
+            {
+              "operator": "==",
+              "key": "is_overtake",
+              "value": "1"
+            }
+          ]
+        },
+        "condition_raw": "distance_rate>=50&order_rate>=40&order_rate<=70&is_overtake==1",
+        "ability_time": 3.6,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "31",
+            "ability_value": 0.1,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
   "900411": {
     "id": "900411",
     "name": "優等生×バクシン＝大勝利ッ",
@@ -17715,6 +17958,54 @@
       }
     ]
   },
+  "910011": {
+    "id": "910011",
+    "name": "わやかわ♪マリンダイヴ",
+    "rarity": 1,
+    "description": "中盤で2回スキルを使うと\\n持久力がわずかに回復する",
+    "icon_id": "20021",
+    "need_skill_point": 200,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": "==",
+              "key": "phase",
+              "value": "1"
+            },
+            {
+              "operator": ">=",
+              "key": "order",
+              "value": "2"
+            },
+            {
+              "operator": "<=",
+              "key": "order_rate",
+              "value": "70"
+            },
+            {
+              "operator": ">=",
+              "key": "activate_count_middle",
+              "value": "2"
+            }
+          ]
+        },
+        "condition_raw": "phase==1&order>=2&order_rate<=70&activate_count_middle>=2",
+        "ability_time": 0.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "9",
+            "ability_value": 0.015,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
   "910031": {
     "id": "910031",
     "name": "絶対は、ボクだ",
@@ -17760,6 +18051,49 @@
           ]
         },
         "condition_raw": "is_finalcorner==1&corner==0&is_overtake==1&order<=5&order_rate<=50&overtake_target_no_order_up_time>=2",
+        "ability_time": 3.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "27",
+            "ability_value": 0.15,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "910041": {
+    "id": "910041",
+    "name": "グッときて♪Chu",
+    "rarity": 1,
+    "description": "スキルで持久力を回復すると\\nレース後半で前のほうにいる時に\\nわずかに速度を上げる",
+    "icon_id": "20011",
+    "need_skill_point": 200,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": ">=",
+              "key": "distance_rate",
+              "value": "50"
+            },
+            {
+              "operator": ">=",
+              "key": "activate_count_heal",
+              "value": "1"
+            },
+            {
+              "operator": "<=",
+              "key": "order",
+              "value": "3"
+            }
+          ]
+        },
+        "condition_raw": "distance_rate>=50&activate_count_heal>=1&order<=3",
         "ability_time": 3.0,
         "cooldown_time": 500.0,
         "effects": [
