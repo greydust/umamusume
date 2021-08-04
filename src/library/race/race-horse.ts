@@ -10,7 +10,7 @@ import {
   RaceResultData, ResultFlag, Season, Weather, IRaceHorse,
 } from './common';
 import {
-  RunningStyle, CoursePhase, SkillEffectData, SkillData, SkillAbilityData,
+  RunningStyle, CoursePhase, SkillEffectData, SkillData, SkillAbilityData, SkillAbilityTargetType, SkillAbilityType,
 } from '../common';
 
 import distanceProperRateJson from '../../db/proper_rate/distance.json';
@@ -742,6 +742,44 @@ class RaceHorse implements IRaceHorse {
     }
   };
 
+  private applyEffect(effect: SkillEffectData) {
+    const targets: RaceHorse[] = [];
+    switch (effect.target_type) {
+      case SkillAbilityTargetType.Self:
+        targets.push(this);
+        break;
+      default:
+        break;
+    }
+
+    _.map(targets, (target) => {
+      switch (effect.ability_type) {
+        case SkillAbilityType.AddSpeed:
+          break;
+        case SkillAbilityType.AddStamina:
+          break;
+        case SkillAbilityType.AddPow:
+          break;
+        case SkillAbilityType.AddGuts:
+          break;
+        case SkillAbilityType.AddWiz:
+          break;
+        case SkillAbilityType.AddSight:
+          break;
+        case SkillAbilityType.AddHp:
+          break;
+        case SkillAbilityType.ExtendTemptation:
+          break;
+        case SkillAbilityType.AddTargetSpeed:
+          break;
+        case SkillAbilityType.AddLaneAccel:
+          break;
+        case SkillAbilityType.AddAccel:
+          break;
+      }
+    });
+  }
+
   private activateAbility({ skillId, ability }: { skillId: string, ability: SkillAbilityData }) {
     if (!(skillId in this.raceResult.skillsActivated)) {
       this.raceResult.skillsActivated[skillId] = { count: 1 };
@@ -749,7 +787,10 @@ class RaceHorse implements IRaceHorse {
       this.raceResult.skillsActivated[skillId].count += 1;
     }
 
+    this._skillCooldown[skillId] = this._time + ability.cooldown_time;
+
     for (const effect of ability.effects) {
+      this.applyEffect(effect);
     }
   }
 
