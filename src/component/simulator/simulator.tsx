@@ -87,11 +87,13 @@ class Simulator extends Component<IProps, IState> {
     const {
       strategy, racecourse, ground, distance, groundStatus,
     } = this.state;
-    if (racecourse === undefined || ground === undefined || distance === undefined || strategy === undefined || groundStatus === undefined) {
-      this.setState({ course: undefined });
-    } else {
-      this.setState({ course: this.courseCategories[racecourse][ground][distance] });
+    let course;
+    if (racecourse !== undefined && ground !== undefined && distance !== undefined && strategy !== undefined && groundStatus !== undefined) {
+      if (ground in this.courseCategories[racecourse]) {
+        course = this.courseCategories[racecourse][ground][distance];
+      }
     }
+    this.setState({ course });
   };
 
   setData = (key: string, value: any): void => {

@@ -40,17 +40,42 @@ class Course extends Component<IProps, IState> {
   }
 
   setData = (key: string, value: any): void => {
-    this.setState({ [key]: value } as Pick<IState, keyof IState>, this.updateCourse);
+    switch (key) {
+      case 'racecourse':
+        this.setState({
+          racecourse: value,
+          ground: undefined,
+          distance: undefined,
+          course: undefined,
+        });
+        break;
+      case 'ground':
+        this.setState({
+          ground: value as GroundType,
+          distance: undefined,
+          course: undefined,
+        });
+        break;
+      case 'distance':
+        this.setState(
+          {
+            distance: value as number,
+          },
+          this.updateCourse,
+        );
+        break;
+    }
   };
 
   updateCourse = () => {
     const { racecourse, ground, distance } = this.state;
-    let course = undefined
+    let course;
     if (racecourse !== undefined && ground !== undefined && distance !== undefined) {
-      if (ground in this.courseCategories[racecourse] )
-        course = this.courseCategories[racecourse][ground][distance]
-    } 
-    this.setState({ course: course });
+      if (ground in this.courseCategories[racecourse]) {
+        course = this.courseCategories[racecourse][ground][distance];
+      }
+    }
+    this.setState({ course });
   };
 
   loadCourseData() {
