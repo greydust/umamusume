@@ -174,7 +174,8 @@ class CourseChart extends Component<IProps, IState> {
       return (<></>);
     }
 
-    const blockDistance = course.distance / 24;
+    this._referenceAreas = [];
+    this._referenceDots = [];
     const { data, maxSlope, minSlope } = CourseChart.buildData({ course });
     this.buildCorner({
       course, localization, maxSlope, minSlope,
@@ -183,6 +184,7 @@ class CourseChart extends Component<IProps, IState> {
       course, localization, maxSlope, minSlope,
     });
 
+    const blockDistance = course.distance / 24;
     return (
       <ComposedChart
         width={1000}
