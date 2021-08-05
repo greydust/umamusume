@@ -45,11 +45,12 @@ class Course extends Component<IProps, IState> {
 
   updateCourse = () => {
     const { racecourse, ground, distance } = this.state;
-    if (racecourse === undefined || ground === undefined || distance === undefined) {
-      this.setState({ course: undefined });
-    } else {
-      this.setState({ course: this.courseCategories[racecourse][ground][distance] });
-    }
+    let course = undefined
+    if (racecourse !== undefined && ground !== undefined && distance !== undefined) {
+      if (ground in this.courseCategories[racecourse] )
+        course = this.courseCategories[racecourse][ground][distance]
+    } 
+    this.setState({ course: course });
   };
 
   loadCourseData() {
