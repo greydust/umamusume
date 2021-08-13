@@ -2482,6 +2482,60 @@
       }
     ]
   },
+  "100581": {
+    "id": "100581",
+    "name": "I Never Goof Up!",
+    "rarity": 5,
+    "description": "レース終盤のコーナーで\\n中団以降のポジションから追い抜くと\\nあきらめない心を発揮して前を目指す",
+    "icon_id": "20013",
+    "need_skill_point": null,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": ">=",
+              "key": "phase",
+              "value": "2"
+            },
+            {
+              "operator": "!=",
+              "key": "corner",
+              "value": "0"
+            },
+            {
+              "operator": ">=",
+              "key": "order",
+              "value": "3"
+            },
+            {
+              "operator": "<",
+              "key": "change_order_onetime",
+              "value": "0"
+            }
+          ]
+        },
+        "condition_raw": "phase>=2&corner!=0&order>=3&change_order_onetime<0",
+        "ability_time": 5.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "27",
+            "ability_value": 0.25,
+            "target_type": "1",
+            "target_value": 0
+          },
+          {
+            "ability_type": "31",
+            "ability_value": 0.3,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
   "100601": {
     "id": "100601",
     "name": "きっとその先へ…！",
@@ -17855,6 +17909,60 @@
           {
             "ability_type": "27",
             "ability_value": 0.15,
+            "target_type": "1",
+            "target_value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "900581": {
+    "id": "900581",
+    "name": "I Never Goof Up!",
+    "rarity": 1,
+    "description": "レース終盤のコーナーで\\n中団以降のポジションから追い抜くと\\nちょっと前を目指す",
+    "icon_id": "20011",
+    "need_skill_point": 200,
+    "abilities": [
+      {
+        "condition": {
+          "operator": "and",
+          "items": [
+            {
+              "operator": ">=",
+              "key": "phase",
+              "value": "2"
+            },
+            {
+              "operator": "!=",
+              "key": "corner",
+              "value": "0"
+            },
+            {
+              "operator": ">=",
+              "key": "order",
+              "value": "3"
+            },
+            {
+              "operator": "<",
+              "key": "change_order_onetime",
+              "value": "0"
+            }
+          ]
+        },
+        "condition_raw": "phase>=2&corner!=0&order>=3&change_order_onetime<0",
+        "ability_time": 3.0,
+        "cooldown_time": 500.0,
+        "effects": [
+          {
+            "ability_type": "27",
+            "ability_value": 0.05,
+            "target_type": "1",
+            "target_value": 0
+          },
+          {
+            "ability_type": "31",
+            "ability_value": 0.1,
             "target_type": "1",
             "target_value": 0
           }
